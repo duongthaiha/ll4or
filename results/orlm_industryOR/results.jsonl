@@ -1,0 +1,1 @@
+{"problem_id": "1", "solver_type": "heuristic", "execution_success": true, "objective_value": 242076.0, "ground_truth": 219816.0, "is_correct": false, "relative_error": 0.10126651381155148, "detail": "rel_error=10.1267%, tol=5%", "elapsed_seconds": 145.19089198112488}
