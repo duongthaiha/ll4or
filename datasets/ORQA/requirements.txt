@@ -8,7 +8,7 @@ async-timeout==4.0.2
 attrs==23.1.0
 binaryornot==0.4.4
 bitsandbytes==0.41.1
-black==23.7.0
+black==26.3.1
 certifi==2023.7.22
 chardet==5.2.0
 charset-normalizer==2.0.12
