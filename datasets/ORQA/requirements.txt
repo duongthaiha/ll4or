@@ -24,7 +24,7 @@ decorator==5.1.1
 dill==0.3.7
 evaluate==0.4.0
 fairscale==0.4.13
-filelock==3.12.2
+filelock==3.20.3
 fire==0.5.0
 flake8==6.1.0
 fonttools==4.43.1
