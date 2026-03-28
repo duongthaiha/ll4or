@@ -1,0 +1,7 @@
+dependencies:
+  - python=3.13
+  - jupyter
+  - matplotlib
+  - numpy
+  - psycopg2
+  - pylint
