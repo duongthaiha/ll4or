@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import logging
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict
 from pathlib import Path
 
@@ -118,14 +119,52 @@ class Orchestrator:
             log.exception("Formulation failed for problem %s", problem.id)
             formulated = {**input_data, "formulation": {}}
 
-        # 2. Generate + execute for each solver type
-        results: list[dict] = []
-        for solver_name, solver_agent in self.solver_agents.items():
-            result = self._run_solver(
-                solver_name, solver_agent, formulated, problem
-            )
-            results.append(result)
+        # 2. Generate + execute for each solver type (parallel or sequential)
+        if self.config.agent.parallel_solvers and len(self.solver_agents) > 1:
+            results = self._run_solvers_parallel(formulated, problem)
+        else:
+            results = [
+                self._run_solver(name, agent, formulated, problem)
+                for name, agent in self.solver_agents.items()
+            ]
 
+        return results
+
+    def _run_solvers_parallel(
+        self, formulated: dict, problem: Problem
+    ) -> list[dict]:
+        """Run all solver agents concurrently using threads.
+
+        Captures the current Langfuse trace/observation IDs and passes them
+        to each thread so child spans remain grouped under the parent trace.
+        """
+        # Capture Langfuse context from the current thread for propagation
+        langfuse_ctx = {}
+        try:
+            from langfuse import get_client
+            lf = get_client()
+            trace_id = lf.get_current_trace_id()
+            obs_id = lf.get_current_observation_id()
+            if trace_id:
+                langfuse_ctx["langfuse_trace_id"] = trace_id
+            if obs_id:
+                langfuse_ctx["langfuse_parent_observation_id"] = obs_id
+        except Exception:
+            pass  # Langfuse not active or not available
+
+        results: list[dict] = []
+        with ThreadPoolExecutor(
+            max_workers=len(self.solver_agents)
+        ) as pool:
+            futures = {
+                pool.submit(
+                    self._run_solver, name, agent, formulated, problem,
+                    **langfuse_ctx,
+                ): name
+                for name, agent in self.solver_agents.items()
+            }
+            for future in as_completed(futures):
+                results.append(future.result())
         return results
 
     def _run_solver(
@@ -134,6 +173,7 @@ class Orchestrator:
         solver_agent,
         formulated: dict,
         problem: Problem,
+        **kwargs,
     ) -> dict:
         """Generate code, execute, debug on failure, evaluate."""
         start = time.time()

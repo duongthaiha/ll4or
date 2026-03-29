@@ -67,6 +67,11 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         choices=["DEBUG", "INFO", "WARNING", "ERROR"],
     )
     p.add_argument(
+        "--sequential",
+        action="store_true",
+        help="Run solvers sequentially instead of in parallel.",
+    )
+    p.add_argument(
         "--list-datasets",
         action="store_true",
         help="List available datasets and exit.",
@@ -95,6 +100,8 @@ def main(argv: list[str] | None = None) -> int:
     config.execution.timeout = args.timeout
     config.evaluation.relative_tolerance = args.tolerance
     config.agent.solver_types = args.solver
+    if args.sequential:
+        config.agent.parallel_solvers = False
 
     if args.llm_provider:
         config.llm.provider = args.llm_provider  # type: ignore[assignment]

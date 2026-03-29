@@ -5,12 +5,15 @@ A multi-agent system that takes OR problems from benchmark datasets, uses LLM ag
 ## Quick Start
 
 ```bash
-# Set up your LLM provider in .env (see .env.example)
+# Set up your LLM provider in .env (see Configuration section)
 # Then run:
 python3 -m src.main --dataset industryOR --max-problems 5 --timeout 120
 
 # Run a specific solver type
 python3 -m src.main --dataset bwor --solver metaheuristic --max-problems 3
+
+# Run solvers sequentially (instead of parallel)
+python3 -m src.main --dataset industryOR --max-problems 1 --sequential
 
 # List available datasets
 python3 -m src.main --list-datasets
@@ -19,14 +22,16 @@ python3 -m src.main --list-datasets
 ## Architecture
 
 ```
-Dataset ─→ Formulator Agent ─→ Solver Agents (×3) ─→ Executor ─→ Evaluator
-              (NL → math)     heuristic / meta /    (subprocess)  (per-dataset
-                              hyper-heuristic                      comparison)
+Dataset ─→ Formulator Agent ─→ Solver Agents (×3, parallel) ─→ Executor ─→ Evaluator
+              (NL → math)     heuristic / meta /               (subprocess)  (per-dataset
+                              hyper-heuristic                                 comparison)
                                     │
                               Debugger Agent ←── on failure (up to 3 retries)
 ```
 
 All generated code is **pure Python** (stdlib + numpy/scipy) — no commercial solvers required.
+
+The three solver agents run **in parallel** by default (wall time = slowest solver, not sum). Use `--sequential` to disable.
 
 ## Datasets
 
@@ -154,7 +159,8 @@ src/
 │   └── sandbox.py        # Subprocess code execution with timeout
 ├── evaluation/
 │   └── evaluator.py      # Per-dataset comparison + aggregate metrics
-├── orchestrator.py       # Pipeline wiring
+├── orchestrator.py       # Pipeline wiring (parallel solver execution)
+├── tracing.py            # Langfuse integration (observe, LLM wrapping)
 ├── config.py             # Configuration (from .env)
 └── main.py               # CLI entry point
 ```
@@ -198,20 +204,22 @@ A default project ("OR Solver") is auto-created with API keys that match the `.e
 
 ### What gets traced
 
-Every pipeline run creates a hierarchical trace in Langfuse:
+Every pipeline run creates a **single hierarchical trace** in Langfuse — even when solvers run in parallel:
 
 ```
 pipeline_run (dataset, accuracy, per-solver metrics)
   └─ solve_problem (per problem)
        ├─ formulator LLM call (prompt, completion, tokens, latency)
-       ├─ run_solver: heuristic
-       │    └─ LLM call (code generation)
-       │    └─ [debugger LLM call, if retry needed]
-       ├─ run_solver: metaheuristic
-       │    └─ LLM call
-       └─ run_solver: hyperheuristic
-            └─ LLM call
+       ├─ run_solver: heuristic          ┐
+       │    └─ LLM call (code generation)│
+       │    └─ [debugger LLM call]       │ run in parallel,
+       ├─ run_solver: metaheuristic      ├ but grouped in
+       │    └─ LLM call                  │ one trace
+       └─ run_solver: hyperheuristic     │
+            └─ LLM call                  ┘
 ```
+
+Parallel trace grouping uses Langfuse's [recommended pattern](https://github.com/orgs/langfuse/discussions/4438) — `langfuse_trace_id` and `langfuse_parent_observation_id` are captured from the parent thread and passed to each solver thread.
 
 ### Configuration
 

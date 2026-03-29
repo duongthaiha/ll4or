@@ -74,6 +74,7 @@ class AgentConfig:
     solver_types: list[str] = field(
         default_factory=lambda: ["heuristic", "metaheuristic", "hyperheuristic"]
     )
+    parallel_solvers: bool = True
 
 
 @dataclass
