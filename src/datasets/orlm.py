@@ -17,6 +17,7 @@ _REPO_ROOT = Path(__file__).resolve().parents[2]
 
 _DATASET_PATHS: dict[str, Path] = {
     "industryOR": _REPO_ROOT / "datasets" / "IndustryOR" / "IndustryOR.json",
+    "nl4opt": _REPO_ROOT / "datasets" / "BWOR" / "data" / "datasets" / "NL4OPT_with_optimal_solution.json",
 }
 
 

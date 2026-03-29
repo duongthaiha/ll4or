@@ -84,13 +84,19 @@ class Orchestrator:
         all_results: list[dict] = []
         detail_records: list[dict] = []
 
-        for i, problem in enumerate(problems):
-            log.info(
-                "[%d/%d] Problem %s", i + 1, len(problems), problem.id
-            )
-            results = self._solve_problem(problem)
-            all_results.extend(results)
-            detail_records.extend(results)
+        n_parallel = self.config.agent.parallel_problems
+        if n_parallel > 1 and len(problems) > 1:
+            log.info("Running %d problems concurrently", n_parallel)
+            all_results = self._run_problems_parallel(problems, n_parallel)
+        else:
+            for i, problem in enumerate(problems):
+                log.info(
+                    "[%d/%d] Problem %s", i + 1, len(problems), problem.id
+                )
+                results = self._solve_problem(problem)
+                all_results.extend(results)
+
+        detail_records = all_results
 
         metrics = compute_metrics(all_results)
         self._save_results(dataset.name, detail_records, metrics)
@@ -104,7 +110,57 @@ class Orchestrator:
 
     # ── internals ────────────────────────────────────────────────────
 
-    def _solve_problem(self, problem: Problem) -> list[dict]:
+    def _run_problems_parallel(
+        self, problems: list[Problem], max_workers: int
+    ) -> list[dict]:
+        """Run multiple problems concurrently."""
+        import threading
+
+        all_results: list[dict] = []
+        lock = threading.Lock()
+        done_count = [0]
+        total = len(problems)
+
+        def solve_one(problem: Problem, **kwargs) -> list[dict]:
+            results = self._solve_problem(problem, **kwargs)
+            with lock:
+                all_results.extend(results)
+                done_count[0] += 1
+                log.info(
+                    "  [%d/%d completed] Problem %s",
+                    done_count[0], total, problem.id,
+                )
+            return results
+
+        # Capture Langfuse context for propagation into problem threads
+        langfuse_ctx = {}
+        try:
+            from langfuse import get_client
+            lf = get_client()
+            trace_id = lf.get_current_trace_id()
+            obs_id = lf.get_current_observation_id()
+            if trace_id:
+                langfuse_ctx["langfuse_trace_id"] = trace_id
+            if obs_id:
+                langfuse_ctx["langfuse_parent_observation_id"] = obs_id
+        except Exception:
+            pass
+
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = [
+                pool.submit(solve_one, p, **langfuse_ctx)
+                for p in problems
+            ]
+            # Wait for all to complete; exceptions are re-raised
+            for future in as_completed(futures):
+                try:
+                    future.result()
+                except Exception:
+                    log.exception("Problem solver failed")
+
+        return all_results
+
+    def _solve_problem(self, problem: Problem, **kwargs) -> list[dict]:
         """Formulate → generate code (all solver types) → execute → evaluate."""
 
         # 1. Formulate

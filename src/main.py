@@ -72,6 +72,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Run solvers sequentially instead of in parallel.",
     )
     p.add_argument(
+        "--parallel-problems",
+        type=int,
+        default=4,
+        help="Number of problems to solve concurrently (default: 4).",
+    )
+    p.add_argument(
         "--list-datasets",
         action="store_true",
         help="List available datasets and exit.",
@@ -100,6 +106,7 @@ def main(argv: list[str] | None = None) -> int:
     config.execution.timeout = args.timeout
     config.evaluation.relative_tolerance = args.tolerance
     config.agent.solver_types = args.solver
+    config.agent.parallel_problems = args.parallel_problems
     if args.sequential:
         config.agent.parallel_solvers = False
 

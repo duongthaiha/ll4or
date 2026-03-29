@@ -11,6 +11,7 @@ from src.datasets.orlm import ORLMAdapter
 def _build_default_registry() -> dict[str, DatasetAdapter]:
     return {
         "industryOR": ORLMAdapter("industryOR"),
+        "nl4opt": ORLMAdapter("nl4opt"),
         "bwor": BWORAdapter(),
         "mamo_easy": MAMOAdapter("easy"),
         "mamo_complex": MAMOAdapter("complex"),

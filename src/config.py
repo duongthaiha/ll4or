@@ -75,6 +75,7 @@ class AgentConfig:
         default_factory=lambda: ["heuristic", "metaheuristic", "hyperheuristic"]
     )
     parallel_solvers: bool = True
+    parallel_problems: int = 1  # number of problems to solve concurrently
 
 
 @dataclass
