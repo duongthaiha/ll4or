@@ -18,6 +18,8 @@ _REPO_ROOT = Path(__file__).resolve().parents[2]
 _DATASET_PATHS: dict[str, Path] = {
     "industryOR": _REPO_ROOT / "datasets" / "IndustryOR" / "IndustryOR.json",
     "nl4opt": _REPO_ROOT / "datasets" / "BWOR" / "data" / "datasets" / "NL4OPT_with_optimal_solution.json",
+    "nl4opt_orlm": _REPO_ROOT / "datasets" / "ORLM" / "results" / "NL4OPT.q2mc_en.ORLM-LLaMA-3-8B" / "executed.jsonl",
+    "industryOR_orlm": _REPO_ROOT / "datasets" / "ORLM" / "results" / "IndustryOR.q2mc_en.ORLM-LLaMA-3-8B" / "executed.jsonl",
 }
 
 

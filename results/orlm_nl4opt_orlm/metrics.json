@@ -1,0 +1,24 @@
+{
+  "total": 735,
+  "correct": 615,
+  "failed_execution": 1,
+  "no_ground_truth": 42,
+  "accuracy": 0.8874458874458875,
+  "per_solver": {
+    "metaheuristic": {
+      "total": 231,
+      "correct": 205,
+      "accuracy": 0.8874458874458875
+    },
+    "heuristic": {
+      "total": 231,
+      "correct": 205,
+      "accuracy": 0.8874458874458875
+    },
+    "hyperheuristic": {
+      "total": 231,
+      "correct": 205,
+      "accuracy": 0.8874458874458875
+    }
+  }
+}
