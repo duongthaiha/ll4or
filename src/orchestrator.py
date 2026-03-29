@@ -323,6 +323,7 @@ class Orchestrator:
                     "relative_error": r["comparison"].relative_error,
                     "detail": r["comparison"].detail,
                     "elapsed_seconds": r["elapsed_seconds"],
+                    "code": r["code"],
                 }
                 f.write(json.dumps(row) + "\n")
 
