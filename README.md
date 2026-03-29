@@ -173,6 +173,67 @@ EXEC_TIMEOUT=600
 OUTPUT_DIR=results
 ```
 
+## Observability with Langfuse
+
+The pipeline integrates with [Langfuse](https://langfuse.com/) for full LLM observability — traces every agent call with prompt, completion, token usage, latency, and cost.
+
+### Start Langfuse (local, self-hosted)
+
+```bash
+# Start the Langfuse stack (Postgres, ClickHouse, Redis, MinIO, Web, Worker)
+docker compose -f docker-compose.langfuse.yml up -d
+
+# Wait ~30 seconds for initialization, then open:
+open http://localhost:3000
+```
+
+**Login credentials:**
+
+| Field | Value |
+|-------|-------|
+| Email | `admin@local.dev` |
+| Password | `adminadmin` |
+
+A default project ("OR Solver") is auto-created with API keys that match the `.env` file — no manual setup needed.
+
+### What gets traced
+
+Every pipeline run creates a hierarchical trace in Langfuse:
+
+```
+pipeline_run (dataset, accuracy, per-solver metrics)
+  └─ solve_problem (per problem)
+       ├─ formulator LLM call (prompt, completion, tokens, latency)
+       ├─ run_solver: heuristic
+       │    └─ LLM call (code generation)
+       │    └─ [debugger LLM call, if retry needed]
+       ├─ run_solver: metaheuristic
+       │    └─ LLM call
+       └─ run_solver: hyperheuristic
+            └─ LLM call
+```
+
+### Configuration
+
+In `.env`:
+
+```bash
+LANGFUSE_ENABLED=true              # set to false to disable (pipeline runs normally)
+LANGFUSE_HOST=http://localhost:3000
+LANGFUSE_PUBLIC_KEY=pk-ll4or-local
+LANGFUSE_SECRET_KEY=sk-ll4or-local
+```
+
+### Stop / Reset
+
+```bash
+# Stop Langfuse (data preserved)
+docker compose -f docker-compose.langfuse.yml down
+
+# Stop and delete all data
+docker compose -f docker-compose.langfuse.yml down -v
+```
+
 ## Adding a New Dataset
 
 1. Create a new adapter in `src/datasets/` implementing `DatasetAdapter`:

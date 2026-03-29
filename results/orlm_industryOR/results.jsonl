@@ -1,1 +1,1 @@
-{"problem_id": "1", "solver_type": "heuristic", "execution_success": true, "objective_value": 194480.0, "ground_truth": 219816.0, "is_correct": false, "relative_error": 0.11526003566619354, "detail": "rel_error=11.5260%, tol=5.00% (rounded=True)", "elapsed_seconds": 186.6227469444275}
+{"problem_id": "1", "solver_type": "heuristic", "execution_success": true, "objective_value": 223968.0, "ground_truth": 219816.0, "is_correct": true, "relative_error": 0.018888524948138443, "detail": "rel_error=1.8889%, tol=5.00% (rounded=True)", "elapsed_seconds": 74.60758399963379}

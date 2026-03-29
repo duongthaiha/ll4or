@@ -7,13 +7,15 @@ from src.llm.base import LLMClient, Message
 
 
 class OpenAIClient(LLMClient):
-    """LLM client backed by the OpenAI API."""
+    """LLM client backed by the OpenAI API.
+
+    When Langfuse is active, uses the Langfuse-wrapped OpenAI class
+    so all API calls are automatically traced.
+    """
 
     def __init__(self, config: LLMConfig):
-        try:
-            from openai import OpenAI
-        except ImportError as exc:
-            raise ImportError("pip install openai") from exc
+        from src.tracing import get_traced_openai_client_class
+        OpenAI = get_traced_openai_client_class()
 
         self.config = config
         self._client = OpenAI(

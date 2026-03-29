@@ -7,13 +7,15 @@ from src.llm.base import LLMClient, Message
 
 
 class AzureOpenAIClient(LLMClient):
-    """LLM client backed by Azure OpenAI Service."""
+    """LLM client backed by Azure OpenAI Service.
+
+    When Langfuse is active, uses the Langfuse-wrapped AzureOpenAI class
+    so all API calls are automatically traced.
+    """
 
     def __init__(self, config: LLMConfig):
-        try:
-            from openai import AzureOpenAI
-        except ImportError as exc:
-            raise ImportError("pip install openai") from exc
+        from src.tracing import get_traced_azure_client_class
+        AzureOpenAI = get_traced_azure_client_class()
 
         self.config = config
         self._client = AzureOpenAI(

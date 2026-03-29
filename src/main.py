@@ -101,6 +101,10 @@ def main(argv: list[str] | None = None) -> int:
     if args.llm_model:
         config.llm.model = args.llm_model
 
+    # Initialize Langfuse tracing (must happen before LLM client creation)
+    from src.tracing import init_langfuse
+    init_langfuse(config.langfuse)
+
     # Instantiate
     dataset = get_dataset(args.dataset)
     llm = create_llm_client(config.llm)

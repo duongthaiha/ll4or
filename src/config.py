@@ -77,6 +77,16 @@ class AgentConfig:
 
 
 @dataclass
+class LangfuseConfig:
+    """Langfuse observability settings."""
+
+    enabled: bool = False
+    host: str = "http://localhost:3000"
+    public_key: str = ""
+    secret_key: str = ""
+
+
+@dataclass
 class Config:
     """Top-level configuration."""
 
@@ -84,6 +94,7 @@ class Config:
     execution: ExecutionConfig = field(default_factory=ExecutionConfig)
     evaluation: EvaluationConfig = field(default_factory=EvaluationConfig)
     agent: AgentConfig = field(default_factory=AgentConfig)
+    langfuse: LangfuseConfig = field(default_factory=LangfuseConfig)
     output_dir: Path = Path("results")
     log_level: str = "INFO"
 
@@ -115,10 +126,17 @@ class Config:
         evaluation = EvaluationConfig(
             relative_tolerance=float(os.environ.get("EVAL_REL_TOL", "0.05")),
         )
+        langfuse = LangfuseConfig(
+            enabled=os.environ.get("LANGFUSE_ENABLED", "false").lower() == "true",
+            host=os.environ.get("LANGFUSE_HOST", "http://localhost:3000"),
+            public_key=os.environ.get("LANGFUSE_PUBLIC_KEY", ""),
+            secret_key=os.environ.get("LANGFUSE_SECRET_KEY", ""),
+        )
         return cls(
             llm=llm,
             execution=execution,
             evaluation=evaluation,
+            langfuse=langfuse,
             output_dir=Path(os.environ.get("OUTPUT_DIR", "results")),
             log_level=os.environ.get("LOG_LEVEL", "INFO"),
         )

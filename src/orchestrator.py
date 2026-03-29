@@ -23,6 +23,7 @@ from src.evaluation.evaluator import (
 )
 from src.execution.sandbox import ExecutionResult, execute_code, extract_code
 from src.llm.base import LLMClient
+from src.tracing import get_observe
 
 log = logging.getLogger(__name__)
 
@@ -46,6 +47,14 @@ class Orchestrator:
             for name, cls in _SOLVER_AGENTS.items()
             if name in self.config.agent.solver_types
         }
+
+        # Resolve the @observe decorator (no-op if Langfuse is off)
+        self._observe = get_observe()
+
+        # Wrap key methods with Langfuse tracing
+        self.run = self._observe(name="pipeline_run")(self.run)
+        self._solve_problem = self._observe(name="solve_problem")(self._solve_problem)
+        self._run_solver = self._observe(name="run_solver")(self._run_solver)
 
     # ── public API ───────────────────────────────────────────────────
 
@@ -85,6 +94,11 @@ class Orchestrator:
         metrics = compute_metrics(all_results)
         self._save_results(dataset.name, detail_records, metrics)
         self._print_summary(dataset.name, metrics)
+
+        # Flush Langfuse traces
+        from src.tracing import flush as langfuse_flush
+        langfuse_flush()
+
         return metrics
 
     # ── internals ────────────────────────────────────────────────────
