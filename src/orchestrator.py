@@ -24,7 +24,7 @@ from src.evaluation.evaluator import (
 )
 from src.execution.sandbox import ExecutionResult, execute_code, extract_code
 from src.llm.base import LLMClient
-from src.tracing import get_observe
+from src.tracing import get_observe, update_observation
 
 log = logging.getLogger(__name__)
 
@@ -267,6 +267,19 @@ class Orchestrator:
                     break
 
         elapsed = time.time() - start
+
+        # Log code & execution result to Langfuse
+        update_observation(metadata={
+            "generated_code": code,
+            "execution": {
+                "success": exec_result.success if exec_result else False,
+                "objective_value": exec_result.objective_value if exec_result else None,
+                "stdout": exec_result.stdout if exec_result else "",
+                "stderr": exec_result.stderr if exec_result else "",
+                "return_code": exec_result.return_code if exec_result else -1,
+                "timed_out": exec_result.timed_out if exec_result else False,
+            },
+        })
 
         # Evaluate using dataset-specific eval config
         obj_val = exec_result.objective_value if exec_result else None

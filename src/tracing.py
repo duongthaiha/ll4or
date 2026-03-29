@@ -88,6 +88,18 @@ def get_traced_openai_client_class():
     return OpenAI
 
 
+def update_observation(**kwargs) -> None:
+    """Attach metadata/output to the current Langfuse observation (no-op if inactive)."""
+    if not _LANGFUSE_ACTIVE:
+        return
+    try:
+        from langfuse import get_client
+        ctx = get_client()
+        ctx.update_current_observation(**kwargs)
+    except Exception:
+        log.debug("Langfuse update_observation failed (non-critical)", exc_info=True)
+
+
 def flush() -> None:
     """Flush any pending Langfuse events."""
     if not _LANGFUSE_ACTIVE:
