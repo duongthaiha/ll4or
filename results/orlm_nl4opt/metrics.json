@@ -1,24 +1,24 @@
 {
-  "total": 18,
-  "correct": 18,
-  "failed_execution": 0,
-  "no_ground_truth": 0,
-  "accuracy": 1.0,
+  "total": 735,
+  "correct": 613,
+  "failed_execution": 3,
+  "no_ground_truth": 42,
+  "accuracy": 0.8845598845598845,
   "per_solver": {
     "heuristic": {
-      "total": 6,
-      "correct": 6,
-      "accuracy": 1.0
+      "total": 231,
+      "correct": 205,
+      "accuracy": 0.8874458874458875
     },
     "metaheuristic": {
-      "total": 6,
-      "correct": 6,
-      "accuracy": 1.0
+      "total": 231,
+      "correct": 204,
+      "accuracy": 0.8831168831168831
     },
     "hyperheuristic": {
-      "total": 6,
-      "correct": 6,
-      "accuracy": 1.0
+      "total": 231,
+      "correct": 204,
+      "accuracy": 0.8831168831168831
     }
   }
 }

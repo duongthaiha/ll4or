@@ -1,24 +1,24 @@
 {
-  "total": 3,
-  "correct": 3,
-  "failed_execution": 0,
+  "total": 300,
+  "correct": 212,
+  "failed_execution": 16,
   "no_ground_truth": 0,
-  "accuracy": 1.0,
+  "accuracy": 0.7066666666666667,
   "per_solver": {
+    "heuristic": {
+      "total": 100,
+      "correct": 76,
+      "accuracy": 0.76
+    },
     "metaheuristic": {
-      "total": 1,
-      "correct": 1,
-      "accuracy": 1.0
+      "total": 100,
+      "correct": 72,
+      "accuracy": 0.72
     },
     "hyperheuristic": {
-      "total": 1,
-      "correct": 1,
-      "accuracy": 1.0
-    },
-    "heuristic": {
-      "total": 1,
-      "correct": 1,
-      "accuracy": 1.0
+      "total": 100,
+      "correct": 64,
+      "accuracy": 0.64
     }
   }
 }
