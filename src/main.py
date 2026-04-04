@@ -82,6 +82,44 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="List available datasets and exit.",
     )
+
+    # ── Multi-agent architecture flags ───────────────────────────────
+    p.add_argument(
+        "--no-analyze",
+        action="store_true",
+        help="Disable the Problem Analyzer agent (Phase 1).",
+    )
+    p.add_argument(
+        "--no-warm-start",
+        action="store_true",
+        help="Disable warm-start protocol (Phase 2: heuristic seeds meta/hyper).",
+    )
+    p.add_argument(
+        "--no-critic",
+        action="store_true",
+        help="Disable the Code Critic agent (Phase 3: pre-execution review).",
+    )
+    p.add_argument(
+        "--improve-iterations",
+        type=int,
+        default=2,
+        help="Number of solution improvement iterations (0 to disable, default: 2).",
+    )
+    p.add_argument(
+        "--no-selector",
+        action="store_true",
+        help="Disable the smart Ensemble Selector agent (Phase 5).",
+    )
+    p.add_argument(
+        "--no-reflector",
+        action="store_true",
+        help="Disable the Reflector agent (Phase 6: cross-problem learning).",
+    )
+    p.add_argument(
+        "--legacy",
+        action="store_true",
+        help="Run in legacy mode (disable all multi-agent enhancements).",
+    )
     return p.parse_args(argv)
 
 
@@ -109,6 +147,27 @@ def main(argv: list[str] | None = None) -> int:
     config.agent.parallel_problems = args.parallel_problems
     if args.sequential:
         config.agent.parallel_solvers = False
+
+    # Multi-agent architecture settings
+    if args.legacy:
+        config.agent.enable_analyzer = False
+        config.agent.enable_warm_start = False
+        config.agent.enable_critic = False
+        config.agent.improve_iterations = 0
+        config.agent.enable_selector = False
+        config.agent.enable_reflector = False
+    else:
+        if args.no_analyze:
+            config.agent.enable_analyzer = False
+        if args.no_warm_start:
+            config.agent.enable_warm_start = False
+        if args.no_critic:
+            config.agent.enable_critic = False
+        config.agent.improve_iterations = args.improve_iterations
+        if args.no_selector:
+            config.agent.enable_selector = False
+        if args.no_reflector:
+            config.agent.enable_reflector = False
 
     if args.llm_provider:
         config.llm.provider = args.llm_provider  # type: ignore[assignment]

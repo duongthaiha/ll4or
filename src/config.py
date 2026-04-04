@@ -77,6 +77,14 @@ class AgentConfig:
     parallel_solvers: bool = True
     parallel_problems: int = 1  # number of problems to solve concurrently
 
+    # ── Multi-agent architecture settings ────────────────────────────
+    enable_analyzer: bool = True       # Phase 1: classify problem before solving
+    enable_warm_start: bool = True     # Phase 2: heuristic → meta/hyper warm-start
+    enable_critic: bool = True         # Phase 3: review code before execution
+    improve_iterations: int = 2        # Phase 4: LLM-guided improvement iterations (0=off)
+    enable_selector: bool = True       # Phase 5: smart ensemble selection
+    enable_reflector: bool = True      # Phase 6: cross-problem learning
+
 
 @dataclass
 class LangfuseConfig:

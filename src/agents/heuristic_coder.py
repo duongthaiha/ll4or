@@ -34,15 +34,29 @@ Return ONLY the Python code inside a single ```python ... ``` block.
 """
 
 
-def _build_user_prompt(question: str, formulation: dict) -> str:
+def _build_user_prompt(
+    question: str, formulation: dict, analysis: dict | None = None,
+) -> str:
     import json
 
     form_str = json.dumps(formulation, indent=2, default=str)
-    return (
+
+    parts = [
         f"## Problem Description\n{question}\n\n"
         f"## Mathematical Formulation\n```json\n{form_str}\n```\n\n"
-        "Write a heuristic Python solver for this problem."
-    )
+    ]
+
+    if analysis:
+        rec = analysis.get("recommended_solvers", {})
+        strategy = rec.get("heuristic_strategy", "")
+        if strategy:
+            parts.append(
+                f"## Recommended Heuristic Strategy\n"
+                f"Use a **{strategy}** approach for this problem.\n\n"
+            )
+
+    parts.append("Write a heuristic Python solver for this problem.")
+    return "".join(parts)
 
 
 class HeuristicCoderAgent(Agent):
@@ -51,8 +65,9 @@ class HeuristicCoderAgent(Agent):
     def run(self, input_data: dict) -> dict:
         question: str = input_data["question"]
         formulation: dict = input_data.get("formulation", {})
+        analysis: dict | None = input_data.get("analysis")
 
-        user_prompt = _build_user_prompt(question, formulation)
+        user_prompt = _build_user_prompt(question, formulation, analysis=analysis)
         raw = self._chat(_SYSTEM_PROMPT, user_prompt)
 
         return {
