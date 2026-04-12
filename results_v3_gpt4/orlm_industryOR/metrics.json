@@ -1,0 +1,119 @@
+{
+  "total": 348,
+  "correct": 101,
+  "failed_execution": 27,
+  "no_ground_truth": 0,
+  "accuracy": 0.29022988505747127,
+  "per_solver": {
+    "heuristic": {
+      "total": 100,
+      "correct": 32,
+      "accuracy": 0.32
+    },
+    "metaheuristic": {
+      "total": 100,
+      "correct": 33,
+      "accuracy": 0.33
+    },
+    "hyperheuristic": {
+      "total": 100,
+      "correct": 33,
+      "accuracy": 0.33
+    },
+    "improved_v2": {
+      "total": 6,
+      "correct": 2,
+      "accuracy": 0.3333333333333333
+    },
+    "improved_v3": {
+      "total": 4,
+      "correct": 1,
+      "accuracy": 0.25
+    },
+    "improved_v4": {
+      "total": 3,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v5": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v6": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v7": {
+      "total": 3,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v8": {
+      "total": 1,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v10": {
+      "total": 3,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v11": {
+      "total": 3,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v12": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v13": {
+      "total": 3,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v14": {
+      "total": 3,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v15": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v16": {
+      "total": 1,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v17": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v18": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v20": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v1": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v9": {
+      "total": 2,
+      "correct": 0,
+      "accuracy": 0.0
+    }
+  }
+}

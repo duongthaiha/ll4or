@@ -1,0 +1,1677 @@
+14:10:13 [INFO] src.tracing: Langfuse enabled → http://localhost:3000
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/langfuse/api/core/pydantic_utilities.py:27: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.datetime_parse import parse_date as parse_date
+14:10:14 [INFO] src.orchestrator: Running 100 problems from 'orlm_industryOR' (eval: relative, tol=0.05, phases: analyzer, warm-start, critic, improver(×20), selector, reflector)
+14:10:14 [INFO] src.orchestrator: Running 8 problems concurrently
+14:10:16 [INFO] src.orchestrator:   Analyzer: class=assignment, difficulty=medium, recommended_meta=GA
+14:10:16 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:10:16 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=easy, recommended_meta=None
+14:10:16 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:10:16 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+14:10:16 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:10:16 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=GA
+14:10:17 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=GA
+14:10:24 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:10:24 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:10:26 [INFO] src.orchestrator:   ✗ heuristic: predicted=175.0, gt=125.0 (rel_error=40.0000%, tol=5.00% (rounded=True)) [8.0s]
+14:10:26 [INFO] src.orchestrator:   Warm-start: heuristic found obj=175.0, seeding meta/hyper
+14:10:26 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:10:28 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:10:28 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:10:30 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:10:31 [INFO] src.orchestrator:   Critic found 5 critical issues in heuristic, requesting fix
+14:10:33 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:10:34 [INFO] src.orchestrator:   ✓ heuristic: predicted=30400.0, gt=30400.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [16.1s]
+14:10:34 [INFO] src.orchestrator:   Warm-start: heuristic found obj=30400.0, seeding meta/hyper
+14:10:34 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:10:34 [INFO] src.orchestrator:   ✗ heuristic: predicted=630750.0, gt=904590.0 (rel_error=30.2723%, tol=5.00% (rounded=True)) [15.1s]
+14:10:34 [INFO] src.orchestrator:   Warm-start: heuristic found obj=630750.0, seeding meta/hyper
+14:10:36 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:10:37 [INFO] src.orchestrator:   Critic found 1 critical issues in metaheuristic, requesting fix
+14:10:37 [INFO] src.orchestrator:   ✗ heuristic: predicted=25250.0, gt=10755.0 (rel_error=134.7745%, tol=5.00% (rounded=True)) [15.2s]
+14:10:37 [INFO] src.orchestrator:   Warm-start: heuristic found obj=25250.0, seeding meta/hyper
+14:10:38 [INFO] src.orchestrator:   ✗ heuristic: predicted=264000.0, gt=219816.0 (rel_error=20.1004%, tol=5.00% (rounded=True)) [15.6s]
+14:10:38 [INFO] src.orchestrator:   Warm-start: heuristic found obj=264000.0, seeding meta/hyper
+14:10:38 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:10:39 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=14.0 (No predicted value) [21.4s]
+14:10:40 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:10:40 [INFO] src.orchestrator:   ✗ heuristic: predicted=0.0, gt=18.6943 (rel_error=100.0000%, tol=5.00% (rounded=True)) [19.0s]
+14:10:40 [INFO] src.orchestrator:   Warm-start: heuristic found obj=0.0, seeding meta/hyper
+14:10:41 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=125.0, gt=125.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [15.3s]
+14:10:44 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:10:45 [INFO] src.orchestrator:   ✗ heuristic: predicted=-36612720.0, gt=10349920.0 (rel_error=453.7488%, tol=5.00% (rounded=True)) [22.4s]
+14:10:45 [INFO] src.orchestrator:   Warm-start: heuristic found obj=-36612720.0, seeding meta/hyper
+14:10:45 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:10:48 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:10:49 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:10:50 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:10:50 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:10:51 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:10:51 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:10:53 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:10:53 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:10:54 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=14.0, gt=14.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [14.9s]
+14:10:54 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:10:55 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:10:55 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:10:56 [INFO] src.orchestrator:   Critic found 6 critical issues in hyperheuristic, requesting fix
+14:10:56 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:10:56 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:10:57 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:10:57 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=125.0, gt=125.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [31.4s]
+14:10:57 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:10:57 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:10:58 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=20775.0, gt=10755.0 (rel_error=93.1660%, tol=5.00% (rounded=True)) [20.9s]
+14:10:59 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:11:00 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 3)
+14:11:00 [INFO] src.orchestrator:   [1/100 completed] Problem 2
+14:11:00 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:11:01 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-594991.5797657646, gt=18.6943 (rel_error=3131636.8421%, tol=5.00% (rounded=True)) [20.2s]
+14:11:01 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=2023820.0, gt=10755.0 (rel_error=18717.4802%, tol=5.00% (rounded=True)) [23.6s]
+14:11:01 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 20775.0 from hyperheuristic)
+14:11:01 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:11:02 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:11:02 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:11:03 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:11:04 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=30400.0, gt=30400.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [29.7s]
+14:11:04 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=1144000.0, gt=219816.0 (rel_error=420.4353%, tol=5.00% (rounded=True)) [25.8s]
+14:11:04 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:11:06 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=28960.0, gt=30400.0 (rel_error=4.7368%, tol=5.00% (rounded=True)) [31.5s]
+14:11:06 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:11:06 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=14.0, gt=14.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [26.3s]
+14:11:06 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:11:06 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:11:08 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=3570.0909611884067, gt=18.6943 (rel_error=18689.4737%, tol=5.00% (rounded=True)) [27.9s]
+14:11:08 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 0.0 from heuristic)
+14:11:09 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 6)
+14:11:09 [INFO] src.orchestrator:   [2/100 completed] Problem 8
+14:11:09 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-5253990587.874886, gt=10349920.0 (rel_error=50863.5865%, tol=5.00% (rounded=True)) [24.3s]
+14:11:09 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 9)
+14:11:09 [INFO] src.orchestrator:   [3/100 completed] Problem 4
+14:11:10 [INFO] src.orchestrator:   Analyzer: class=combinatorial, difficulty=medium, recommended_meta=GA
+14:11:11 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:11:11 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=-183551182500.0, gt=10349920.0 (rel_error=1773555.0847%, tol=5.00% (rounded=True)) [26.8s]
+14:11:11 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: -36612720.0 from heuristic)
+14:11:11 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:11:11 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=1079040.0, gt=904590.0 (rel_error=19.2850%, tol=5.00% (rounded=True)) [37.1s]
+14:11:14 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:11:20 [INFO] src.orchestrator:   ✓ heuristic: predicted=3.0, gt=3.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [4.9s]
+14:11:20 [INFO] src.orchestrator:   Warm-start: heuristic found obj=3.0, seeding meta/hyper
+14:11:21 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+14:11:22 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:11:22 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 20775.0 from hyperheuristic)
+14:11:23 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:11:27 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:11:27 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: -36612720.0 from heuristic)
+14:11:27 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:11:29 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=219816.0 (No predicted value) [50.9s]
+14:11:29 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 264000.0 from heuristic)
+14:11:30 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:11:31 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:11:31 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 0.0 from heuristic)
+14:11:31 [INFO] src.orchestrator:   ✓ heuristic: predicted=623.0, gt=623.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [24.3s]
+14:11:31 [INFO] src.orchestrator:   Warm-start: heuristic found obj=623.0, seeding meta/hyper
+14:11:32 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:11:33 [INFO] src.orchestrator:   ✗ heuristic: predicted=3670.0, gt=3867.0 (rel_error=5.0944%, tol=5.00% (rounded=True)) [19.5s]
+14:11:33 [INFO] src.orchestrator:   Warm-start: heuristic found obj=3670.0, seeding meta/hyper
+14:11:36 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:11:40 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:11:42 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=3.0, gt=3.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [21.9s]
+14:11:43 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:11:43 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 20775.0 from hyperheuristic)
+14:11:43 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:11:44 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:11:45 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:11:46 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:11:46 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:11:48 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:11:48 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:11:49 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=3867.0, gt=3867.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [16.1s]
+14:11:53 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:11:53 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=3.0, gt=3.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [33.5s]
+14:11:53 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:11:54 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=615.0, gt=623.0 (rel_error=1.2841%, tol=5.00% (rounded=True)) [22.8s]
+14:11:55 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-538174.0, gt=623.0 (rel_error=86484.2697%, tol=5.00% (rounded=True)) [24.2s]
+14:11:55 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:11:57 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:11:57 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: -36612720.0 from heuristic)
+14:11:57 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:11:57 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 264000.0 from heuristic)
+14:11:57 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:11:57 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 0.0 from heuristic)
+14:11:57 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 14)
+14:11:57 [INFO] src.orchestrator:   [4/100 completed] Problem 10
+14:12:00 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 18)
+14:12:00 [INFO] src.orchestrator:   [5/100 completed] Problem 9
+14:12:00 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=GA
+14:12:01 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:12:04 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:12:04 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:12:08 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 23)
+14:12:08 [INFO] src.orchestrator:   [6/100 completed] Problem 6
+14:12:11 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:12:11 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:12:12 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:12:14 [INFO] src.orchestrator:   ✓ heuristic: predicted=43700.0, gt=43200.0 (rel_error=1.1574%, tol=5.00% (rounded=True)) [10.1s]
+14:12:14 [INFO] src.orchestrator:   Warm-start: heuristic found obj=43700.0, seeding meta/hyper
+14:12:15 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:12:17 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:12:17 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:12:20 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:12:20 [WARNING] langfuse: Error code: 400 - {'error': {'message': "The response was filtered due to the prompt triggering Azure OpenAI's content management policy. Please modify your prompt and retry. To learn more about our content filtering policies please read our documentation: https://go.microsoft.com/fwlink/?linkid=2198766", 'type': None, 'param': 'prompt', 'code': 'content_filter', 'status': 400, 'innererror': {'code': 'ResponsibleAIPolicyViolation', 'content_filter_result': {'hate': {'filtered': False, 'severity': 'safe'}, 'jailbreak': {'filtered': True, 'detected': True}, 'purview': {'detected': False, 'filtered': False, 'details': {'actionLabel': 'Safe', 'correlationId': '980fb47e-8738-4b70-a6ab-b76bf0889df9', 'internalError': ''}}, 'self_harm': {'filtered': False, 'severity': 'safe'}, 'sexual': {'filtered': False, 'severity': 'safe'}, 'violence': {'filtered': False, 'severity': 'safe'}}}}}
+14:12:20 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:12:20 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:12:21 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 28)
+14:12:21 [INFO] src.orchestrator:   [7/100 completed] Problem 3
+14:12:21 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:12:21 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 264000.0 from heuristic)
+14:12:23 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:12:24 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:12:25 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:12:27 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:12:28 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:12:29 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:12:29 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=180000.0 (No predicted value) [25.2s]
+14:12:31 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 33)
+14:12:31 [INFO] src.orchestrator:   [8/100 completed] Problem 5
+14:12:33 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:12:33 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=none
+14:12:34 [INFO] src.orchestrator:   ✓ heuristic: predicted=123.8, gt=123.8 (rel_error=0.0000%, tol=5.00% (rounded=True)) [20.8s]
+14:12:34 [INFO] src.orchestrator:   Warm-start: heuristic found obj=123.8, seeding meta/hyper
+14:12:35 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-9184.0, gt=43200.0 (rel_error=121.2593%, tol=5.00% (rounded=True)) [21.5s]
+14:12:35 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:12:40 [INFO] src.orchestrator:   ✗ heuristic: predicted=320.0, gt=168.0 (rel_error=90.4762%, tol=5.00% (rounded=True)) [13.6s]
+14:12:40 [INFO] src.orchestrator:   Warm-start: heuristic found obj=320.0, seeding meta/hyper
+14:12:41 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=17773.0, gt=43200.0 (rel_error=58.8588%, tol=5.00% (rounded=True)) [26.9s]
+14:12:41 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:12:41 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:12:42 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:12:45 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 38)
+14:12:45 [INFO] src.orchestrator:   [9/100 completed] Problem 12
+14:12:46 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:12:47 [INFO] src.orchestrator:   Critic found 5 critical issues in hyperheuristic, requesting fix
+14:12:47 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=GA
+14:12:47 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=178422.91712018018, gt=180000.0 (rel_error=0.8761%, tol=5.00% (rounded=True)) [17.7s]
+14:12:49 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:12:49 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:12:49 [INFO] src.orchestrator:   ✗ heuristic: predicted=3800.0, gt=4100.0 (rel_error=7.3171%, tol=5.00% (rounded=True)) [11.7s]
+14:12:49 [INFO] src.orchestrator:   Warm-start: heuristic found obj=3800.0, seeding meta/hyper
+14:12:50 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:12:52 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 43)
+14:12:52 [INFO] src.orchestrator:   [10/100 completed] Problem 1
+14:12:53 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:12:53 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:12:55 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:12:56 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:12:56 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=1128.9979331070788, gt=123.8 (rel_error=810.4839%, tol=5.00% (rounded=True)) [21.7s]
+14:12:56 [INFO] src.orchestrator:   Critic found 5 critical issues in hyperheuristic, requesting fix
+14:12:59 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=2100.0, gt=168.0 (rel_error=1150.0000%, tol=5.00% (rounded=True)) [18.6s]
+14:13:01 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:13:01 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:13:02 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=1800.0, gt=4100.0 (rel_error=56.0976%, tol=5.00% (rounded=True)) [12.3s]
+14:13:02 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:13:03 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:13:05 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:13:06 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:13:08 [INFO] src.orchestrator:   ✗ heuristic: predicted=0.0, gt=0.5765 (rel_error=100.0000%, tol=5.00% (rounded=True)) [16.6s]
+14:13:08 [INFO] src.orchestrator:   Warm-start: heuristic found obj=0.0, seeding meta/hyper
+14:13:08 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:13:09 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:13:09 [INFO] src.orchestrator:   ✗ heuristic: predicted=10.0, gt=5.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [11.7s]
+14:13:09 [INFO] src.orchestrator:   Warm-start: heuristic found obj=10.0, seeding meta/hyper
+14:13:11 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-925.0, gt=4100.0 (rel_error=122.5610%, tol=5.00% (rounded=True)) [21.7s]
+14:13:11 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 3800.0 from heuristic)
+14:13:15 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=123.8 (No predicted value) [40.4s]
+14:13:15 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:13:16 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=350.0, gt=168.0 (rel_error=108.3333%, tol=5.00% (rounded=True)) [35.5s]
+14:13:16 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 320.0 from heuristic)
+14:13:19 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 48)
+14:13:19 [INFO] src.orchestrator:   [11/100 completed] Problem 14
+14:13:20 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:13:20 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:13:21 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:13:21 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:13:25 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=5.0, gt=5.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [15.3s]
+14:13:25 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:13:26 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=5001988.909012908, gt=5.0 (rel_error=100039680.0000%, tol=5.00% (rounded=True)) [16.6s]
+14:13:26 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:13:26 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-1000000.0, gt=0.5765 (rel_error=100000100.0000%, tol=5.00% (rounded=True)) [17.9s]
+14:13:29 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 52)
+14:13:29 [INFO] src.orchestrator:   [12/100 completed] Problem 18
+14:13:31 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:13:31 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 3800.0 from heuristic)
+14:13:32 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:13:33 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:13:39 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:13:39 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 320.0 from heuristic)
+14:13:40 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:13:41 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=0.341536, gt=0.5765 (rel_error=100.0000%, tol=5.00% (rounded=True)) [32.4s]
+14:13:41 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 0.0 from heuristic)
+14:13:44 [INFO] src.orchestrator:   ✗ heuristic: predicted=435.0, gt=4000.0 (rel_error=89.1250%, tol=5.00% (rounded=True)) [16.7s]
+14:13:44 [INFO] src.orchestrator:   Warm-start: heuristic found obj=435.0, seeding meta/hyper
+14:13:45 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:13:48 [INFO] src.orchestrator:   ✗ improved_v2 (refine): predicted=18.0, gt=168.0 (rel_error=89.2857%, tol=5.00% (rounded=True))
+14:13:48 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 18.0 from improved_v2)
+14:13:50 [INFO] src.orchestrator:   ✗ heuristic: predicted=600.0, gt=956.0 (rel_error=37.2385%, tol=5.00% (rounded=True)) [14.0s]
+14:13:50 [INFO] src.orchestrator:   Warm-start: heuristic found obj=600.0, seeding meta/hyper
+14:13:50 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=135279.9823655874, gt=180000.0 (rel_error=24.8444%, tol=5.00% (rounded=True)) [80.6s]
+14:13:50 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:13:51 [INFO] src.orchestrator:   Critic found 7 critical issues in hyperheuristic, requesting fix
+14:13:53 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 56)
+14:13:53 [INFO] src.orchestrator:   [13/100 completed] Problem 13
+14:13:56 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:13:56 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:13:56 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=0.0, gt=4000.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [12.0s]
+14:13:58 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:13:58 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 3800.0 from heuristic)
+14:14:01 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=370.0, gt=4000.0 (rel_error=90.7500%, tol=5.00% (rounded=True)) [16.4s]
+14:14:01 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 435.0 from heuristic)
+14:14:04 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:14:04 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:14:04 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 0.0 from heuristic)
+14:14:04 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:14:11 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=956.0, gt=956.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [21.4s]
+14:14:12 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:14:13 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=956.0, gt=956.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [22.8s]
+14:14:13 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:14:16 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 60)
+14:14:16 [INFO] src.orchestrator:   [14/100 completed] Problem 20
+14:14:17 [INFO] src.orchestrator:   ✗ heuristic: predicted=1280.0, gt=15000.0 (rel_error=91.4667%, tol=5.00% (rounded=True)) [17.1s]
+14:14:17 [INFO] src.orchestrator:   Warm-start: heuristic found obj=1280.0, seeding meta/hyper
+14:14:17 [INFO] src.orchestrator:   ✗ improved_v3 (refine): predicted=97.0, gt=168.0 (rel_error=42.2619%, tol=5.00% (rounded=True))
+14:14:17 [INFO] src.orchestrator:   Improver iteration 4/20 (best so far: 97.0 from improved_v3)
+14:14:19 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:14:19 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:14:19 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:14:19 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:14:19 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 435.0 from heuristic)
+14:14:23 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 64)
+14:14:23 [INFO] src.orchestrator:   [15/100 completed] Problem 16
+14:14:25 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:14:31 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:14:32 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:14:35 [INFO] src.orchestrator:   ✗ heuristic: predicted=0.0, gt=156483.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [12.4s]
+14:14:35 [INFO] src.orchestrator:   Warm-start: heuristic found obj=0.0, seeding meta/hyper
+14:14:37 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:14:37 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=1000.0, gt=15000.0 (rel_error=93.3333%, tol=5.00% (rounded=True)) [20.5s]
+14:14:37 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:14:37 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 435.0 from heuristic)
+14:14:39 [INFO] src.orchestrator:   Critic found 8 critical issues in hyperheuristic, requesting fix
+14:14:40 [INFO] src.orchestrator:   ✓ heuristic: predicted=22000.0, gt=21500.0 (rel_error=2.3256%, tol=5.00% (rounded=True)) [11.8s]
+14:14:40 [INFO] src.orchestrator:   Warm-start: heuristic found obj=22000.0, seeding meta/hyper
+14:14:41 [INFO] src.orchestrator:   ✗ improved_v4 (refine): predicted=97.0, gt=168.0 (rel_error=42.2619%, tol=5.00% (rounded=True))
+14:14:41 [INFO] src.orchestrator:   Improver iteration 5/20 (best so far: 97.0 from improved_v3)
+14:14:45 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:14:50 [INFO] src.orchestrator:   ✗ improved_v5 (refine): predicted=350.0, gt=168.0 (rel_error=108.3333%, tol=5.00% (rounded=True))
+14:14:50 [INFO] src.orchestrator:   Improver iteration 6/20 (best so far: 97.0 from improved_v3)
+14:14:51 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:14:52 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:14:53 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=1000.0, gt=15000.0 (rel_error=93.3333%, tol=5.00% (rounded=True)) [36.4s]
+14:14:53 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 1280.0 from heuristic)
+14:14:53 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:14:56 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=20980.0, gt=21500.0 (rel_error=2.4186%, tol=5.00% (rounded=True)) [16.4s]
+14:14:56 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:14:56 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:14:59 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:15:00 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 69)
+14:15:00 [INFO] src.orchestrator:   [16/100 completed] Problem 19
+14:15:01 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=359296.1, gt=156483.0 (rel_error=129.6070%, tol=5.00% (rounded=True)) [25.0s]
+14:15:03 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:15:05 [INFO] src.orchestrator:   ✗ improved_v6 (refine): predicted=350.0, gt=168.0 (rel_error=108.3333%, tol=5.00% (rounded=True))
+14:15:05 [INFO] src.orchestrator:   Improver iteration 7/20 (best so far: 97.0 from improved_v3)
+14:15:05 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=24000.0, gt=21500.0 (rel_error=11.6279%, tol=5.00% (rounded=True)) [25.5s]
+14:15:05 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:15:10 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 73)
+14:15:10 [INFO] src.orchestrator:   [17/100 completed] Problem 23
+14:15:11 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=none
+14:15:13 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:15:13 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 1280.0 from heuristic)
+14:15:15 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:15:19 [INFO] src.orchestrator:   ✗ heuristic: predicted=1500.0, gt=1000.0 (rel_error=50.0000%, tol=5.00% (rounded=True)) [12.6s]
+14:15:19 [INFO] src.orchestrator:   Warm-start: heuristic found obj=1500.0, seeding meta/hyper
+14:15:21 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:15:24 [INFO] src.orchestrator:   ✗ heuristic: predicted=185000.0, gt=510000.0 (rel_error=63.7255%, tol=5.00% (rounded=True)) [10.0s]
+14:15:24 [INFO] src.orchestrator:   Warm-start: heuristic found obj=185000.0, seeding meta/hyper
+14:15:31 [INFO] src.orchestrator:   ✗ improved_v7 (refine): predicted=97.0, gt=168.0 (rel_error=42.2619%, tol=5.00% (rounded=True))
+14:15:31 [INFO] src.orchestrator:   Improver iteration 8/20 (best so far: 97.0 from improved_v3)
+14:15:33 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:15:35 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:15:36 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:15:38 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:15:38 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 1280.0 from heuristic)
+14:15:39 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=1000.0, gt=1000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [19.9s]
+14:15:39 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=199990.946297741, gt=510000.0 (rel_error=60.7861%, tol=5.00% (rounded=True)) [15.4s]
+14:15:40 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:15:41 [INFO] src.orchestrator:   ✗ improved_v8 (refine): predicted=350.0, gt=168.0 (rel_error=108.3333%, tol=5.00% (rounded=True))
+14:15:41 [INFO] src.orchestrator:   Improver iteration 9/20 (best so far: 97.0 from improved_v3)
+14:15:43 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:15:46 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:15:50 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=1400.0, gt=1000.0 (rel_error=40.0000%, tol=5.00% (rounded=True)) [30.8s]
+14:15:50 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:15:53 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=339999.99995862687, gt=510000.0 (rel_error=33.3333%, tol=5.00% (rounded=True)) [29.3s]
+14:15:53 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 339999.99995862687 from hyperheuristic)
+14:15:54 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 78)
+14:15:54 [INFO] src.orchestrator:   [18/100 completed] Problem 24
+14:15:56 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:15:57 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:15:57 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:15:57 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:16:01 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 83)
+14:16:01 [INFO] src.orchestrator:   [19/100 completed] Problem 21
+14:16:03 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:16:08 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:16:10 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:16:10 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 339999.99995862687 from hyperheuristic)
+14:16:13 [INFO] src.orchestrator:   ✗ heuristic: predicted=78.0, gt=53.0 (rel_error=47.1698%, tol=5.00% (rounded=True)) [13.5s]
+14:16:13 [INFO] src.orchestrator:   Warm-start: heuristic found obj=78.0, seeding meta/hyper
+14:16:16 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:16:19 [INFO] src.orchestrator:   ✗ heuristic: predicted=4407.9, gt=1146.4142 (rel_error=284.6422%, tol=5.00% (rounded=True)) [11.8s]
+14:16:19 [INFO] src.orchestrator:   Warm-start: heuristic found obj=4407.9, seeding meta/hyper
+14:16:24 [INFO] src.orchestrator:   Critic found 1 critical issues in metaheuristic, requesting fix
+14:16:25 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:16:26 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:16:26 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 339999.99995862687 from hyperheuristic)
+14:16:28 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=48.0, gt=53.0 (rel_error=9.4340%, tol=5.00% (rounded=True)) [15.6s]
+14:16:30 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:16:34 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:16:34 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:16:35 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:16:41 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=47.0, gt=53.0 (rel_error=11.3208%, tol=5.00% (rounded=True)) [28.0s]
+14:16:41 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 48.0 from metaheuristic)
+14:16:41 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:16:42 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:16:42 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:16:45 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=3070.0283999999997, gt=1146.4142 (rel_error=167.8883%, tol=5.00% (rounded=True)) [26.3s]
+14:16:45 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 87)
+14:16:45 [INFO] src.orchestrator:   [20/100 completed] Problem 25
+14:16:47 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:16:49 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=5184.008628970875, gt=1146.4142 (rel_error=352.3560%, tol=5.00% (rounded=True)) [29.9s]
+14:16:49 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 3070.0283999999997 from hyperheuristic)
+14:16:55 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:16:55 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 48.0 from metaheuristic)
+14:16:58 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:17:00 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:17:02 [INFO] src.orchestrator:   ✗ heuristic: predicted=901000.0, gt=580000.0 (rel_error=55.3448%, tol=5.00% (rounded=True)) [11.4s]
+14:17:02 [INFO] src.orchestrator:   Warm-start: heuristic found obj=901000.0, seeding meta/hyper
+14:17:08 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:17:08 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 48.0 from metaheuristic)
+14:17:11 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:17:11 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 3070.0283999999997 from hyperheuristic)
+14:17:15 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:17:15 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:17:20 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=771888.6563624938, gt=580000.0 (rel_error=33.0843%, tol=5.00% (rounded=True)) [17.8s]
+14:17:21 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:17:28 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=901000.0, gt=580000.0 (rel_error=55.3448%, tol=5.00% (rounded=True)) [26.1s]
+14:17:28 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 771888.6563624938 from metaheuristic)
+14:17:29 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:17:29 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:17:30 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:17:30 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 3070.0283999999997 from hyperheuristic)
+14:17:33 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 92)
+14:17:33 [INFO] src.orchestrator:   [21/100 completed] Problem 26
+14:17:36 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:17:47 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:17:47 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 771888.6563624938 from metaheuristic)
+14:17:50 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:17:55 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:17:55 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:17:55 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:17:59 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 97)
+14:17:59 [INFO] src.orchestrator:   [22/100 completed] Problem 27
+14:18:00 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:18:01 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:18:05 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:18:07 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:18:07 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 771888.6563624938 from metaheuristic)
+14:18:11 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=2000.0 (No predicted value) [31.2s]
+14:18:12 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:18:16 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:18:21 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:18:25 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:18:26 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:18:28 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:18:28 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:18:28 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:18:30 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=32.43589743589744 (No predicted value) [26.3s]
+14:18:31 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=674000.0, gt=2000.0 (rel_error=33600.0000%, tol=5.00% (rounded=True)) [20.4s]
+14:18:32 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 101)
+14:18:32 [INFO] src.orchestrator:   [23/100 completed] Problem 28
+14:18:34 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:18:36 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=-1000.0, gt=2000.0 (rel_error=150.0000%, tol=5.00% (rounded=True)) [25.1s]
+14:18:36 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: -1000.0 from hyperheuristic)
+14:18:40 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:18:44 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=58876.787143772635, gt=32.43589743589744 (rel_error=183890.6250%, tol=5.00% (rounded=True)) [13.6s]
+14:18:47 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:18:52 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:18:53 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:18:56 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:18:56 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: -1000.0 from hyperheuristic)
+14:18:57 [INFO] src.orchestrator:   ✗ heuristic: predicted=0.0, gt=1190.41 (rel_error=100.0000%, tol=5.00% (rounded=True)) [18.5s]
+14:18:57 [INFO] src.orchestrator:   Warm-start: heuristic found obj=0.0, seeding meta/hyper
+14:18:59 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=35.0, gt=32.43589743589744 (rel_error=9.3750%, tol=5.00% (rounded=True)) [29.3s]
+14:18:59 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 35.0 from hyperheuristic)
+14:19:09 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:19:12 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:19:14 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:19:14 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 35.0 from hyperheuristic)
+14:19:17 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:19:19 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:19:19 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: -1000.0 from hyperheuristic)
+14:19:22 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-77535.59716352506, gt=1190.41 (rel_error=6615.6303%, tol=5.00% (rounded=True)) [24.3s]
+14:19:23 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=3712.5641613240164, gt=1190.41 (rel_error=212.0168%, tol=5.00% (rounded=True)) [25.7s]
+14:19:23 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 0.0 from heuristic)
+14:19:28 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:19:28 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 35.0 from hyperheuristic)
+14:19:36 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:19:36 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:19:40 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 106)
+14:19:40 [INFO] src.orchestrator:   [24/100 completed] Problem 29
+14:19:42 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:19:45 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:19:45 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:19:47 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:19:47 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 0.0 from heuristic)
+14:19:48 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 110)
+14:19:48 [INFO] src.orchestrator:   [25/100 completed] Problem 30
+14:19:50 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:19:53 [INFO] src.orchestrator:   ✓ improved_v2 (refine): predicted=0.576593, gt=0.5765 (rel_error=0.0000%, tol=5.00% (rounded=True))
+14:19:53 [INFO] src.orchestrator:   Improver: found correct answer on iteration 2!
+14:19:55 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:19:57 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 115)
+14:19:57 [INFO] src.orchestrator:   [26/100 completed] Problem 17
+14:19:59 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:20:00 [INFO] src.orchestrator:   ✗ heuristic: predicted=2214.0, gt=2924.0 (rel_error=24.2818%, tol=5.00% (rounded=True)) [14.4s]
+14:20:00 [INFO] src.orchestrator:   Warm-start: heuristic found obj=2214.0, seeding meta/hyper
+14:20:03 [INFO] src.orchestrator:   Critic found 1 critical issues in heuristic, requesting fix
+14:20:07 [INFO] src.orchestrator:   ✗ heuristic: predicted=2000.0, gt=1000.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [12.6s]
+14:20:07 [INFO] src.orchestrator:   Warm-start: heuristic found obj=2000.0, seeding meta/hyper
+14:20:09 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:20:09 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 0.0 from heuristic)
+14:20:11 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:20:12 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:20:15 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:20:16 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:20:18 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:20:18 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=1.664730688241176, gt=2924.0 (rel_error=99.9316%, tol=5.00% (rounded=True)) [18.5s]
+14:20:19 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:20:21 [INFO] src.orchestrator:   ✓ heuristic: predicted=7.0, gt=7.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [17.9s]
+14:20:21 [INFO] src.orchestrator:   Warm-start: heuristic found obj=7.0, seeding meta/hyper
+14:20:23 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=0.0, gt=1000.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [16.5s]
+14:20:24 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:20:25 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:20:29 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:20:29 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:20:31 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=1000.0, gt=1000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [23.8s]
+14:20:31 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:20:34 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 120)
+14:20:34 [INFO] src.orchestrator:   [27/100 completed] Problem 31
+14:20:35 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:20:35 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 124)
+14:20:35 [INFO] src.orchestrator:   [28/100 completed] Problem 33
+14:20:35 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:20:36 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:20:38 [INFO] src.orchestrator:   Analyzer: class=VRP, difficulty=hard, recommended_meta=ALNS
+14:20:38 [INFO] src.orchestrator:   Analyzer: class=scheduling, difficulty=medium, recommended_meta=TabuSearch
+14:20:39 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:20:42 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:20:44 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:20:46 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:20:46 [INFO] src.orchestrator:   ✗ heuristic: predicted=17.1, gt=14.1 (rel_error=21.4286%, tol=5.00% (rounded=True)) [4.6s]
+14:20:46 [INFO] src.orchestrator:   Warm-start: heuristic found obj=17.1, seeding meta/hyper
+14:20:50 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:20:54 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=2924.0 (No predicted value) [53.7s]
+14:20:54 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 2214.0 from heuristic)
+14:20:54 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+14:20:57 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:20:57 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:20:57 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:20:58 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:20:58 [INFO] src.orchestrator:   Improver iteration 9 (refine): execution failed (1 consecutive)
+14:20:58 [INFO] src.orchestrator:   Improver iteration 10/20 (best so far: 97.0 from improved_v3)
+14:21:00 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=7.0 (No predicted value) [39.1s]
+14:21:02 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=14.1, gt=14.1 (rel_error=0.0000%, tol=5.00% (rounded=True)) [16.0s]
+14:21:03 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=7.0 (No predicted value) [42.1s]
+14:21:03 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:21:03 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=14.1, gt=14.1 (rel_error=0.0000%, tol=5.00% (rounded=True)) [17.8s]
+14:21:03 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:21:04 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:21:06 [INFO] src.orchestrator:   ✗ improved_v10 (refine): predicted=350.0, gt=168.0 (rel_error=108.3333%, tol=5.00% (rounded=True))
+14:21:06 [INFO] src.orchestrator:   Improver iteration 11/20 (best so far: 97.0 from improved_v3)
+14:21:06 [INFO] src.orchestrator:   ✗ heuristic: predicted=237.17878366585012, gt=175.37 (rel_error=35.4286%, tol=5.00% (rounded=True)) [20.0s]
+14:21:06 [INFO] src.orchestrator:   Warm-start: heuristic found obj=237.17878366585012, seeding meta/hyper
+14:21:07 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 129)
+14:21:07 [INFO] src.orchestrator:   [29/100 completed] Problem 34
+14:21:07 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 133)
+14:21:07 [INFO] src.orchestrator:   [30/100 completed] Problem 35
+14:21:09 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:21:09 [INFO] src.orchestrator:   Analyzer: class=scheduling, difficulty=medium, recommended_meta=GA
+14:21:14 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:21:14 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 2214.0 from heuristic)
+14:21:15 [INFO] src.orchestrator:   ✗ improved_v11 (refine): predicted=97.0, gt=168.0 (rel_error=42.2619%, tol=5.00% (rounded=True))
+14:21:15 [INFO] src.orchestrator:   Improver iteration 12/20 (best so far: 97.0 from improved_v3)
+14:21:19 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:21:22 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:21:23 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:21:24 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:21:25 [INFO] src.orchestrator:   ✓ heuristic: predicted=14.0, gt=14.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [13.4s]
+14:21:25 [INFO] src.orchestrator:   Warm-start: heuristic found obj=14.0, seeding meta/hyper
+14:21:25 [INFO] src.orchestrator:   ✗ improved_v12 (refine): predicted=97.0, gt=168.0 (rel_error=42.2619%, tol=5.00% (rounded=True))
+14:21:25 [INFO] src.orchestrator:   Improver iteration 13/20 (best so far: 97.0 from improved_v3)
+14:21:26 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:21:30 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:21:32 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:21:33 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:21:33 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 2214.0 from heuristic)
+14:21:35 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:21:35 [INFO] src.orchestrator:   ✗ improved_v13 (refine): predicted=97.0, gt=168.0 (rel_error=42.2619%, tol=5.00% (rounded=True))
+14:21:35 [INFO] src.orchestrator:   Improver iteration 14/20 (best so far: 97.0 from improved_v3)
+14:21:35 [INFO] src.orchestrator:   ✓ heuristic: predicted=11250.0, gt=11250.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [24.1s]
+14:21:35 [INFO] src.orchestrator:   Warm-start: heuristic found obj=11250.0, seeding meta/hyper
+14:21:41 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:21:42 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:21:42 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:21:45 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:21:47 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=14.0, gt=14.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [22.2s]
+14:21:49 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:21:49 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:21:49 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=14.0, gt=14.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [24.2s]
+14:21:49 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:21:50 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+14:21:52 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 136)
+14:21:52 [INFO] src.orchestrator:   [31/100 completed] Problem 38
+14:21:55 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:21:55 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=6250.0, gt=11250.0 (rel_error=44.4444%, tol=5.00% (rounded=True)) [19.5s]
+14:21:55 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:21:56 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:21:56 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:22:00 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 140)
+14:22:00 [INFO] src.orchestrator:   [32/100 completed] Problem 32
+14:22:00 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=175.37 (No predicted value) [54.6s]
+14:22:02 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:22:02 [INFO] src.orchestrator:   ✗ improved_v14 (refine): predicted=97.0, gt=168.0 (rel_error=42.2619%, tol=5.00% (rounded=True))
+14:22:02 [INFO] src.orchestrator:   Improver iteration 15/20 (best so far: 97.0 from improved_v3)
+14:22:06 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=237.17878366585012, gt=175.37 (rel_error=35.4286%, tol=5.00% (rounded=True)) [60.0s]
+14:22:06 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 237.17878366585012 from heuristic)
+14:22:06 [INFO] src.agents.improver:   Improver: all solvers agree on wrong value 237.17878366585012 — triggering full re-formulation (attempt 1)
+14:22:07 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:22:08 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:22:10 [INFO] src.orchestrator:   ✓ heuristic: predicted=600.0, gt=600.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [11.3s]
+14:22:10 [INFO] src.orchestrator:   Warm-start: heuristic found obj=600.0, seeding meta/hyper
+14:22:16 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:22:19 [INFO] src.orchestrator:   ✗ improved_v15 (refine): predicted=350.0, gt=168.0 (rel_error=108.3333%, tol=5.00% (rounded=True))
+14:22:19 [INFO] src.orchestrator:   Improver iteration 16/20 (best so far: 97.0 from improved_v3)
+14:22:24 [INFO] src.orchestrator:   Critic found 5 critical issues in metaheuristic, requesting fix
+14:22:28 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:22:28 [INFO] src.orchestrator:   ✗ improved_v16 (refine): predicted=97.0, gt=168.0 (rel_error=42.2619%, tol=5.00% (rounded=True))
+14:22:28 [INFO] src.orchestrator:   Improver iteration 17/20 (best so far: 97.0 from improved_v3)
+14:22:30 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=600.0, gt=600.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [20.5s]
+14:22:35 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:22:37 [INFO] src.orchestrator:   ✗ improved_v17 (refine): predicted=138.0, gt=168.0 (rel_error=17.8571%, tol=5.00% (rounded=True))
+14:22:37 [INFO] src.orchestrator:   Improver iteration 18/20 (best so far: 138.0 from improved_v17)
+14:22:45 [INFO] src.orchestrator:   ✗ improved_v18 (refine): predicted=122.0, gt=168.0 (rel_error=27.3810%, tol=5.00% (rounded=True))
+14:22:45 [INFO] src.orchestrator:   Improver iteration 19/20 (best so far: 138.0 from improved_v17)
+14:22:45 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=1050.0, gt=600.0 (rel_error=75.0000%, tol=5.00% (rounded=True)) [35.3s]
+14:22:45 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:22:49 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 145)
+14:22:49 [INFO] src.orchestrator:   [33/100 completed] Problem 39
+14:22:52 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:23:04 [INFO] src.orchestrator:   Improver iteration 19 (refine): execution failed (1 consecutive)
+14:23:04 [INFO] src.orchestrator:   Improver iteration 20/20 (best so far: 138.0 from improved_v17)
+14:23:05 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:23:08 [INFO] src.orchestrator:   ✗ heuristic: predicted=1137440.0, gt=964640.0 (rel_error=17.9134%, tol=5.00% (rounded=True)) [12.2s]
+14:23:08 [INFO] src.orchestrator:   Warm-start: heuristic found obj=1137440.0, seeding meta/hyper
+14:23:13 [INFO] src.orchestrator:   ✗ improved_v20 (refine): predicted=350.0, gt=168.0 (rel_error=108.3333%, tol=5.00% (rounded=True))
+14:23:19 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 150)
+14:23:19 [INFO] src.orchestrator:   [34/100 completed] Problem 15
+14:23:21 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:23:21 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:23:22 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:23:26 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=958881.3683537911, gt=964640.0 (rel_error=0.5970%, tol=5.00% (rounded=True)) [17.7s]
+14:23:29 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:23:34 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:23:36 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:23:39 [INFO] src.orchestrator:   ✓ heuristic: predicted=150.0, gt=150.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [15.1s]
+14:23:39 [INFO] src.orchestrator:   Warm-start: heuristic found obj=150.0, seeding meta/hyper
+14:23:42 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:23:50 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=1007840.0, gt=964640.0 (rel_error=4.4784%, tol=5.00% (rounded=True)) [42.0s]
+14:23:50 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:23:51 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:23:54 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 155)
+14:23:54 [INFO] src.orchestrator:   [35/100 completed] Problem 41
+14:23:55 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:23:56 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:23:56 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=300.001673443732, gt=150.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [17.6s]
+14:24:01 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=19074158.80380341, gt=150.0 (rel_error=12716006.0000%, tol=5.00% (rounded=True)) [22.1s]
+14:24:01 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:24:05 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 158)
+14:24:05 [INFO] src.orchestrator:   [36/100 completed] Problem 42
+14:24:05 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:24:07 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:24:09 [INFO] src.orchestrator:   ✗ heuristic: predicted=12000.0, gt=6800.0 (rel_error=76.4706%, tol=5.00% (rounded=True)) [11.4s]
+14:24:09 [INFO] src.orchestrator:   Warm-start: heuristic found obj=12000.0, seeding meta/hyper
+14:24:20 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:24:21 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:24:23 [INFO] src.orchestrator:   Critic found 1 critical issues in hyperheuristic, requesting fix
+14:24:24 [INFO] src.orchestrator:   ✓ heuristic: predicted=685.0, gt=685.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [13.3s]
+14:24:24 [INFO] src.orchestrator:   Warm-start: heuristic found obj=685.0, seeding meta/hyper
+14:24:27 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=6960.0, gt=6800.0 (rel_error=2.3529%, tol=5.00% (rounded=True)) [18.2s]
+14:24:31 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:24:36 [INFO] openai._base_client: Retrying request to /chat/completions in 0.405464 seconds
+14:24:38 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=7520.0, gt=6800.0 (rel_error=10.5882%, tol=5.00% (rounded=True)) [29.9s]
+14:24:38 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:24:39 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:24:42 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 162)
+14:24:42 [INFO] src.orchestrator:   [37/100 completed] Problem 43
+14:24:44 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:24:45 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:24:46 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=7383.866452620874, gt=685.0 (rel_error=977.9562%, tol=5.00% (rounded=True)) [21.3s]
+14:24:51 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:24:57 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:24:59 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=1005.0, gt=685.0 (rel_error=46.7153%, tol=5.00% (rounded=True)) [34.3s]
+14:24:59 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:25:00 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:25:02 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 166)
+14:25:02 [INFO] src.orchestrator:   [38/100 completed] Problem 44
+14:25:02 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:25:04 [INFO] src.orchestrator:   ✗ heuristic: predicted=300.0, gt=700.0 (rel_error=57.1429%, tol=5.00% (rounded=True)) [13.6s]
+14:25:04 [INFO] src.orchestrator:   Warm-start: heuristic found obj=300.0, seeding meta/hyper
+14:25:04 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=hard, recommended_meta=GA
+14:25:08 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:25:16 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=369010.6, gt=156483.0 (rel_error=135.8154%, tol=5.00% (rounded=True)) [640.1s]
+14:25:16 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 0.0 from heuristic)
+14:25:16 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:25:18 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:25:19 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:25:22 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:25:22 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:25:26 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:25:27 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:25:29 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=582.0, gt=700.0 (rel_error=16.8571%, tol=5.00% (rounded=True)) [25.1s]
+14:25:32 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:25:34 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=3007.0, gt=700.0 (rel_error=329.5714%, tol=5.00% (rounded=True)) [30.3s]
+14:25:34 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 582.0 from metaheuristic)
+14:25:37 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=715.7 (No predicted value) [30.5s]
+14:25:38 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:25:38 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 0.0 from heuristic)
+14:25:53 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:25:54 [INFO] src.orchestrator:   Critic found 5 critical issues in hyperheuristic, requesting fix
+14:25:58 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:25:59 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:25:59 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 582.0 from metaheuristic)
+14:25:59 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:26:01 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:26:01 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 0.0 from heuristic)
+14:26:05 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=770.9000000000001, gt=715.7 (rel_error=7.6816%, tol=5.00% (rounded=True)) [28.2s]
+14:26:05 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:26:12 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=4069.8, gt=715.7 (rel_error=468.4358%, tol=5.00% (rounded=True)) [34.7s]
+14:26:12 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 770.9000000000001 from metaheuristic)
+14:26:13 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+14:26:17 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:26:17 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 582.0 from metaheuristic)
+14:26:29 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:26:29 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:26:33 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 171)
+14:26:33 [INFO] src.orchestrator:   [39/100 completed] Problem 22
+14:26:34 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:26:34 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 770.9000000000001 from metaheuristic)
+14:26:35 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=GA
+14:26:40 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:26:40 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:26:43 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 176)
+14:26:43 [INFO] src.orchestrator:   [40/100 completed] Problem 45
+14:26:45 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:26:53 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:26:55 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:26:57 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:26:57 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 770.9000000000001 from metaheuristic)
+14:26:58 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:26:59 [INFO] src.orchestrator:   ✗ heuristic: predicted=18937.570000000014, gt=20241.615384615387 (rel_error=6.4421%, tol=5.00% (rounded=True)) [19.8s]
+14:26:59 [INFO] src.orchestrator:   Warm-start: heuristic found obj=18937.570000000014, seeding meta/hyper
+14:27:02 [INFO] src.orchestrator:   ✓ heuristic: predicted=11250.0, gt=11250.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [11.8s]
+14:27:02 [INFO] src.orchestrator:   Warm-start: heuristic found obj=11250.0, seeding meta/hyper
+14:27:03 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:27:10 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=11250.0, gt=11250.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [334.7s]
+14:27:10 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:27:14 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:27:14 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 180)
+14:27:14 [INFO] src.orchestrator:   [41/100 completed] Problem 37
+14:27:14 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:27:15 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:27:16 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=3867.0 (No predicted value) [942.3s]
+14:27:16 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:27:16 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:27:16 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:27:19 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:27:19 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:27:19 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=11250.0, gt=11250.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [17.7s]
+14:27:20 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 184)
+14:27:20 [INFO] src.orchestrator:   [42/100 completed] Problem 11
+14:27:20 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:27:22 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=none
+14:27:23 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 189)
+14:27:23 [INFO] src.orchestrator:   [43/100 completed] Problem 46
+14:27:23 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:27:24 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:27:25 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:27:29 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:27:29 [INFO] src.orchestrator:   ✗ improved_v1 (reformulate): predicted=203.82053014503242, gt=175.37 (rel_error=16.5714%, tol=5.00% (rounded=True))
+14:27:29 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 203.82053014503242 from improved_v1)
+14:27:31 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:27:32 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:27:32 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:27:33 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=33590.0, gt=20241.615384615387 (rel_error=65.9421%, tol=5.00% (rounded=True)) [33.2s]
+14:27:34 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:27:34 [INFO] src.orchestrator:   ✗ heuristic: predicted=-8700.0, gt=9100.0 (rel_error=195.6044%, tol=5.00% (rounded=True)) [9.3s]
+14:27:34 [INFO] src.orchestrator:   Warm-start: heuristic found obj=-8700.0, seeding meta/hyper
+14:27:37 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:27:39 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:27:40 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=33288066.626 (No predicted value) [334.8s]
+14:27:40 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=11250.0, gt=11250.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [38.3s]
+14:27:40 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:27:41 [INFO] src.orchestrator:   ✗ improved_v2 (refine): predicted=366.90782422671964, gt=175.37 (rel_error=109.7143%, tol=5.00% (rounded=True))
+14:27:41 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 203.82053014503242 from improved_v1)
+14:27:43 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:27:43 [INFO] src.orchestrator:   ✗ heuristic: predicted=9600.0, gt=4240.0 (rel_error=126.4151%, tol=5.00% (rounded=True)) [14.3s]
+14:27:43 [INFO] src.orchestrator:   Warm-start: heuristic found obj=9600.0, seeding meta/hyper
+14:27:44 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 194)
+14:27:44 [INFO] src.orchestrator:   [44/100 completed] Problem 48
+14:27:45 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:27:46 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+14:27:48 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:27:50 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:27:51 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=7943.0, gt=9100.0 (rel_error=12.7143%, tol=5.00% (rounded=True)) [16.9s]
+14:27:52 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:27:52 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:27:53 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=4800.0, gt=9100.0 (rel_error=47.2527%, tol=5.00% (rounded=True)) [19.0s]
+14:27:53 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 7943.0 from metaheuristic)
+14:27:56 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=19010.600000000002, gt=20241.615384615387 (rel_error=6.0814%, tol=5.00% (rounded=True)) [56.1s]
+14:27:56 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 19010.600000000002 from metaheuristic)
+14:27:56 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:27:57 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=208000.0 (No predicted value) [36.0s]
+14:27:57 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:27:58 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:28:00 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:28:00 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:28:04 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=79593221.89945322, gt=33288066.626 (rel_error=139.1044%, tol=5.00% (rounded=True)) [23.8s]
+14:28:04 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=5820.0, gt=4240.0 (rel_error=37.2642%, tol=5.00% (rounded=True)) [20.5s]
+14:28:06 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:28:08 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:28:09 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:28:11 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:28:13 [INFO] src.orchestrator:   Critic found 5 critical issues in hyperheuristic, requesting fix
+14:28:15 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=261000.0, gt=208000.0 (rel_error=25.4808%, tol=5.00% (rounded=True)) [18.1s]
+14:28:16 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=-350416750.0, gt=33288066.626 (rel_error=1152.6798%, tol=5.00% (rounded=True)) [36.1s]
+14:28:16 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 79593221.89945322 from metaheuristic)
+14:28:16 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:28:16 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 7943.0 from metaheuristic)
+14:28:17 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:28:19 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:28:20 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:28:20 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 19010.600000000002 from metaheuristic)
+14:28:22 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=150.0 (No predicted value) [32.3s]
+14:28:27 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=24600000.0, gt=208000.0 (rel_error=11726.9231%, tol=5.00% (rounded=True)) [30.2s]
+14:28:27 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 261000.0 from metaheuristic)
+14:28:32 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:28:35 [INFO] src.orchestrator:   Critic found 1 critical issues in hyperheuristic, requesting fix
+14:28:38 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:28:38 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 7943.0 from metaheuristic)
+14:28:38 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:28:38 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 79593221.89945322 from metaheuristic)
+14:28:39 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=110.0, gt=150.0 (rel_error=26.6667%, tol=5.00% (rounded=True)) [17.2s]
+14:28:39 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=148.0, gt=150.0 (rel_error=1.3333%, tol=5.00% (rounded=True)) [17.4s]
+14:28:39 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:28:43 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 199)
+14:28:43 [INFO] src.orchestrator:   [45/100 completed] Problem 52
+14:28:45 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:28:54 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:28:54 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 261000.0 from metaheuristic)
+14:28:57 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:28:58 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:28:58 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:29:00 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:29:00 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 79593221.89945322 from metaheuristic)
+14:29:01 [INFO] src.orchestrator:   ✗ heuristic: predicted=5500.0, gt=3050.0 (rel_error=80.3279%, tol=5.00% (rounded=True)) [12.4s]
+14:29:01 [INFO] src.orchestrator:   Warm-start: heuristic found obj=5500.0, seeding meta/hyper
+14:29:01 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 204)
+14:29:01 [INFO] src.orchestrator:   [46/100 completed] Problem 50
+14:29:03 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:29:09 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:29:12 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:29:13 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:29:17 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:29:17 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:29:18 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=3050.0, gt=3050.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [16.7s]
+14:29:18 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:29:18 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 261000.0 from metaheuristic)
+14:29:20 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=135.26666666666668 (No predicted value) [14.5s]
+14:29:21 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:29:21 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:29:24 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:29:25 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 209)
+14:29:25 [INFO] src.orchestrator:   [47/100 completed] Problem 40
+14:29:27 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:29:31 [INFO] src.orchestrator:   Critic found 1 critical issues in hyperheuristic, requesting fix
+14:29:31 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=3050.0, gt=3050.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [30.4s]
+14:29:31 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:29:32 [INFO] src.orchestrator:   Critic found 1 critical issues in metaheuristic, requesting fix
+14:29:34 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 212)
+14:29:34 [INFO] src.orchestrator:   [48/100 completed] Problem 53
+14:29:36 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=86.99999999999919, gt=135.26666666666668 (rel_error=35.5556%, tol=5.00% (rounded=True)) [15.5s]
+14:29:37 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+14:29:37 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:29:39 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:29:44 [INFO] src.orchestrator:   ✗ heuristic: predicted=5.0, gt=4.0 (rel_error=25.0000%, tol=5.00% (rounded=True)) [13.3s]
+14:29:44 [INFO] src.orchestrator:   Warm-start: heuristic found obj=5.0, seeding meta/hyper
+14:29:44 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:29:44 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:29:44 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:29:48 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 217)
+14:29:48 [INFO] src.orchestrator:   [49/100 completed] Problem 49
+14:29:50 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:29:50 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=127.8012, gt=135.26666666666668 (rel_error=5.1852%, tol=5.00% (rounded=True)) [30.2s]
+14:29:50 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 127.8012 from hyperheuristic)
+14:29:51 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:29:54 [INFO] src.orchestrator:   ✗ heuristic: predicted=1999.9999999999995, gt=-700.0 (rel_error=385.7143%, tol=5.00% (rounded=True)) [13.0s]
+14:29:54 [INFO] src.orchestrator:   Warm-start: heuristic found obj=1999.9999999999995, seeding meta/hyper
+14:29:55 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:29:57 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:30:01 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=4.0, gt=4.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [17.1s]
+14:30:02 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:30:03 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:30:03 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:30:03 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 127.8012 from hyperheuristic)
+14:30:05 [INFO] src.orchestrator:   ✗ heuristic: predicted=-4400.0, gt=600.0 (rel_error=833.3333%, tol=5.00% (rounded=True)) [12.4s]
+14:30:05 [INFO] src.orchestrator:   Warm-start: heuristic found obj=-4400.0, seeding meta/hyper
+14:30:06 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:30:07 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:30:08 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:30:11 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-1690.7476008579997, gt=-700.0 (rel_error=141.5714%, tol=5.00% (rounded=True)) [17.3s]
+14:30:14 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=-1606.982614915818, gt=-700.0 (rel_error=129.5714%, tol=5.00% (rounded=True)) [20.2s]
+14:30:14 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: -1606.982614915818 from hyperheuristic)
+14:30:16 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:30:16 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 127.8012 from hyperheuristic)
+14:30:16 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=5.0, gt=4.0 (rel_error=25.0000%, tol=5.00% (rounded=True)) [31.9s]
+14:30:16 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:30:17 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:30:19 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 221)
+14:30:19 [INFO] src.orchestrator:   [50/100 completed] Problem 55
+14:30:20 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:30:22 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:30:22 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=14100.0, gt=600.0 (rel_error=2250.0000%, tol=5.00% (rounded=True)) [16.7s]
+14:30:26 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=9600.0, gt=600.0 (rel_error=1500.0000%, tol=5.00% (rounded=True)) [20.6s]
+14:30:26 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: -4400.0 from heuristic)
+14:30:32 [INFO] src.orchestrator:   Critic found 5 critical issues in heuristic, requesting fix
+14:30:33 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:30:33 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:30:34 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:30:34 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: -1606.982614915818 from hyperheuristic)
+14:30:36 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 225)
+14:30:36 [INFO] src.orchestrator:   [51/100 completed] Problem 54
+14:30:38 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:30:38 [INFO] src.orchestrator:   ✗ heuristic: predicted=306000.0, gt=240000.0 (rel_error=27.5000%, tol=5.00% (rounded=True)) [12.3s]
+14:30:38 [INFO] src.orchestrator:   Warm-start: heuristic found obj=306000.0, seeding meta/hyper
+14:30:45 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:30:45 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: -4400.0 from heuristic)
+14:30:51 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:30:52 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:30:54 [INFO] src.orchestrator:   Critic found 5 critical issues in heuristic, requesting fix
+14:30:57 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:30:57 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: -1606.982614915818 from hyperheuristic)
+14:30:58 [INFO] src.orchestrator:   ✗ heuristic: predicted=8666.67, gt=6160.0 (rel_error=40.6981%, tol=5.00% (rounded=True)) [15.9s]
+14:30:58 [INFO] src.orchestrator:   Warm-start: heuristic found obj=8666.67, seeding meta/hyper
+14:30:58 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=234605.95407229319, gt=240000.0 (rel_error=2.2475%, tol=5.00% (rounded=True)) [19.7s]
+14:31:00 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=-240000.0, gt=240000.0 (rel_error=200.0000%, tol=5.00% (rounded=True)) [21.8s]
+14:31:00 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:31:03 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:31:03 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: -4400.0 from heuristic)
+14:31:04 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 229)
+14:31:04 [INFO] src.orchestrator:   [52/100 completed] Problem 58
+14:31:06 [INFO] src.orchestrator:   Analyzer: class=TSP, difficulty=medium, recommended_meta=ACO
+14:31:07 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:31:08 [INFO] src.orchestrator:   Critic found 7 critical issues in hyperheuristic, requesting fix
+14:31:09 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:31:12 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:31:14 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:31:14 [INFO] src.orchestrator:   ✓ heuristic: predicted=153.0, gt=153.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [3.8s]
+14:31:14 [INFO] src.orchestrator:   Warm-start: heuristic found obj=153.0, seeding meta/hyper
+14:31:16 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:31:18 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+14:31:19 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:31:19 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:31:20 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:31:20 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:31:20 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=7.048793936786198, gt=6160.0 (rel_error=99.8864%, tol=5.00% (rounded=True)) [22.4s]
+14:31:21 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=6160.0 (No predicted value) [23.2s]
+14:31:21 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 8666.67 from heuristic)
+14:31:21 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=904590.0 (No predicted value) [1247.0s]
+14:31:21 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 1079040.0 from hyperheuristic)
+14:31:23 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 234)
+14:31:23 [INFO] src.orchestrator:   [53/100 completed] Problem 56
+14:31:24 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 239)
+14:31:24 [INFO] src.orchestrator:   [54/100 completed] Problem 57
+14:31:24 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:31:25 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:31:25 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:31:27 [INFO] src.orchestrator:   Analyzer: class=knapsack, difficulty=medium, recommended_meta=GA
+14:31:30 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=153.0, gt=153.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [15.7s]
+14:31:31 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=153.0, gt=153.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [16.8s]
+14:31:31 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:31:32 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:31:32 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 8666.67 from heuristic)
+14:31:34 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 244)
+14:31:34 [INFO] src.orchestrator:   [55/100 completed] Problem 60
+14:31:36 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:31:36 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:31:37 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:31:38 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:31:38 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 1079040.0 from hyperheuristic)
+14:31:39 [INFO] src.orchestrator:   ✓ heuristic: predicted=37000.0, gt=37000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [10.4s]
+14:31:39 [INFO] src.orchestrator:   Warm-start: heuristic found obj=37000.0, seeding meta/hyper
+14:31:41 [INFO] src.orchestrator:   ✗ heuristic: predicted=80000.0, gt=90000.0 (rel_error=11.1111%, tol=5.00% (rounded=True)) [12.2s]
+14:31:41 [INFO] src.orchestrator:   Warm-start: heuristic found obj=80000.0, seeding meta/hyper
+14:31:49 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:31:49 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 8666.67 from heuristic)
+14:31:50 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:31:51 [INFO] src.orchestrator:   Critic found 5 critical issues in heuristic, requesting fix
+14:31:52 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:31:52 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:31:54 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-305000.0, gt=90000.0 (rel_error=438.8889%, tol=5.00% (rounded=True)) [13.0s]
+14:31:55 [INFO] src.orchestrator:   ✓ heuristic: predicted=640.0, gt=640.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [12.6s]
+14:31:55 [INFO] src.orchestrator:   Warm-start: heuristic found obj=640.0, seeding meta/hyper
+14:31:55 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:31:57 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=38957.585466700395, gt=37000.0 (rel_error=5.2919%, tol=5.00% (rounded=True)) [18.4s]
+14:31:58 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:31:58 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:31:58 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 1079040.0 from hyperheuristic)
+14:31:59 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=90000.0, gt=90000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [18.1s]
+14:31:59 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:32:03 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 249)
+14:32:03 [INFO] src.orchestrator:   [56/100 completed] Problem 62
+14:32:05 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=37000.0, gt=37000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [25.8s]
+14:32:05 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:32:05 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:32:05 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:32:05 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:32:08 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 254)
+14:32:08 [INFO] src.orchestrator:   [57/100 completed] Problem 61
+14:32:09 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:32:09 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:32:09 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 259)
+14:32:09 [INFO] src.orchestrator:   [58/100 completed] Problem 59
+14:32:10 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:32:11 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:32:15 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=640.0, gt=640.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [20.2s]
+14:32:16 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=121120.0, gt=640.0 (rel_error=18825.0000%, tol=5.00% (rounded=True)) [20.6s]
+14:32:16 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:32:17 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:32:17 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:32:18 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:32:19 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 264)
+14:32:19 [INFO] src.orchestrator:   [59/100 completed] Problem 63
+14:32:21 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:32:21 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:32:21 [INFO] src.orchestrator:   ✓ heuristic: predicted=38000.0, gt=38000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [12.7s]
+14:32:21 [INFO] src.orchestrator:   Warm-start: heuristic found obj=38000.0, seeding meta/hyper
+14:32:21 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=GA
+14:32:22 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 269)
+14:32:22 [INFO] src.orchestrator:   [60/100 completed] Problem 7
+14:32:23 [INFO] src.orchestrator:   ✓ heuristic: predicted=25000.0, gt=25000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [9.7s]
+14:32:23 [INFO] src.orchestrator:   Warm-start: heuristic found obj=25000.0, seeding meta/hyper
+14:32:25 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+14:32:26 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:32:31 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:32:33 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:32:35 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:32:36 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:32:36 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:32:37 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=21400.0, gt=25000.0 (rel_error=14.4000%, tol=5.00% (rounded=True)) [14.3s]
+14:32:39 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:32:39 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:32:40 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:32:40 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=0.0, gt=38000.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [18.7s]
+14:32:40 [INFO] src.orchestrator:   ✓ heuristic: predicted=3225000.0, gt=3160500.0 (rel_error=2.0408%, tol=5.00% (rounded=True)) [13.7s]
+14:32:40 [INFO] src.orchestrator:   Warm-start: heuristic found obj=3225000.0, seeding meta/hyper
+14:32:42 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=30500.0 (No predicted value) [28.8s]
+14:32:43 [INFO] src.orchestrator:   ✗ heuristic: predicted=1825.0, gt=1030.0 (rel_error=77.1845%, tol=5.00% (rounded=True)) [14.5s]
+14:32:43 [INFO] src.orchestrator:   Warm-start: heuristic found obj=1825.0, seeding meta/hyper
+14:32:46 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=15000.0, gt=38000.0 (rel_error=60.5263%, tol=5.00% (rounded=True)) [24.3s]
+14:32:46 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:32:49 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 273)
+14:32:49 [INFO] src.orchestrator:   [61/100 completed] Problem 64
+14:32:51 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+14:32:53 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:32:55 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:32:55 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:32:55 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:32:57 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=1030000.0, gt=30500.0 (rel_error=3277.0492%, tol=5.00% (rounded=True)) [15.4s]
+14:32:57 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:32:58 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:33:02 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=1428.6522638929223, gt=1030.0 (rel_error=38.7379%, tol=5.00% (rounded=True)) [18.8s]
+14:33:02 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:33:03 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:33:03 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=2081166.7, gt=3160500.0 (rel_error=34.1507%, tol=5.00% (rounded=True)) [23.3s]
+14:33:05 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=1300.0, gt=1030.0 (rel_error=26.2136%, tol=5.00% (rounded=True)) [21.7s]
+14:33:05 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 1300.0 from hyperheuristic)
+14:33:07 [INFO] src.orchestrator:   ✓ heuristic: predicted=20.0, gt=20.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [13.3s]
+14:33:07 [INFO] src.orchestrator:   Warm-start: heuristic found obj=20.0, seeding meta/hyper
+14:33:09 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:33:17 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=127900.0, gt=30500.0 (rel_error=319.3443%, tol=5.00% (rounded=True)) [35.5s]
+14:33:17 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 127900.0 from hyperheuristic)
+14:33:17 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:33:19 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:33:22 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:33:22 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 1300.0 from hyperheuristic)
+14:33:22 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=2.0, gt=20.0 (rel_error=90.0000%, tol=5.00% (rounded=True)) [15.1s]
+14:33:25 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:33:36 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:33:36 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 1300.0 from hyperheuristic)
+14:33:42 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:33:42 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 127900.0 from hyperheuristic)
+14:33:47 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:33:47 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 19010.600000000002 from metaheuristic)
+14:33:55 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:33:55 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:33:59 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 278)
+14:33:59 [INFO] src.orchestrator:   [62/100 completed] Problem 68
+14:34:01 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:34:01 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 127900.0 from hyperheuristic)
+14:34:03 [INFO] src.orchestrator:   Analyzer: class=TSP, difficulty=medium, recommended_meta=ACO
+14:34:11 [INFO] src.orchestrator:   Critic found 1 critical issues in heuristic, requesting fix
+14:34:11 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:34:11 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:34:15 [INFO] src.orchestrator:   ✓ heuristic: predicted=35.0, gt=35.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [9.7s]
+14:34:15 [INFO] src.orchestrator:   Warm-start: heuristic found obj=35.0, seeding meta/hyper
+14:34:15 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 283)
+14:34:15 [INFO] src.orchestrator:   [63/100 completed] Problem 47
+14:34:17 [INFO] src.orchestrator:   Analyzer: class=assignment, difficulty=easy, recommended_meta=GA
+14:34:24 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:34:25 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:34:26 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:34:26 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:34:27 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:34:28 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=35.0, gt=35.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [12.9s]
+14:34:29 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:34:31 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:34:31 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:34:34 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:34:36 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=330.0 (No predicted value) [17.2s]
+14:34:37 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=35.0, gt=35.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [21.6s]
+14:34:37 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:34:37 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 288)
+14:34:37 [INFO] src.orchestrator:   [64/100 completed] Problem 65
+14:34:39 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:34:40 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 293)
+14:34:40 [INFO] src.orchestrator:   [65/100 completed] Problem 70
+14:34:42 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:34:48 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:34:49 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:34:50 [INFO] src.orchestrator:   ✓ heuristic: predicted=135000.0, gt=135000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [8.2s]
+14:34:50 [INFO] src.orchestrator:   Warm-start: heuristic found obj=135000.0, seeding meta/hyper
+14:34:51 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:34:54 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:34:55 [INFO] src.orchestrator:   Critic found 5 critical issues in heuristic, requesting fix
+14:34:56 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:34:57 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:34:59 [INFO] src.orchestrator:   ✗ heuristic: predicted=2600.0, gt=1600.0 (rel_error=62.5000%, tol=5.00% (rounded=True)) [13.8s]
+14:34:59 [INFO] src.orchestrator:   Warm-start: heuristic found obj=2600.0, seeding meta/hyper
+14:35:01 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=640.0, gt=330.0 (rel_error=93.9394%, tol=5.00% (rounded=True)) [24.4s]
+14:35:01 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:35:01 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:35:04 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+14:35:06 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=135000.0, gt=135000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [16.5s]
+14:35:07 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:35:09 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:35:11 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=330.0 (No predicted value) [34.3s]
+14:35:11 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 640.0 from hyperheuristic)
+14:35:13 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:35:14 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=135000.0, gt=135000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [23.9s]
+14:35:14 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:35:14 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=1600.0, gt=1600.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [15.0s]
+14:35:17 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 298)
+14:35:17 [INFO] src.orchestrator:   [66/100 completed] Problem 72
+14:35:18 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:35:20 [INFO] src.orchestrator:   Analyzer: class=scheduling, difficulty=medium, recommended_meta=GA
+14:35:24 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:35:26 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:35:26 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 640.0 from hyperheuristic)
+14:35:29 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=1600.0, gt=1600.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [30.0s]
+14:35:29 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:35:32 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:35:33 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 303)
+14:35:33 [INFO] src.orchestrator:   [67/100 completed] Problem 73
+14:35:35 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:35:36 [INFO] src.orchestrator:   ✗ heuristic: predicted=140000.0, gt=115000.0 (rel_error=21.7391%, tol=5.00% (rounded=True)) [12.3s]
+14:35:36 [INFO] src.orchestrator:   Warm-start: heuristic found obj=140000.0, seeding meta/hyper
+14:35:39 [INFO] src.orchestrator:   ✗ improved_v2 (refine): predicted=260.0, gt=330.0 (rel_error=21.2121%, tol=5.00% (rounded=True))
+14:35:39 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 260.0 from improved_v2)
+14:35:45 [INFO] src.orchestrator:   ✓ improved_v3 (refine): predicted=340.0, gt=330.0 (rel_error=3.0303%, tol=5.00% (rounded=True))
+14:35:45 [INFO] src.orchestrator:   Improver: found correct answer on iteration 3!
+14:35:46 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:35:49 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 308)
+14:35:49 [INFO] src.orchestrator:   [68/100 completed] Problem 71
+14:35:50 [INFO] src.orchestrator:   ✓ heuristic: predicted=55.0, gt=57.0 (rel_error=3.5088%, tol=5.00% (rounded=True)) [12.2s]
+14:35:50 [INFO] src.orchestrator:   Warm-start: heuristic found obj=55.0, seeding meta/hyper
+14:35:50 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=null
+14:35:51 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:35:52 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:35:56 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=135152.40666254392, gt=115000.0 (rel_error=17.5235%, tol=5.00% (rounded=True)) [20.4s]
+14:35:57 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:36:00 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:36:04 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:36:04 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:36:06 [INFO] src.orchestrator:   Critic found 5 critical issues in heuristic, requesting fix
+14:36:10 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:36:10 [INFO] src.orchestrator:   ✓ heuristic: predicted=4700.0, gt=4700.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [13.8s]
+14:36:10 [INFO] src.orchestrator:   Warm-start: heuristic found obj=4700.0, seeding meta/hyper
+14:36:10 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:36:16 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=52.0, gt=57.0 (rel_error=8.7719%, tol=5.00% (rounded=True)) [25.9s]
+14:36:17 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=115000.0 (No predicted value) [40.9s]
+14:36:17 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 135152.40666254392 from metaheuristic)
+14:36:23 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:36:26 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:36:29 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:36:32 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=69968.68171764996, gt=4700.0 (rel_error=1388.7021%, tol=5.00% (rounded=True)) [22.2s]
+14:36:37 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:36:40 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:36:40 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 135152.40666254392 from metaheuristic)
+14:36:44 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+14:36:50 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=94248.09986740016, gt=4700.0 (rel_error=1905.2766%, tol=5.00% (rounded=True)) [40.6s]
+14:36:50 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:36:54 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 313)
+14:36:54 [INFO] src.orchestrator:   [69/100 completed] Problem 76
+14:36:56 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:37:05 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:37:05 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 135152.40666254392 from metaheuristic)
+14:37:09 [INFO] src.orchestrator:   Critic found 4 critical issues in heuristic, requesting fix
+14:37:15 [INFO] src.orchestrator:   ✓ heuristic: predicted=1005.0, gt=1005.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [14.8s]
+14:37:15 [INFO] src.orchestrator:   Warm-start: heuristic found obj=1005.0, seeding meta/hyper
+14:37:25 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:37:25 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:37:29 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 318)
+14:37:29 [INFO] src.orchestrator:   [70/100 completed] Problem 74
+14:37:30 [INFO] src.orchestrator:   Critic found 5 critical issues in metaheuristic, requesting fix
+14:37:30 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:37:31 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:37:36 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=1020.0, gt=1005.0 (rel_error=1.4925%, tol=5.00% (rounded=True)) [21.7s]
+14:37:36 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:37:43 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=1005.0, gt=1005.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [28.6s]
+14:37:43 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:37:44 [INFO] openai._base_client: Retrying request to /chat/completions in 0.427300 seconds
+14:37:45 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:37:45 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:37:47 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 323)
+14:37:47 [INFO] src.orchestrator:   [71/100 completed] Problem 77
+14:37:49 [INFO] src.orchestrator:   ✗ heuristic: predicted=262.5, gt=172.0 (rel_error=52.3256%, tol=5.00% (rounded=True)) [14.5s]
+14:37:49 [INFO] src.orchestrator:   Warm-start: heuristic found obj=262.5, seeding meta/hyper
+14:37:49 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:37:58 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:38:00 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:38:01 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:38:02 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:38:03 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=7920.0, gt=4240.0 (rel_error=86.7925%, tol=5.00% (rounded=True)) [620.0s]
+14:38:03 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 5820.0 from metaheuristic)
+14:38:04 [INFO] src.orchestrator:   ✓ heuristic: predicted=9800.0, gt=9800.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [12.8s]
+14:38:04 [INFO] src.orchestrator:   Warm-start: heuristic found obj=9800.0, seeding meta/hyper
+14:38:05 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=258.0071873405125, gt=172.0 (rel_error=50.0000%, tol=5.00% (rounded=True)) [15.9s]
+14:38:05 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:38:13 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:38:16 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:38:19 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:38:21 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=9470.0, gt=9800.0 (rel_error=3.3673%, tol=5.00% (rounded=True)) [16.4s]
+14:38:21 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:38:24 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:38:24 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 5820.0 from metaheuristic)
+14:38:25 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:38:29 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:38:31 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=8630.0, gt=9800.0 (rel_error=11.9388%, tol=5.00% (rounded=True)) [26.7s]
+14:38:31 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:38:31 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:38:35 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 328)
+14:38:35 [INFO] src.orchestrator:   [72/100 completed] Problem 79
+14:38:36 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=172.0 (No predicted value) [47.1s]
+14:38:36 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 258.0071873405125 from metaheuristic)
+14:38:37 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=GA
+14:38:39 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=180.0, gt=20.0 (rel_error=800.0000%, tol=5.00% (rounded=True)) [332.5s]
+14:38:39 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:38:43 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 333)
+14:38:43 [INFO] src.orchestrator:   [73/100 completed] Problem 69
+14:38:46 [INFO] src.orchestrator:   Analyzer: class=knapsack, difficulty=medium, recommended_meta=GA
+14:38:48 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:38:48 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 5820.0 from metaheuristic)
+14:38:54 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:38:54 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 258.0071873405125 from metaheuristic)
+14:38:55 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:38:58 [INFO] src.orchestrator:   Critic found 5 critical issues in heuristic, requesting fix
+14:39:02 [INFO] src.orchestrator:   ✗ heuristic: predicted=53.9, gt=28.6 (rel_error=86.2069%, tol=5.00% (rounded=True)) [13.3s]
+14:39:02 [INFO] src.orchestrator:   Warm-start: heuristic found obj=53.9, seeding meta/hyper
+14:39:05 [INFO] src.orchestrator:   ✓ heuristic: predicted=85900.0, gt=84000.0 (rel_error=2.2619%, tol=5.00% (rounded=True)) [22.5s]
+14:39:05 [INFO] src.orchestrator:   Warm-start: heuristic found obj=85900.0, seeding meta/hyper
+14:39:08 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:39:08 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:39:11 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:39:11 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 258.0071873405125 from metaheuristic)
+14:39:12 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:39:12 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 338)
+14:39:12 [INFO] src.orchestrator:   [74/100 completed] Problem 51
+14:39:13 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:39:15 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:39:17 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:39:18 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:39:19 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=57.099999999999994, gt=28.6 (rel_error=96.5517%, tol=5.00% (rounded=True)) [16.6s]
+14:39:21 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:39:23 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=57.099999999999994, gt=28.6 (rel_error=96.5517%, tol=5.00% (rounded=True)) [20.7s]
+14:39:23 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 53.9 from heuristic)
+14:39:25 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=26700.0, gt=84000.0 (rel_error=68.2143%, tol=5.00% (rounded=True)) [19.8s]
+14:39:28 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:39:28 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:39:31 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:39:31 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:39:31 [INFO] src.orchestrator:   ✗ heuristic: predicted=14.4, gt=28.0 (rel_error=50.0000%, tol=5.00% (rounded=True)) [13.3s]
+14:39:31 [INFO] src.orchestrator:   Warm-start: heuristic found obj=14.4, seeding meta/hyper
+14:39:35 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 343)
+14:39:35 [INFO] src.orchestrator:   [75/100 completed] Problem 78
+14:39:37 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:39:38 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+14:39:43 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:39:43 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 53.9 from heuristic)
+14:39:45 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:39:46 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:39:47 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:39:49 [INFO] src.orchestrator:   ✓ improved_v2 (refine): predicted=28.599999999999998, gt=28.6 (rel_error=0.0000%, tol=5.00% (rounded=True))
+14:39:49 [INFO] src.orchestrator:   Improver: found correct answer on iteration 2!
+14:39:50 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=15.799999999999999, gt=28.0 (rel_error=42.8571%, tol=5.00% (rounded=True)) [18.8s]
+14:39:51 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:39:52 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=15.8, gt=28.0 (rel_error=42.8571%, tol=5.00% (rounded=True)) [21.0s]
+14:39:52 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 15.799999999999999 from metaheuristic)
+14:39:53 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 348)
+14:39:53 [INFO] src.orchestrator:   [76/100 completed] Problem 81
+14:39:54 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=84000.0 (No predicted value) [49.0s]
+14:39:54 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:39:56 [INFO] src.orchestrator:   ✗ heuristic: predicted=20.0, gt=26.0 (rel_error=23.0769%, tol=5.00% (rounded=True)) [14.2s]
+14:39:56 [INFO] src.orchestrator:   Warm-start: heuristic found obj=20.0, seeding meta/hyper
+14:39:56 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:39:58 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 353)
+14:39:58 [INFO] src.orchestrator:   [77/100 completed] Problem 80
+14:40:00 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:40:02 [INFO] src.orchestrator:   ✗ improved_v1 (refine): predicted=15.799999999999999, gt=28.0 (rel_error=42.8571%, tol=5.00% (rounded=True))
+14:40:02 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 15.799999999999999 from metaheuristic)
+14:40:02 [WARNING] src.agents.formulator: Failed to parse formulation JSON, returning raw text
+14:40:08 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:40:09 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:40:09 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:40:10 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:40:10 [INFO] src.orchestrator:   ✗ improved_v2 (refine): predicted=15.8, gt=28.0 (rel_error=42.8571%, tol=5.00% (rounded=True))
+14:40:10 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 15.799999999999999 from metaheuristic)
+14:40:12 [INFO] src.orchestrator:   ✗ heuristic: predicted=31000.0, gt=23000.0 (rel_error=34.7826%, tol=5.00% (rounded=True)) [13.0s]
+14:40:12 [INFO] src.orchestrator:   Warm-start: heuristic found obj=31000.0, seeding meta/hyper
+14:40:13 [INFO] src.orchestrator:   ✗ heuristic: predicted=1680.0, gt=1866.37 (rel_error=9.9678%, tol=5.00% (rounded=True)) [10.5s]
+14:40:13 [INFO] src.orchestrator:   Warm-start: heuristic found obj=1680.0, seeding meta/hyper
+14:40:14 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=47.0, gt=26.0 (rel_error=80.7692%, tol=5.00% (rounded=True)) [18.6s]
+14:40:16 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=26.0, gt=26.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [20.1s]
+14:40:16 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:40:19 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 358)
+14:40:19 [INFO] src.orchestrator:   [78/100 completed] Problem 83
+14:40:21 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:40:21 [INFO] src.orchestrator:   ✗ improved_v3 (refine): predicted=15.8, gt=28.0 (rel_error=42.8571%, tol=5.00% (rounded=True))
+14:40:21 [INFO] src.orchestrator:   Improver iteration 4/20 (best so far: 15.799999999999999 from metaheuristic)
+14:40:24 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:40:26 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:40:26 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:40:27 [INFO] src.orchestrator:   Critic found 4 critical issues in hyperheuristic, requesting fix
+14:40:29 [INFO] src.orchestrator:   ✗ improved_v4 (refine): predicted=15.799999999999999, gt=28.0 (rel_error=42.8571%, tol=5.00% (rounded=True))
+14:40:29 [INFO] src.orchestrator:   Improver iteration 5/20 (best so far: 15.799999999999999 from metaheuristic)
+14:40:30 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:40:30 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=1858.1535088650903, gt=1866.37 (rel_error=0.4287%, tol=5.00% (rounded=True)) [17.0s]
+14:40:31 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:40:32 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=1861.4666666666667, gt=1866.37 (rel_error=0.2680%, tol=5.00% (rounded=True)) [18.9s]
+14:40:32 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:40:35 [INFO] src.orchestrator:   ✓ heuristic: predicted=77500.0, gt=77500.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [11.7s]
+14:40:35 [INFO] src.orchestrator:   Warm-start: heuristic found obj=77500.0, seeding meta/hyper
+14:40:35 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=15000.0, gt=23000.0 (rel_error=34.7826%, tol=5.00% (rounded=True)) [23.0s]
+14:40:36 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 362)
+14:40:36 [INFO] src.orchestrator:   [79/100 completed] Problem 85
+14:40:37 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=23000.0, gt=23000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [24.7s]
+14:40:37 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:40:38 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+14:40:40 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 366)
+14:40:40 [INFO] src.orchestrator:   [80/100 completed] Problem 84
+14:40:42 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:40:48 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:40:49 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:40:49 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:40:51 [INFO] src.orchestrator:   Improver iteration 5 (refine): execution failed (1 consecutive)
+14:40:51 [INFO] src.orchestrator:   Improver iteration 6/20 (best so far: 15.799999999999999 from metaheuristic)
+14:40:53 [INFO] src.orchestrator:   ✗ heuristic: predicted=4500.0, gt=4170.0 (rel_error=7.9137%, tol=5.00% (rounded=True)) [13.1s]
+14:40:53 [INFO] src.orchestrator:   Warm-start: heuristic found obj=4500.0, seeding meta/hyper
+14:40:53 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:40:55 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-153743.30000000005, gt=77500.0 (rel_error=298.3781%, tol=5.00% (rounded=True)) [19.7s]
+14:40:56 [INFO] src.orchestrator:   ✗ heuristic: predicted=-50.0, gt=1.25 (rel_error=5100.0000%, tol=5.00% (rounded=True)) [10.3s]
+14:40:56 [INFO] src.orchestrator:   Warm-start: heuristic found obj=-50.0, seeding meta/hyper
+14:41:02 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:41:05 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:41:06 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:41:07 [INFO] src.orchestrator:   Improver iteration 6 (refine): execution failed (2 consecutive)
+14:41:07 [INFO] src.orchestrator:   Improver iteration 7/20 (best so far: 15.799999999999999 from metaheuristic)
+14:41:08 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:41:11 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:41:11 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=1.1627970906371843, gt=1.25 (rel_error=0.0000%, tol=5.00% (rounded=True)) [15.3s]
+14:41:13 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:41:13 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=4230.0, gt=4170.0 (rel_error=1.4388%, tol=5.00% (rounded=True)) [20.3s]
+14:41:18 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:41:20 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:41:26 [INFO] src.orchestrator:   Improver iteration 7 (refine): execution failed (3 consecutive)
+14:41:26 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:41:26 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=1.1924459972359074, gt=1.25 (rel_error=0.0000%, tol=5.00% (rounded=True)) [29.8s]
+14:41:26 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:41:28 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:41:29 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 370)
+14:41:29 [INFO] src.orchestrator:   [81/100 completed] Problem 88
+14:41:30 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 375)
+14:41:30 [INFO] src.orchestrator:   [82/100 completed] Problem 82
+14:41:31 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:41:33 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:41:35 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=4180.0, gt=4170.0 (rel_error=0.2398%, tol=5.00% (rounded=True)) [42.4s]
+14:41:35 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:41:40 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 379)
+14:41:40 [INFO] src.orchestrator:   [83/100 completed] Problem 87
+14:41:41 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:41:41 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:41:43 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:41:43 [WARNING] src.agents.formulator: Failed to parse formulation JSON, returning raw text
+14:41:45 [INFO] src.orchestrator:   ✓ heuristic: predicted=3600.0, gt=3600.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [9.3s]
+14:41:45 [INFO] src.orchestrator:   Warm-start: heuristic found obj=3600.0, seeding meta/hyper
+14:41:47 [INFO] src.orchestrator:   ✗ heuristic: predicted=160.0, gt=146.667 (rel_error=8.8435%, tol=5.00% (rounded=True)) [12.6s]
+14:41:47 [INFO] src.orchestrator:   Warm-start: heuristic found obj=160.0, seeding meta/hyper
+14:41:51 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:41:54 [INFO] src.orchestrator:   ✗ heuristic: predicted=574.0, gt=408.9 (rel_error=40.3423%, tol=5.00% (rounded=True)) [10.4s]
+14:41:54 [INFO] src.orchestrator:   Warm-start: heuristic found obj=574.0, seeding meta/hyper
+14:41:56 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:41:57 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:41:58 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:41:59 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:42:01 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=2840.0, gt=3600.0 (rel_error=21.1111%, tol=5.00% (rounded=True)) [16.4s]
+14:42:02 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=3180.0, gt=3600.0 (rel_error=11.6667%, tol=5.00% (rounded=True)) [17.1s]
+14:42:02 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:42:05 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:42:05 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:42:05 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:42:05 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=159.94240100516498, gt=146.667 (rel_error=8.8435%, tol=5.00% (rounded=True)) [18.7s]
+14:42:06 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 383)
+14:42:06 [INFO] src.orchestrator:   [84/100 completed] Problem 90
+14:42:08 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=410.0, gt=408.9 (rel_error=0.2445%, tol=5.00% (rounded=True)) [14.5s]
+14:42:08 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=GA
+14:42:11 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:42:11 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=159.98211382964595, gt=146.667 (rel_error=8.8435%, tol=5.00% (rounded=True)) [24.7s]
+14:42:11 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 160.0 from heuristic)
+14:42:11 [INFO] src.agents.improver:   Improver: all solvers agree on wrong value 160.0 — triggering full re-formulation (attempt 1)
+14:42:16 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=408.0, gt=408.9 (rel_error=0.2445%, tol=5.00% (rounded=True)) [21.9s]
+14:42:16 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:42:20 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 387)
+14:42:20 [INFO] src.orchestrator:   [85/100 completed] Problem 91
+14:42:22 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:42:22 [INFO] src.orchestrator:   Improver iteration 1 (reformulate): execution failed (1 consecutive)
+14:42:22 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 160.0 from heuristic)
+14:42:22 [INFO] src.agents.improver:   Improver: all solvers agree on wrong value 160.0 — triggering full re-formulation (attempt 2)
+14:42:22 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:42:25 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:42:25 [WARNING] src.agents.formulator: Failed to parse formulation JSON, returning raw text
+14:42:28 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:42:35 [INFO] src.orchestrator:   Improver iteration 2 (reformulate): execution failed (2 consecutive)
+14:42:35 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 160.0 from heuristic)
+14:42:35 [INFO] src.agents.improver:   Improver: all solvers agree on wrong value 160.0 — triggering full re-formulation (attempt 3)
+14:42:39 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:42:40 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:42:43 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=6200.0 (No predicted value) [30.9s]
+14:42:43 [INFO] src.orchestrator:   ✗ heuristic: predicted=3040.0, gt=3360.0 (rel_error=9.5238%, tol=5.00% (rounded=True)) [17.3s]
+14:42:43 [INFO] src.orchestrator:   Warm-start: heuristic found obj=3040.0, seeding meta/hyper
+14:42:50 [INFO] src.orchestrator:   Improver iteration 3 (reformulate): execution failed (3 consecutive)
+14:42:50 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:42:51 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:42:53 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 391)
+14:42:53 [INFO] src.orchestrator:   [86/100 completed] Problem 89
+14:42:54 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:42:54 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:42:55 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:42:57 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:42:59 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:42:59 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=2346.415410899781, gt=3360.0 (rel_error=30.1786%, tol=5.00% (rounded=True)) [16.1s]
+14:42:59 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:43:01 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:43:04 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:43:06 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=6200.0, gt=6200.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [23.2s]
+14:43:07 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=6400.0, gt=6200.0 (rel_error=3.2258%, tol=5.00% (rounded=True)) [24.1s]
+14:43:07 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:43:10 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=3353.9234557848586, gt=3360.0 (rel_error=0.1786%, tol=5.00% (rounded=True)) [27.3s]
+14:43:10 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:43:11 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 395)
+14:43:11 [INFO] src.orchestrator:   [87/100 completed] Problem 92
+14:43:11 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+14:43:12 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:43:13 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+14:43:14 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 399)
+14:43:14 [INFO] src.orchestrator:   [88/100 completed] Problem 93
+14:43:14 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (1 consecutive)
+14:43:14 [INFO] src.orchestrator:   Improver iteration 4/20 (best so far: 203.82053014503242 from improved_v1)
+14:43:16 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=GA
+14:43:18 [INFO] src.orchestrator:   ✗ heuristic: predicted=4664800.0, gt=5000000.0 (rel_error=6.7040%, tol=5.00% (rounded=True)) [18.3s]
+14:43:18 [INFO] src.orchestrator:   Warm-start: heuristic found obj=4664800.0, seeding meta/hyper
+14:43:24 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:43:27 [INFO] src.orchestrator:   ✗ improved_v4 (refine): predicted=203.82053014503242, gt=175.37 (rel_error=16.5714%, tol=5.00% (rounded=True))
+14:43:27 [INFO] src.orchestrator:   Improver iteration 5/20 (best so far: 203.82053014503242 from improved_v1)
+14:43:27 [INFO] src.orchestrator:   ✓ heuristic: predicted=501.5, gt=528.0 (rel_error=4.9242%, tol=5.00% (rounded=True)) [9.8s]
+14:43:27 [INFO] src.orchestrator:   Warm-start: heuristic found obj=501.5, seeding meta/hyper
+14:43:31 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:43:31 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:43:31 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:43:36 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=2081009761.5173693, gt=5000000.0 (rel_error=41520.1952%, tol=5.00% (rounded=True)) [18.3s]
+14:43:38 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:43:40 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:43:42 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:43:45 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=4000000.0, gt=528.0 (rel_error=757475.7576%, tol=5.00% (rounded=True)) [18.5s]
+14:43:47 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:43:48 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=501.5, gt=528.0 (rel_error=4.9242%, tol=5.00% (rounded=True)) [21.2s]
+14:43:48 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:43:53 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 404)
+14:43:53 [INFO] src.orchestrator:   [89/100 completed] Problem 95
+14:43:55 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=None
+14:43:55 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=26610014126.546417, gt=5000000.0 (rel_error=532100.2825%, tol=5.00% (rounded=True)) [36.9s]
+14:43:55 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 4664800.0 from heuristic)
+14:44:11 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+14:44:15 [INFO] src.orchestrator:   ✗ heuristic: predicted=-25625.0, gt=115.0 (rel_error=22382.6087%, tol=5.00% (rounded=True)) [16.5s]
+14:44:15 [INFO] src.orchestrator:   Warm-start: heuristic found obj=-25625.0, seeding meta/hyper
+14:44:17 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:44:17 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 4664800.0 from heuristic)
+14:44:26 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:44:32 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=-756.3942278627067, gt=115.0 (rel_error=757.3913%, tol=5.00% (rounded=True)) [17.6s]
+14:44:35 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:44:42 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:44:42 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:44:42 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 4664800.0 from heuristic)
+14:44:51 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=0.0, gt=115.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [36.7s]
+14:44:51 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 0.0 from hyperheuristic)
+14:45:05 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:45:05 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:45:10 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 409)
+14:45:10 [INFO] src.orchestrator:   [90/100 completed] Problem 94
+14:45:11 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:45:11 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 0.0 from hyperheuristic)
+14:45:11 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+14:45:22 [INFO] src.orchestrator:   Critic found 1 critical issues in heuristic, requesting fix
+14:45:25 [INFO] src.orchestrator:   ✓ heuristic: predicted=137000.0, gt=137500.0 (rel_error=0.3636%, tol=5.00% (rounded=True)) [10.7s]
+14:45:25 [INFO] src.orchestrator:   Warm-start: heuristic found obj=137000.0, seeding meta/hyper
+14:45:31 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:45:31 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 0.0 from hyperheuristic)
+14:45:36 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:45:40 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:45:41 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=159700.0, gt=137500.0 (rel_error=16.1455%, tol=5.00% (rounded=True)) [15.9s]
+14:45:49 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:45:50 [INFO] openai._base_client: Retrying request to /chat/completions in 0.475595 seconds
+14:45:50 [INFO] src.orchestrator:   Improver iteration 3 (refine): execution failed (3 consecutive)
+14:45:50 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+14:45:53 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:45:54 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 414)
+14:45:54 [INFO] src.orchestrator:   [91/100 completed] Problem 97
+14:45:55 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:45:57 [INFO] src.orchestrator:   Analyzer: class=knapsack, difficulty=medium, recommended_meta=GA
+14:46:01 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:46:05 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+14:46:07 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=161100.0, gt=137500.0 (rel_error=17.1636%, tol=5.00% (rounded=True)) [41.9s]
+14:46:07 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:46:09 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:46:10 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 418)
+14:46:10 [INFO] src.orchestrator:   [92/100 completed] Problem 98
+14:46:11 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:46:13 [INFO] src.orchestrator:   Analyzer: class=network_flow, difficulty=medium, recommended_meta=ACO
+14:46:13 [INFO] src.orchestrator:   ✓ heuristic: predicted=0.5984999999999999, gt=0.6075 (rel_error=0.0000%, tol=5.00% (rounded=True)) [13.0s]
+14:46:13 [INFO] src.orchestrator:   Warm-start: heuristic found obj=0.5984999999999999, seeding meta/hyper
+14:46:18 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=57.0, gt=57.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [627.5s]
+14:46:18 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:46:21 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 422)
+14:46:21 [INFO] src.orchestrator:   [93/100 completed] Problem 75
+14:46:24 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+14:46:24 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:46:26 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+14:46:28 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=0.6075, gt=0.6075 (rel_error=0.0000%, tol=5.00% (rounded=True)) [15.1s]
+14:46:32 [INFO] src.orchestrator:   ✗ heuristic: predicted=0.0, gt=84.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [15.1s]
+14:46:32 [INFO] src.orchestrator:   Warm-start: heuristic found obj=0.0, seeding meta/hyper
+14:46:32 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+14:46:39 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=0.6075, gt=0.6075 (rel_error=0.0000%, tol=5.00% (rounded=True)) [26.0s]
+14:46:39 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:46:43 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 426)
+14:46:43 [INFO] src.orchestrator:   [94/100 completed] Problem 99
+14:46:48 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:46:51 [INFO] src.orchestrator:   Critic found 3 critical issues in metaheuristic, requesting fix
+14:46:54 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:46:56 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=0.0, gt=84.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [24.7s]
+14:47:00 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=84.0, gt=84.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [28.4s]
+14:47:00 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:47:04 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 430)
+14:47:04 [INFO] src.orchestrator:   [95/100 completed] Problem 100
+14:47:58 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+14:48:05 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=25000.0, gt=25000.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [942.6s]
+14:48:05 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:48:09 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 433)
+14:48:09 [INFO] src.orchestrator:   [96/100 completed] Problem 66
+14:48:19 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+14:48:34 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+14:48:40 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+14:48:45 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+14:48:49 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=19.6 (No predicted value) [327.4s]
+14:48:54 [INFO] src.orchestrator:   ✗ improved_v5 (refine): predicted=199.29437542562778, gt=175.37 (rel_error=13.7143%, tol=5.00% (rounded=True))
+14:48:54 [INFO] src.orchestrator:   Improver iteration 6/20 (best so far: 199.29437542562778 from improved_v5)
+14:49:03 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+14:49:06 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+14:49:09 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+14:49:13 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+14:49:17 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=26.6, gt=19.6 (rel_error=35.0000%, tol=5.00% (rounded=True)) [28.0s]
+14:49:20 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=74005.0, gt=19.6 (rel_error=369925.0000%, tol=5.00% (rounded=True)) [30.6s]
+14:49:20 [INFO] src.orchestrator:   Improver iteration 1/20 (best so far: 26.6 from metaheuristic)
+14:49:25 [INFO] src.orchestrator:   Improver iteration 6 (refine): execution failed (1 consecutive)
+14:49:25 [INFO] src.orchestrator:   Improver iteration 7/20 (best so far: 199.29437542562778 from improved_v5)
+14:49:43 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+14:49:43 [INFO] src.orchestrator:   Improver iteration 2/20 (best so far: 26.6 from metaheuristic)
+14:50:01 [INFO] src.orchestrator:   ✗ improved_v7 (refine): predicted=203.82053014503242, gt=175.37 (rel_error=16.5714%, tol=5.00% (rounded=True))
+14:50:01 [INFO] src.orchestrator:   Improver iteration 8/20 (best so far: 199.29437542562778 from improved_v5)
+14:50:05 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+14:50:05 [INFO] src.orchestrator:   Improver iteration 3/20 (best so far: 26.6 from metaheuristic)
+14:51:51 [INFO] openai._base_client: Retrying request to /chat/completions in 0.496387 seconds
+14:51:51 [INFO] openai._base_client: Retrying request to /chat/completions in 0.424877 seconds
+14:52:02 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=118499.84999999998, gt=77500.0 (rel_error=52.9032%, tol=5.00% (rounded=True)) [686.5s]
+14:52:02 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:52:05 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 437)
+14:52:05 [INFO] src.orchestrator:   [97/100 completed] Problem 86
+14:55:33 [INFO] src.orchestrator:   Improver iteration 8 (refine): execution failed (1 consecutive)
+14:55:33 [INFO] src.orchestrator:   Improver iteration 9/20 (best so far: 199.29437542562778 from improved_v5)
+14:55:59 [INFO] src.orchestrator:   ✗ improved_v9 (refine): predicted=203.82053014503242, gt=175.37 (rel_error=16.5714%, tol=5.00% (rounded=True))
+14:55:59 [INFO] src.orchestrator:   Improver iteration 10/20 (best so far: 199.29437542562778 from improved_v5)
+14:56:22 [INFO] src.orchestrator:   ✗ improved_v10 (refine): predicted=117.09453193468183, gt=175.37 (rel_error=33.1429%, tol=5.00% (rounded=True))
+14:56:22 [INFO] src.orchestrator:   Improver iteration 11/20 (best so far: 199.29437542562778 from improved_v5)
+14:56:50 [INFO] src.orchestrator:   ✗ improved_v11 (refine): predicted=2957.0510063463294, gt=175.37 (rel_error=1589.7143%, tol=5.00% (rounded=True))
+14:56:50 [INFO] src.orchestrator:   Improver iteration 12/20 (best so far: 199.29437542562778 from improved_v5)
+14:57:00 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=3160500.0 (No predicted value) [1460.1s]
+14:57:00 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+14:57:02 [INFO] src.orchestrator:   ✗ improved_v12 (refine): predicted=196.64121367940243, gt=175.37 (rel_error=12.5714%, tol=5.00% (rounded=True))
+14:57:02 [INFO] src.orchestrator:   Improver iteration 13/20 (best so far: 196.64121367940243 from improved_v12)
+14:57:05 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 442)
+14:57:05 [INFO] src.orchestrator:   [98/100 completed] Problem 67
+14:59:52 [INFO] src.orchestrator:   ✗ improved_v3 (refine): predicted=3022.2, gt=19.6 (rel_error=15010.0000%, tol=5.00% (rounded=True))
+14:59:52 [INFO] src.orchestrator:   Improver iteration 4/20 (best so far: 26.6 from metaheuristic)
+15:00:15 [INFO] src.orchestrator:   Improver iteration 4 (refine): execution failed (1 consecutive)
+15:00:15 [INFO] src.orchestrator:   Improver iteration 5/20 (best so far: 26.6 from metaheuristic)
+15:00:32 [INFO] src.orchestrator:   Improver iteration 5 (refine): execution failed (2 consecutive)
+15:00:32 [INFO] src.orchestrator:   Improver iteration 6/20 (best so far: 26.6 from metaheuristic)
+15:00:41 [INFO] src.orchestrator:   ✗ improved_v6 (refine): predicted=23.1, gt=19.6 (rel_error=15.0000%, tol=5.00% (rounded=True))
+15:00:41 [INFO] src.orchestrator:   Improver iteration 7/20 (best so far: 23.1 from improved_v6)
+15:02:27 [INFO] src.orchestrator:   ✗ improved_v13 (refine): predicted=203.82053014503242, gt=175.37 (rel_error=16.5714%, tol=5.00% (rounded=True))
+15:02:27 [INFO] src.orchestrator:   Improver iteration 14/20 (best so far: 196.64121367940243 from improved_v12)
+15:05:58 [INFO] src.orchestrator:   ✗ improved_v7 (refine): predicted=24.3, gt=19.6 (rel_error=20.0000%, tol=5.00% (rounded=True))
+15:05:58 [INFO] src.orchestrator:   Improver iteration 8/20 (best so far: 23.1 from improved_v6)
+15:07:56 [INFO] src.orchestrator:   ✗ improved_v14 (refine): predicted=203.82053014503242, gt=175.37 (rel_error=16.5714%, tol=5.00% (rounded=True))
+15:07:56 [INFO] src.orchestrator:   Improver iteration 15/20 (best so far: 196.64121367940243 from improved_v12)
+15:08:18 [INFO] src.orchestrator:   ✗ improved_v15 (refine): predicted=37.36308338453881, gt=175.37 (rel_error=78.8571%, tol=5.00% (rounded=True))
+15:08:18 [INFO] src.orchestrator:   Improver iteration 16/20 (best so far: 196.64121367940243 from improved_v12)
+15:13:51 [INFO] src.orchestrator:   Improver iteration 16 (refine): execution failed (1 consecutive)
+15:13:51 [INFO] src.orchestrator:   Improver iteration 17/20 (best so far: 196.64121367940243 from improved_v12)
+15:14:13 [INFO] src.orchestrator:   ✗ improved_v17 (refine): predicted=0.0, gt=175.37 (rel_error=100.0000%, tol=5.00% (rounded=True))
+15:14:13 [INFO] src.orchestrator:   Improver iteration 18/20 (best so far: 196.64121367940243 from improved_v12)
+15:14:26 [INFO] src.orchestrator:   ✗ improved_v18 (refine): predicted=203.82053014503242, gt=175.37 (rel_error=16.5714%, tol=5.00% (rounded=True))
+15:14:26 [INFO] src.orchestrator:   Improver iteration 19/20 (best so far: 196.64121367940243 from improved_v12)
+15:16:23 [INFO] src.orchestrator:   Improver iteration 8 (refine): execution failed (1 consecutive)
+15:16:23 [INFO] src.orchestrator:   Improver iteration 9/20 (best so far: 23.1 from improved_v6)
+15:19:57 [INFO] src.orchestrator:   Improver iteration 19 (refine): execution failed (1 consecutive)
+15:19:57 [INFO] src.orchestrator:   Improver iteration 20/20 (best so far: 196.64121367940243 from improved_v12)
+15:20:13 [INFO] src.orchestrator:   ✗ improved_v20 (refine): predicted=203.82053014503242, gt=175.37 (rel_error=16.5714%, tol=5.00% (rounded=True))
+15:20:19 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 447)
+15:20:19 [INFO] src.orchestrator:   [99/100 completed] Problem 36
+15:23:19 [INFO] src.orchestrator:   ✗ improved_v9 (refine): predicted=23.0, gt=19.6 (rel_error=15.0000%, tol=5.00% (rounded=True))
+15:23:19 [INFO] src.orchestrator:   Improver iteration 10/20 (best so far: 23.1 from improved_v6)
+15:24:08 [INFO] src.orchestrator:   ✗ improved_v10 (refine): predicted=16.1, gt=19.6 (rel_error=20.0000%, tol=5.00% (rounded=True))
+15:24:08 [INFO] src.orchestrator:   Improver iteration 11/20 (best so far: 23.1 from improved_v6)
+15:24:22 [INFO] src.orchestrator:   ✗ improved_v11 (refine): predicted=26.0, gt=19.6 (rel_error=30.0000%, tol=5.00% (rounded=True))
+15:24:22 [INFO] src.orchestrator:   Improver iteration 12/20 (best so far: 23.1 from improved_v6)
+15:24:45 [INFO] src.orchestrator:   Improver iteration 12 (refine): execution failed (1 consecutive)
+15:24:45 [INFO] src.orchestrator:   Improver iteration 13/20 (best so far: 23.1 from improved_v6)
+15:25:32 [INFO] src.orchestrator:   ✗ improved_v13 (refine): predicted=22.3, gt=19.6 (rel_error=10.0000%, tol=5.00% (rounded=True))
+15:25:32 [INFO] src.orchestrator:   Improver iteration 14/20 (best so far: 22.3 from improved_v13)
+15:25:54 [INFO] src.orchestrator:   ✗ improved_v14 (refine): predicted=23.2, gt=19.6 (rel_error=15.0000%, tol=5.00% (rounded=True))
+15:25:54 [INFO] src.orchestrator:   Improver iteration 15/20 (best so far: 22.3 from improved_v13)
+15:26:13 [INFO] src.orchestrator:   Improver iteration 15 (refine): execution failed (1 consecutive)
+15:26:13 [INFO] src.orchestrator:   Improver iteration 16/20 (best so far: 22.3 from improved_v13)
+15:26:31 [INFO] src.orchestrator:   Improver iteration 16 (refine): execution failed (2 consecutive)
+15:26:31 [INFO] src.orchestrator:   Improver iteration 17/20 (best so far: 22.3 from improved_v13)
+15:26:53 [INFO] src.orchestrator:   Improver iteration 17 (refine): execution failed (3 consecutive)
+15:26:53 [INFO] src.orchestrator:   Improver: bailing out after 3 consecutive execution failures
+15:26:59 [INFO] src.orchestrator:   Reflector: 5 new lessons (total: 452)
+15:26:59 [INFO] src.orchestrator:   [100/100 completed] Problem 96
+15:26:59 [INFO] src.orchestrator: Results saved to results_v3_gpt4/orlm_industryOR
+
+============================================================
+  Dataset: orlm_industryOR
+  Total problems evaluated: 348
+  Overall accuracy: 29.0%
+  Failed executions: 27
+────────────────────────────────────────────────────────────
+  heuristic             32/100 correct  (32.0%)
+  metaheuristic         33/100 correct  (33.0%)
+  hyperheuristic        33/100 correct  (33.0%)
+  improved_v2           2/6 correct  (33.3%)
+  improved_v3           1/4 correct  (25.0%)
+  improved_v4           0/3 correct  (0.0%)
+  improved_v5           0/2 correct  (0.0%)
+  improved_v6           0/2 correct  (0.0%)
+  improved_v7           0/3 correct  (0.0%)
+  improved_v8           0/1 correct  (0.0%)
+  improved_v10          0/3 correct  (0.0%)
+  improved_v11          0/3 correct  (0.0%)
+  improved_v12          0/2 correct  (0.0%)
+  improved_v13          0/3 correct  (0.0%)
+  improved_v14          0/3 correct  (0.0%)
+  improved_v15          0/2 correct  (0.0%)
+  improved_v16          0/1 correct  (0.0%)
+  improved_v17          0/2 correct  (0.0%)
+  improved_v18          0/2 correct  (0.0%)
+  improved_v20          0/2 correct  (0.0%)
+  improved_v1           0/2 correct  (0.0%)
+  improved_v9           0/2 correct  (0.0%)
+============================================================
+
