@@ -33,9 +33,17 @@ class ExecutionResult:
 
 def extract_code(raw_response: str) -> str:
     """Pull Python code out of an LLM response (expects ```python blocks)."""
-    match = re.search(r"```python\s*\n(.*?)```", raw_response, re.DOTALL)
+    # Try standard ```python ... ``` block (case-insensitive language tag)
+    match = re.search(r"```[Pp](?:ython|y)?\s*\n(.*?)```", raw_response, re.DOTALL)
     if match:
         return match.group(1).strip()
+    # Handle truncated responses where closing ``` is missing
+    match = re.search(r"```[Pp](?:ython|y)?\s*\n(.*)", raw_response, re.DOTALL)
+    if match:
+        code = match.group(1).strip()
+        if code and ("import " in code or "def " in code or "print(" in code):
+            log.debug("Extracted code from truncated code block (no closing ```)")
+            return code
     # Fallback: if the response looks like pure code, use it directly
     if "def " in raw_response or "import " in raw_response:
         return raw_response.strip()
