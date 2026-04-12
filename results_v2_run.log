@@ -1,0 +1,54 @@
+09:40:46 [INFO] src.tracing: Langfuse enabled → http://localhost:3000
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/langfuse/api/core/pydantic_utilities.py:27: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.datetime_parse import parse_date as parse_date
+09:40:47 [INFO] src.orchestrator: Running 100 problems from 'orlm_industryOR' (eval: relative, tol=0.05, phases: analyzer, warm-start, critic, improver(×20), selector, reflector)
+09:40:47 [INFO] src.orchestrator: Running 8 problems concurrently
+09:40:54 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=easy, recommended_meta=TabuSearch
+09:40:54 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=easy, recommended_meta=SA
+09:40:54 [INFO] src.orchestrator:   Analyzer: class=assignment, difficulty=easy, recommended_meta=TabuSearch
+09:40:54 [INFO] src.orchestrator:   Analyzer: class=network_flow, difficulty=easy, recommended_meta=TabuSearch
+09:40:55 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=SA
+09:40:56 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=TabuSearch
+09:40:56 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=TabuSearch
+09:40:57 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=hard, recommended_meta=TabuSearch
+09:41:09 [INFO] src.orchestrator:   ✓ heuristic: predicted=125.0, gt=125.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [7.9s]
+09:41:09 [INFO] src.orchestrator:   Warm-start: heuristic found obj=125.0, seeding meta/hyper
+09:41:21 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+09:41:26 [INFO] src.orchestrator:   Critic found 1 critical issues in metaheuristic, requesting fix
+09:41:27 [INFO] src.orchestrator:   ✓ heuristic: predicted=14.0, gt=14.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [22.1s]
+09:41:27 [INFO] src.orchestrator:   Warm-start: heuristic found obj=14.0, seeding meta/hyper
+09:41:29 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=125.0, gt=125.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [19.9s]
+09:41:31 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=125.0, gt=125.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [21.6s]
+09:41:31 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+09:41:37 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+09:41:38 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 3)
+09:41:38 [INFO] src.orchestrator:   [1/100 completed] Problem 2
+09:41:39 [INFO] src.orchestrator:   ✓ heuristic: predicted=904590.0, gt=904590.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [34.1s]
+09:41:39 [INFO] src.orchestrator:   Warm-start: heuristic found obj=904590.0, seeding meta/hyper
+09:41:45 [INFO] src.orchestrator:   Critic found 1 critical issues in heuristic, requesting fix
+09:41:47 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=14.0, gt=14.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [20.2s]
+09:41:48 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=GA
+09:41:49 [INFO] src.orchestrator:   Critic found 1 critical issues in heuristic, requesting fix
+09:41:55 [INFO] src.orchestrator:   Critic found 1 critical issues in heuristic, requesting fix
+09:41:58 [INFO] src.orchestrator:   ✓ hyperheuristic: predicted=14.0, gt=14.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [31.1s]
+09:41:58 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+09:42:01 [INFO] src.orchestrator:   ✗ heuristic: predicted=16.800000074999996, gt=18.6943 (rel_error=10.5263%, tol=5.00% (rounded=True)) [46.3s]
+09:42:01 [INFO] src.orchestrator:   Warm-start: heuristic found obj=16.800000074999996, seeding meta/hyper
+09:42:01 [INFO] src.orchestrator:   ✓ heuristic: predicted=30400.0, gt=30400.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [55.8s]
+09:42:01 [INFO] src.orchestrator:   Warm-start: heuristic found obj=30400.0, seeding meta/hyper
+09:42:06 [INFO] src.orchestrator:   ✗ heuristic: predicted=6439000.0, gt=10349920.0 (rel_error=37.7870%, tol=5.00% (rounded=True)) [49.0s]
+09:42:06 [INFO] src.orchestrator:   Warm-start: heuristic found obj=6439000.0, seeding meta/hyper
+09:42:07 [INFO] src.orchestrator:   Reflector: 4 new lessons (total: 7)
+09:42:07 [INFO] src.orchestrator:   [2/100 completed] Problem 8
+09:42:15 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=TabuSearch
+09:42:16 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
+09:42:26 [INFO] src.orchestrator:   ✓ metaheuristic: predicted=30400.0, gt=30400.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [25.2s]
+09:42:30 [INFO] src.orchestrator:   ✗ heuristic: predicted=12264.61, gt=10755.0 (rel_error=14.0400%, tol=5.00% (rounded=True)) [79.6s]
+09:42:30 [INFO] src.orchestrator:   Warm-start: heuristic found obj=12264.61, seeding meta/hyper
+09:42:39 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+09:42:42 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+09:42:42 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+09:42:48 [INFO] src.orchestrator:   Critic found 1 critical issues in hyperheuristic, requesting fix
+09:42:49 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+09:42:50 [INFO] src.orchestrator:   ✓ heuristic: predicted=3.0, gt=3.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [19.6s]
+09:42:50 [INFO] src.orchestrator:   Warm-start: heuristic found obj=3.0, seeding meta/hyper

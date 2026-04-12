@@ -1,0 +1,124 @@
+{
+  "total": 425,
+  "correct": 220,
+  "failed_execution": 17,
+  "no_ground_truth": 0,
+  "accuracy": 0.5176470588235295,
+  "per_solver": {
+    "heuristic": {
+      "total": 100,
+      "correct": 75,
+      "accuracy": 0.75
+    },
+    "metaheuristic": {
+      "total": 100,
+      "correct": 71,
+      "accuracy": 0.71
+    },
+    "hyperheuristic": {
+      "total": 100,
+      "correct": 67,
+      "accuracy": 0.67
+    },
+    "improved_v1": {
+      "total": 12,
+      "correct": 3,
+      "accuracy": 0.25
+    },
+    "improved_v2": {
+      "total": 9,
+      "correct": 2,
+      "accuracy": 0.2222222222222222
+    },
+    "improved_v3": {
+      "total": 7,
+      "correct": 1,
+      "accuracy": 0.14285714285714285
+    },
+    "improved_v4": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v5": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v6": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v7": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v8": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v9": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v10": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v11": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v12": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v13": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v14": {
+      "total": 6,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v15": {
+      "total": 6,
+      "correct": 1,
+      "accuracy": 0.16666666666666666
+    },
+    "improved_v16": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v17": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v18": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v19": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v20": {
+      "total": 5,
+      "correct": 0,
+      "accuracy": 0.0
+    }
+  }
+}
