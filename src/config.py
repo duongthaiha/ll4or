@@ -12,7 +12,7 @@ from typing import Literal
 class LLMConfig:
     """LLM provider configuration."""
 
-    provider: Literal["openai", "anthropic", "azure"] = "openai"
+    provider: Literal["openai", "anthropic", "azure", "ollama"] = "openai"
     model: str = "gpt-4o"
     api_key: str = ""
     base_url: str | None = None
@@ -22,13 +22,16 @@ class LLMConfig:
 
     def __post_init__(self):
         if not self.api_key:
-            env_map = {
-                "openai": "OPENAI_API_KEY",
-                "anthropic": "ANTHROPIC_API_KEY",
-                "azure": "AZURE_OPENAI_API_KEY",
-            }
-            env_var = env_map.get(self.provider, "LLM_API_KEY")
-            self.api_key = os.environ.get(env_var, "")
+            if self.provider == "ollama":
+                self.api_key = "ollama"  # Ollama needs no real key
+            else:
+                env_map = {
+                    "openai": "OPENAI_API_KEY",
+                    "anthropic": "ANTHROPIC_API_KEY",
+                    "azure": "AZURE_OPENAI_API_KEY",
+                }
+                env_var = env_map.get(self.provider, "LLM_API_KEY")
+                self.api_key = os.environ.get(env_var, "")
 
 
 @dataclass
@@ -128,6 +131,12 @@ class Config:
             llm.base_url = os.environ.get("AZURE_OPENAI_ENDPOINT", "")
             llm.api_version = os.environ.get("AZURE_API_VERSION", "2025-04-01-preview")
             llm.api_key = os.environ.get("AZURE_OPENAI_API_KEY", "")
+        # Ollama-specific settings
+        elif provider == "ollama":
+            llm.base_url = os.environ.get(
+                "OLLAMA_BASE_URL", "http://localhost:11434/v1"
+            )
+            llm.api_key = "ollama"
 
         execution = ExecutionConfig(
             timeout=int(os.environ.get("EXEC_TIMEOUT", "600")),

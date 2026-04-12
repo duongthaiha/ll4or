@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import logging
+import os
 import sys
 
 from src.config import Config
@@ -171,6 +172,11 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.llm_provider:
         config.llm.provider = args.llm_provider  # type: ignore[assignment]
+        if args.llm_provider == "ollama":
+            config.llm.base_url = os.environ.get(
+                "OLLAMA_BASE_URL", "http://localhost:11434/v1"
+            )
+            config.llm.api_key = "ollama"
     if args.llm_model:
         config.llm.model = args.llm_model
 
