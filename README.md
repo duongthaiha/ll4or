@@ -140,7 +140,7 @@ Example: predicted=3.1416, gt=3.1415 (raw string "3.1415")
 src/
 ├── llm/                  # LLM client abstraction
 │   ├── base.py           #   Abstract LLMClient interface
-│   ├── openai_client.py  #   OpenAI API
+│   ├── openai_client.py  #   OpenAI API (also used for Ollama)
 │   ├── azure_client.py   #   Azure OpenAI API
 │   └── anthropic_client.py # Anthropic API
 ├── agents/               # LLM-powered agents
@@ -170,7 +170,7 @@ src/
 Copy `.env` and set your LLM credentials:
 
 ```bash
-LLM_PROVIDER=azure          # openai | anthropic | azure
+LLM_PROVIDER=azure          # openai | anthropic | azure | ollama
 LLM_MODEL=gpt-5.4
 AZURE_OPENAI_API_KEY=your-key
 AZURE_OPENAI_ENDPOINT=https://your-endpoint.openai.azure.com/
@@ -178,6 +178,38 @@ AZURE_API_VERSION=2025-04-01-preview
 EXEC_TIMEOUT=600
 OUTPUT_DIR=results
 ```
+
+### Running with Local Models (Ollama)
+
+You can run the pipeline with local models via [Ollama](https://ollama.com/):
+
+```bash
+# Install a model
+ollama pull qwen2.5-coder:14b
+
+# Run the pipeline
+LANGFUSE_ENABLED=false LLM_MAX_TOKENS=8192 python3 -m src.main \
+  --dataset industryOR \
+  --llm-provider ollama \
+  --llm-model qwen2.5-coder:14b \
+  --output results_v3_qwen25coder \
+  --parallel-problems 4
+
+# For larger models (>20GB), use --sequential to avoid Ollama crashes
+LANGFUSE_ENABLED=false LLM_MAX_TOKENS=8192 python3 -m src.main \
+  --dataset industryOR \
+  --llm-provider ollama \
+  --llm-model gemma4:26b \
+  --output results_v3_gemma4 \
+  --parallel-problems 1 \
+  --sequential
+```
+
+**Important notes for Ollama:**
+- Set `LANGFUSE_ENABLED=false` — Langfuse tracing causes hangs with local models
+- Set `LLM_MAX_TOKENS=8192` — default 4096 may truncate generated solver code
+- Use `--sequential` for large models (>20GB) — parallel requests crash Ollama with GGML assertion errors
+- Smaller models (<10GB) handle parallel requests fine
 
 ## Observability with Langfuse
 

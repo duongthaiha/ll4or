@@ -1,17 +1,17 @@
 # Benchmark Results — Multi-Agent Heuristic OR Solver
 
 **Approach:** Pure Python heuristic code generation (no commercial solvers)  
-**Models:** GPT-5.4 and GPT-4o (Azure OpenAI)  
-**Date:** 2026-03-30 (v1), 2026-04-04 (v3 multi-agent), 2026-04-12 (GPT-4o experiment)
+**Models:** GPT-5.4, GPT-4o (Azure OpenAI), Llama 3 8B, Qwen2.5-Coder 14B (Ollama local)  
+**Date:** 2026-03-30 (v1), 2026-04-04 (v3 multi-agent), 2026-04-12 (GPT-4o experiment), 2026-04-13 (local model experiments)
 
 ---
 
 ## Summary
 
-| Benchmark | v3 GPT-5.4 | v3 GPT-4o | v1 GPT-5.4 | v1 GPT-4 | Previous SOTA |
-|-----------|-----------|-----------|------------|----------|---------------|
-| **IndustryOR** | **93.0%** | 61.0% | 81.0% | 38.0% | 38.0% (ORLM-LLaMA-3-8B) |
-| **NL4OPT** | — | — | **85.3%** | 85.3% | 86.5% (ORLM-Deepseek) |
+| Benchmark | v3 GPT-5.4 | v3 GPT-4o | v3 Llama3-8B | v1 GPT-5.4 | v1 GPT-4 | Previous SOTA |
+|-----------|-----------|-----------|-------------|------------|----------|---------------|
+| **IndustryOR** | **93.0%** | 61.0% | 0.0% | 81.0% | 38.0% | 38.0% (ORLM-LLaMA-3-8B) |
+| **NL4OPT** | — | — | — | **85.3%** | 85.3% | 86.5% (ORLM-Deepseek) |
 
 > **Note:** "Ensemble" counts a problem as correct if *any* solver (including improvement iterations) produces a correct answer. Previous SOTA uses fine-tuned models + commercial COPT solver; our approach uses zero-shot LLMs + pure Python.
 
@@ -151,6 +151,65 @@ GPT-4o solved **3 problems that GPT-5.4 couldn't** (even after 20 improvement it
 
 ---
 
+## Local Model Experiments (IndustryOR, Ollama)
+
+**Question:** Can open-source models running locally via Ollama match cloud API performance on the v3 pipeline?
+
+**Setup:** All models run locally on Apple M4 Pro (24GB RAM) via Ollama, using the full v3 multi-agent pipeline. `LANGFUSE_ENABLED=false`, `LLM_MAX_TOKENS=8192`.
+
+### Results Summary
+
+| Model | Size | Ensemble | Heuristic | Meta | Hyper | Exec Failures | Time/Problem |
+|-------|------|----------|-----------|------|-------|---------------|-------------|
+| **GPT-5.4** (cloud) | — | **93.0%** | 75.0% | 71.0% | 67.0% | 17 | ~30s |
+| **GPT-4o** (cloud) | — | **61.0%** | 32.0% | 33.0% | 33.0% | 27 | ~30s |
+| **Llama 3 8B** (local) | 4.7GB | **0.0%** | 0.0% | 0.0% | 0.0% | 247/301 | ~10 min |
+| **Qwen2.5-Coder 14B** (local) | 9.0GB | *running* | — | — | — | — | — |
+
+### Llama 3 8B — Detailed Analysis
+
+**Model:** `llama3:8b` (Q4_0, 4.7GB)  
+**Run time:** ~24 hours (4 concurrent problems, parallel solvers)
+
+| Metric | Value |
+|--------|-------|
+| **Ensemble accuracy** | **0/100 (0.0%)** |
+| Heuristic execution success | 50/100 |
+| Metaheuristic execution success | 1/100 |
+| Hyperheuristic execution success | 2/100 |
+| Total execution failures | 247/301 (82%) |
+
+**Why 0% accuracy despite 50% heuristic execution?**
+- Of the 50 heuristic runs that produced a value, **none** were within the 5% tolerance
+- Median relative error: **92.1%** — values are in the right ballpark but wildly inaccurate
+- Only 5/50 were within 20% of ground truth
+- Meta/hyper solvers almost never produced working code (1-2% execution rate)
+
+**Close misses** (executed, within 20%):
+
+| Problem | Ground Truth | Predicted | Error |
+|---------|-------------|-----------|-------|
+| 4 | 30,400 | 32,000 | 5.3% |
+| 53 | 3,050 | 3,550 | 16.4% |
+| 58 | 240,000 | 216,000 | 10.0% |
+| 70 | 35 | 38 | 8.6% |
+| 100 | 84 | 70 | 16.7% |
+
+> Problem 4 was the closest — just 0.3pp outside the 5% tolerance.
+
+**Root causes of failure:**
+1. **Code generation quality:** The 8B model frequently generates Python code with syntax errors, missing variables, or incorrect logic — 82% of all solver attempts failed execution entirely.
+2. **Metaheuristic/hyperheuristic inability:** The model struggles with complex algorithm templates (SA, GA, Tabu Search). Only 1-2 out of 100 attempts produced runnable code.
+3. **Formulation errors:** Even when code executes, the mathematical formulation is often wrong, leading to large errors.
+
+**Technical notes for Ollama runs:**
+- `--sequential` flag is **required** for larger models (gemma4:26b) — parallel solver requests cause Ollama GGML assertion crashes
+- Llama3:8b handles parallel requests fine (4 concurrent problems + parallel solvers)
+- Langfuse tracing must be disabled (`LANGFUSE_ENABLED=false`) — causes hangs with local models
+- `LLM_MAX_TOKENS=8192` recommended — default 4096 truncates solver code
+
+---
+
 ## NL4OPT (245 problems)
 
 **Evaluation:** ORLM-style — 5% relative tolerance, values rounded to integers.
@@ -194,6 +253,10 @@ GPT-4o solved **3 problems that GPT-5.4 couldn't** (even after 20 improvement it
 
 7. **GPT-5.4 is ~2.4× better per-solver.** Individual solver accuracy: GPT-5.4 averages ~71% vs GPT-4o ~33%. The gap is consistent across heuristic, metaheuristic, and hyperheuristic.
 
+8. **Small open-source models (≤8B) cannot handle this task.** Llama 3 8B achieves 0% accuracy — it can generate simple heuristic code (50% execution rate) but the mathematical formulations are too inaccurate (median 92% relative error). Meta/hyper solvers require complex algorithm templates that 8B models cannot produce reliably (1-2% execution rate).
+
+9. **There is a capability cliff between model sizes.** GPT-4o (~200B) achieves 61%, while Llama 3 8B achieves 0%. The multi-agent architecture cannot compensate for models that fundamentally cannot generate correct OR formulations — architecture helps weak models, but not models below a minimum capability threshold.
+
 ---
 
 ## Configuration
@@ -206,6 +269,17 @@ GPT-4o solved **3 problems that GPT-5.4 couldn't** (even after 20 improvement it
 - **Parallelism:** 8 concurrent problems, 3 parallel solvers per problem
 - **Phases:** Analyzer → Formulator → Warm-Start → Critic → Solvers → Improver → Reflector
 - **Evaluation tolerance:** 5% relative error, integer rounding (ORLM standard)
+
+### v3 (Local Models via Ollama)
+- **Models:** Llama 3 8B (Q4_0), Qwen2.5-Coder 14B (Q4_K_M)
+- **Hardware:** Apple M4 Pro, 24GB unified memory
+- **Execution timeout:** 600 seconds per solver run
+- **Debug retries:** Up to 3 per solver
+- **Improvement iterations:** 2 (with bail-out after 3 consecutive failures)
+- **Parallelism:** 4 concurrent problems, parallel solvers (llama3) / sequential solvers (gemma4)
+- **Phases:** Full v3 pipeline (Analyzer → Formulator → Warm-Start → Critic → Solvers → Improver → Reflector)
+- **Evaluation tolerance:** 5% relative error, integer rounding (ORLM standard)
+- **Special flags:** `LANGFUSE_ENABLED=false`, `LLM_MAX_TOKENS=8192`
 
 ### v1 (Baseline)
 - **LLMs:** GPT-5.4 and GPT-4 via Azure OpenAI
