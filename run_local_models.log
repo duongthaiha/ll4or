@@ -1,0 +1,10 @@
+==========================================
+  Starting local model benchmark runs
+==========================================
+
+[Sun Apr 12 20:43:28 BST 2026] Starting gemma4:26b run...
+20:43:28 [INFO] src.tracing: Langfuse disabled (LANGFUSE_ENABLED=false)
+20:43:29 [INFO] src.orchestrator: Running 100 problems from 'orlm_industryOR' (eval: relative, tol=0.05, phases: analyzer, warm-start, critic, improver(×2), selector, reflector)
+20:43:29 [INFO] src.orchestrator: [1/100] Problem 1
+20:44:55 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+20:44:55 [INFO] src.orchestrator:   Analyzer: class=MIP, difficulty=medium, recommended_meta=ALNS

@@ -1,0 +1,29 @@
+{
+  "total": 301,
+  "correct": 0,
+  "failed_execution": 247,
+  "no_ground_truth": 0,
+  "accuracy": 0.0,
+  "per_solver": {
+    "heuristic": {
+      "total": 100,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "metaheuristic": {
+      "total": 100,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "hyperheuristic": {
+      "total": 100,
+      "correct": 0,
+      "accuracy": 0.0
+    },
+    "improved_v2": {
+      "total": 1,
+      "correct": 0,
+      "accuracy": 0.0
+    }
+  }
+}
