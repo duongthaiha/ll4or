@@ -177,6 +177,9 @@ def main(argv: list[str] | None = None) -> int:
                 "OLLAMA_BASE_URL", "http://localhost:11434/v1"
             )
             config.llm.api_key = "ollama"
+        elif args.llm_provider == "foundry":
+            config.llm.base_url = os.environ.get("FOUNDRY_BASE_URL", "")
+            config.llm.api_key = os.environ.get("FOUNDRY_API_KEY", "")
     if args.llm_model:
         config.llm.model = args.llm_model
 

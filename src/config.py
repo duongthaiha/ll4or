@@ -12,7 +12,7 @@ from typing import Literal
 class LLMConfig:
     """LLM provider configuration."""
 
-    provider: Literal["openai", "anthropic", "azure", "ollama"] = "openai"
+    provider: Literal["openai", "anthropic", "azure", "ollama", "foundry"] = "openai"
     model: str = "gpt-4o"
     api_key: str = ""
     base_url: str | None = None
@@ -137,6 +137,10 @@ class Config:
                 "OLLAMA_BASE_URL", "http://localhost:11434/v1"
             )
             llm.api_key = "ollama"
+        # Azure AI Foundry (Models-as-a-Service) settings
+        elif provider == "foundry":
+            llm.base_url = os.environ.get("FOUNDRY_BASE_URL", "")
+            llm.api_key = os.environ.get("FOUNDRY_API_KEY", "")
 
         execution = ExecutionConfig(
             timeout=int(os.environ.get("EXEC_TIMEOUT", "600")),

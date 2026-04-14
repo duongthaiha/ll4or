@@ -8,7 +8,7 @@ from src.llm.base import LLMClient
 
 def create_llm_client(config: LLMConfig) -> LLMClient:
     """Instantiate the correct LLM client based on provider name."""
-    if config.provider in ("openai", "ollama"):
+    if config.provider in ("openai", "ollama", "foundry"):
         from src.llm.openai_client import OpenAIClient
         return OpenAIClient(config)
     elif config.provider == "anthropic":
