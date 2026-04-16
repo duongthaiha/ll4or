@@ -8,10 +8,10 @@
 
 ## Summary
 
-| Benchmark | v3 GPT-5.4 | v3 GPT-4o | v3 Llama3-8B | v1 GPT-5.4 | v1 GPT-4 | Previous SOTA |
-|-----------|-----------|-----------|-------------|------------|----------|---------------|
-| **IndustryOR** | **93.0%** | 61.0% | 0.0% | 81.0% | 38.0% | 38.0% (ORLM-LLaMA-3-8B) |
-| **NL4OPT** | — | — | — | **85.3%** | 85.3% | 86.5% (ORLM-Deepseek) |
+| Benchmark | v3 GPT-5.4 | v3 GPT-4o | v3 Deepseek-Coder-V2 | v3 Llama3-8B | v1 GPT-5.4 | v1 GPT-4 | Previous SOTA |
+|-----------|-----------|-----------|---------------------|-------------|------------|----------|---------------|
+| **IndustryOR** | **93.0%** | 61.0% | 4.0% | 0.0% | 81.0% | 38.0% | 38.0% (ORLM-LLaMA-3-8B) |
+| **NL4OPT** | — | — | — | — | **85.3%** | 85.3% | 86.5% (ORLM-Deepseek) |
 
 > **Note:** "Ensemble" counts a problem as correct if *any* solver (including improvement iterations) produces a correct answer. Previous SOTA uses fine-tuned models + commercial COPT solver; our approach uses zero-shot LLMs + pure Python.
 
@@ -163,8 +163,9 @@ GPT-4o solved **3 problems that GPT-5.4 couldn't** (even after 20 improvement it
 |-------|------|----------|-----------|------|-------|---------------|-------------|
 | **GPT-5.4** (cloud) | — | **93.0%** | 75.0% | 71.0% | 67.0% | 17 | ~30s |
 | **GPT-4o** (cloud) | — | **61.0%** | 32.0% | 33.0% | 33.0% | 27 | ~30s |
+| **Deepseek-Coder-V2 16B** (local) | 8.9GB | **4.0%** | 3.0% | 0.0% | 0.0% | 277/305 | ~15 min |
 | **Llama 3 8B** (local) | 4.7GB | **0.0%** | 0.0% | 0.0% | 0.0% | 247/301 | ~10 min |
-| **Qwen2.5-Coder 14B** (local) | 9.0GB | *running* | — | — | — | — | — |
+| **Qwen2.5-Coder 14B** (local) | 9.0GB | *paused* | — | — | — | — | — |
 
 ### Llama 3 8B — Detailed Analysis
 
@@ -204,9 +205,46 @@ GPT-4o solved **3 problems that GPT-5.4 couldn't** (even after 20 improvement it
 
 **Technical notes for Ollama runs:**
 - `--sequential` flag is **required** for larger models (gemma4:26b) — parallel solver requests cause Ollama GGML assertion crashes
-- Llama3:8b handles parallel requests fine (4 concurrent problems + parallel solvers)
+- Llama3:8b and Deepseek-Coder-V2:16b handle parallel requests fine (4 concurrent problems + parallel solvers)
 - Langfuse tracing must be disabled (`LANGFUSE_ENABLED=false`) — causes hangs with local models
 - `LLM_MAX_TOKENS=8192` recommended — default 4096 truncates solver code
+
+### Deepseek-Coder-V2 16B — Detailed Analysis
+
+**Model:** `deepseek-coder-v2:16b` (MoE architecture, 8.9GB)  
+**Run time:** ~32 hours (4 concurrent problems, parallel solvers)
+
+| Metric | Value |
+|--------|-------|
+| **Ensemble accuracy** | **4/100 (4.0%)** |
+| Heuristic execution success | 15/100 |
+| Metaheuristic execution success | 6/100 |
+| Hyperheuristic execution success | 2/100 |
+| Improver saves | 1 (Problem 62) |
+| Total execution failures | 277/305 (91%) |
+
+**Correctly solved problems:**
+
+| Problem | Ground Truth | Solver | Predicted |
+|---------|-------------|--------|-----------|
+| 2 | 125 | heuristic | 125.0 |
+| 17 | 0.5765 | heuristic | 0.55 |
+| 53 | 3,050 | heuristic | 3,050.0 |
+| 62 | 90,000 | improved_v2 | 90,000.0 |
+
+**Close misses (within 20%):**
+
+| Problem | Ground Truth | Predicted | Error | Solver |
+|---------|-------------|-----------|-------|--------|
+| 62 | 90,000 | 80,000 | 11.1% | heuristic |
+| 70 | 35 | 38 | 8.6% | heuristic |
+| 91 | 408.9 | 450 | 10.0% | heuristic |
+
+**Comparison with Llama 3 8B:**
+- Deepseek-Coder-V2 is slightly better (4% vs 0%) but still far below cloud models
+- Heuristic execution rate improved (15% vs 50% for Llama3, but Llama3 had 0 correct while Deepseek got 3)
+- Meta/hyper execution rates remain extremely low (6% and 2%) — complex algorithm templates overwhelm both models
+- The Improver saved 1 problem (62) — demonstrating the architecture can help even weak models when code executes
 
 ---
 
@@ -253,9 +291,9 @@ GPT-4o solved **3 problems that GPT-5.4 couldn't** (even after 20 improvement it
 
 7. **GPT-5.4 is ~2.4× better per-solver.** Individual solver accuracy: GPT-5.4 averages ~71% vs GPT-4o ~33%. The gap is consistent across heuristic, metaheuristic, and hyperheuristic.
 
-8. **Small open-source models (≤8B) cannot handle this task.** Llama 3 8B achieves 0% accuracy — it can generate simple heuristic code (50% execution rate) but the mathematical formulations are too inaccurate (median 92% relative error). Meta/hyper solvers require complex algorithm templates that 8B models cannot produce reliably (1-2% execution rate).
+8. **Small open-source models (≤16B) cannot handle this task.** Llama 3 8B achieves 0% and Deepseek-Coder-V2 16B achieves 4% accuracy — both struggle to generate runnable solver code (82-91% execution failure). Heuristic code occasionally works, but meta/hyper solvers require complex algorithm templates that small models cannot produce reliably.
 
-9. **There is a capability cliff between model sizes.** GPT-4o (~200B) achieves 61%, while Llama 3 8B achieves 0%. The multi-agent architecture cannot compensate for models that fundamentally cannot generate correct OR formulations — architecture helps weak models, but not models below a minimum capability threshold.
+9. **There is a capability cliff between model sizes.** GPT-4o (~200B) achieves 61%, while the best local model (Deepseek-Coder-V2 16B) achieves only 4%. The multi-agent architecture cannot compensate for models that fundamentally cannot generate correct OR formulations — architecture helps weak models, but not models below a minimum capability threshold.
 
 ---
 
@@ -271,7 +309,7 @@ GPT-4o solved **3 problems that GPT-5.4 couldn't** (even after 20 improvement it
 - **Evaluation tolerance:** 5% relative error, integer rounding (ORLM standard)
 
 ### v3 (Local Models via Ollama)
-- **Models:** Llama 3 8B (Q4_0), Qwen2.5-Coder 14B (Q4_K_M)
+- **Models:** Llama 3 8B (Q4_0), Deepseek-Coder-V2 16B (MoE), Qwen2.5-Coder 14B (Q4_K_M)
 - **Hardware:** Apple M4 Pro, 24GB unified memory
 - **Execution timeout:** 600 seconds per solver run
 - **Debug retries:** Up to 3 per solver
