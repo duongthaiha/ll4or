@@ -6,6 +6,11 @@ A multi-agent system that takes OR problems from benchmark datasets, uses LLM ag
 
 ```bash
 # Set up your LLM provider in .env (see Configuration section)
+
+# (Optional but recommended) install common solver packages that generated
+# code tends to import (numpy, scipy, pulp, ortools, deap, …). See below.
+pip install -r requirements-solver.txt
+
 # Then run:
 python3 -m src.main --dataset industryOR --max-problems 5 --timeout 120
 
@@ -18,6 +23,34 @@ python3 -m src.main --dataset industryOR --max-problems 1 --sequential
 # List available datasets
 python3 -m src.main --list-datasets
 ```
+
+## Solver Dependencies
+
+LLM-generated solver code commonly imports packages that aren't in the base
+environment (`scipy`, `pulp`, `ortools`, `deap`, `networkx`, etc.). Missing
+packages cause `ModuleNotFoundError` at execution time and waste Debugger-agent
+iterations trying to recover.
+
+The full list lives in [`requirements-solver.txt`](requirements-solver.txt).
+Install once up front:
+
+```bash
+pip install -r requirements-solver.txt
+```
+
+Or let the CLI install only the missing ones on startup:
+
+```bash
+python3 -m src.main --dataset industryOR --install-solver-deps ...
+```
+
+At every startup the CLI logs a warning listing any packages from
+`requirements-solver.txt` that aren't importable. Pass `--skip-dep-check` to
+silence that warning.
+
+Commercial solvers (Gurobi, CPLEX/`docplex`) are intentionally **not** listed
+— they require licenses/accounts; install them manually if needed.
+
 
 ## Architecture
 

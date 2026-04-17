@@ -121,6 +121,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         action="store_true",
         help="Run in legacy mode (disable all multi-agent enhancements).",
     )
+    p.add_argument(
+        "--install-solver-deps",
+        action="store_true",
+        help="Install common solver packages from requirements-solver.txt "
+             "before running (pulls down numpy, scipy, pulp, ortools, deap, etc.).",
+    )
+    p.add_argument(
+        "--skip-dep-check",
+        action="store_true",
+        help="Skip the startup check that warns about missing solver packages.",
+    )
     return p.parse_args(argv)
 
 
@@ -138,6 +149,17 @@ def main(argv: list[str] | None = None) -> int:
         format="%(asctime)s [%(levelname)s] %(name)s: %(message)s",
         datefmt="%H:%M:%S",
     )
+
+    # Initialize agent tracer (enabled if AGENT_TRACE_DIR env var is set)
+    from src import agent_tracer
+    agent_tracer.init_from_env()
+
+    # Solver-package bootstrap: optionally install, otherwise just warn if missing.
+    from src.execution.bootstrap import install_solver_deps, log_missing_solver_deps
+    if args.install_solver_deps:
+        install_solver_deps(missing_only=True)
+    if not args.skip_dep_check:
+        log_missing_solver_deps()
 
     # Build config
     config = Config.from_env()

@@ -14,3 +14,36 @@
 00:28:28 [INFO] src.orchestrator:   Critic found 1 critical issues in heuristic, requesting fix
 00:29:02 [INFO] src.orchestrator:   Critic found 2 critical issues in heuristic, requesting fix
 00:29:41 [INFO] src.orchestrator:   Critic found 3 critical issues in heuristic, requesting fix
+00:30:32 [INFO] src.orchestrator:   ✓ heuristic: predicted=125.0, gt=125.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [385.1s]
+00:30:32 [INFO] src.orchestrator:   Warm-start: heuristic found obj=125.0, seeding meta/hyper
+00:30:32 [WARNING] langfuse: Context error: No active span in current context. Operations that depend on an active span will be skipped. Ensure spans are created with start_as_current_observation() or that you're operating within an active span context.
+00:30:32 [WARNING] langfuse: Context error: No active span in current context. Operations that depend on an active span will be skipped. Ensure spans are created with start_as_current_observation() or that you're operating within an active span context.
+00:31:21 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+00:32:22 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+00:34:37 [INFO] src.orchestrator:   ✗ heuristic: predicted=7744100.0, gt=10349920.0 (rel_error=25.1772%, tol=5.00% (rounded=True)) [598.0s]
+00:34:37 [INFO] src.orchestrator:   Warm-start: heuristic found obj=7744100.0, seeding meta/hyper
+00:34:37 [WARNING] langfuse: Context error: No active span in current context. Operations that depend on an active span will be skipped. Ensure spans are created with start_as_current_observation() or that you're operating within an active span context.
+00:34:37 [WARNING] langfuse: Context error: No active span in current context. Operations that depend on an active span will be skipped. Ensure spans are created with start_as_current_observation() or that you're operating within an active span context.
+00:35:39 [INFO] src.orchestrator:   ✗ heuristic: predicted=105520.0, gt=219816.0 (rel_error=51.9962%, tol=5.00% (rounded=True)) [628.4s]
+00:35:39 [INFO] src.orchestrator:   Warm-start: heuristic found obj=105520.0, seeding meta/hyper
+00:35:39 [WARNING] langfuse: Context error: No active span in current context. Operations that depend on an active span will be skipped. Ensure spans are created with start_as_current_observation() or that you're operating within an active span context.
+00:35:39 [WARNING] langfuse: Context error: No active span in current context. Operations that depend on an active span will be skipped. Ensure spans are created with start_as_current_observation() or that you're operating within an active span context.
+00:35:48 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=2057.750581904041, gt=125.0 (rel_error=1546.4000%, tol=5.00% (rounded=True)) [316.3s]
+00:35:55 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+00:40:21 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+00:42:01 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+00:42:48 [INFO] src.orchestrator:   Critic found 3 critical issues in hyperheuristic, requesting fix
+00:43:32 [INFO] src.orchestrator:   Critic found 4 critical issues in metaheuristic, requesting fix
+00:44:13 [INFO] src.orchestrator:   Critic found 2 critical issues in metaheuristic, requesting fix
+00:45:31 [INFO] src.orchestrator:   Critic found 5 critical issues in hyperheuristic, requesting fix
+00:47:03 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=75.0, gt=125.0 (rel_error=40.0000%, tol=5.00% (rounded=True)) [991.3s]
+00:47:03 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+00:48:02 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+00:49:20 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=16255295.0, gt=10349920.0 (rel_error=57.0572%, tol=5.00% (rounded=True)) [882.6s]
+00:50:49 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+00:51:44 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+00:51:59 [INFO] src.orchestrator:   Reflector: 2 new lessons (total: 2)
+00:51:59 [INFO] src.orchestrator:   [1/100 completed] Problem 2
+00:53:34 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+00:54:52 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+00:55:08 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…

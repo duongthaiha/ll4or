@@ -1,0 +1,41 @@
+# Common Python packages used by generated OR solver code.
+#
+# These are inferred from the most frequent imports across historical runs
+# (results_v3*/**/results.jsonl). Pre-installing them avoids wasted debugger
+# iterations on ModuleNotFoundError.
+#
+# Install once:
+#     pip install -r requirements-solver.txt
+#
+# Or on startup via CLI:
+#     python3 -m src.main ... --install-solver-deps
+#
+# Commercial solvers (gurobipy, cplex/docplex) are intentionally omitted —
+# they require a license or account and should be installed manually.
+
+# Core numerics
+numpy
+scipy
+pandas
+sympy
+
+# Optimization modeling / solvers (open source)
+pulp
+cvxpy
+ortools
+pyomo
+mip
+highspy
+
+# Graph / combinatorial
+networkx
+
+# Metaheuristics / heuristics
+deap
+sortedcontainers
+
+# ML (used by some hyperheuristic strategies)
+scikit-learn
+
+# Plotting (occasionally referenced)
+matplotlib

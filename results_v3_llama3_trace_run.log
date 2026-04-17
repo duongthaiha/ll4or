@@ -1,0 +1,54 @@
+09:29:59 [INFO] src.tracing: Langfuse enabled → http://localhost:3000
+/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/langfuse/api/core/pydantic_utilities.py:27: UserWarning: Core Pydantic V1 functionality isn't compatible with Python 3.14 or greater.
+  from pydantic.v1.datetime_parse import parse_date as parse_date
+09:30:00 [INFO] src.orchestrator: Running 2 problems from 'orlm_industryOR' (eval: relative, tol=0.05, phases: analyzer, warm-start, critic, improver(×2), selector, reflector)
+09:30:00 [INFO] src.orchestrator: [1/2] Problem 1
+09:30:18 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=hard, recommended_meta=GA
+09:30:27 [WARNING] src.agents.formulator: Failed to parse formulation JSON, returning raw text
+09:30:53 [INFO] src.orchestrator:   ✗ heuristic: predicted=-2016000.0, gt=219816.0 (rel_error=1017.1307%, tol=5.00% (rounded=True)) [25.0s]
+09:30:53 [INFO] src.orchestrator:   Warm-start: heuristic found obj=-2016000.0, seeding meta/hyper
+09:31:22 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+09:31:39 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+09:31:55 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+09:32:10 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=219816.0 (No predicted value) [77.6s]
+09:32:41 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+09:33:02 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+09:33:18 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+09:33:36 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=219816.0 (No predicted value) [86.2s]
+09:33:36 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: -2016000.0 from heuristic)
+09:34:28 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+09:34:28 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: -2016000.0 from heuristic)
+09:35:13 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+09:35:24 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 3)
+09:35:24 [INFO] src.orchestrator: [2/2] Problem 2
+09:35:33 [INFO] src.orchestrator:   Analyzer: class=knapsack, difficulty=medium, recommended_meta=GA
+09:35:58 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+09:36:11 [INFO] src.orchestrator:   ✗ heuristic: predicted=0.0, gt=125.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [31.2s]
+09:36:11 [INFO] src.orchestrator:   Warm-start: heuristic found obj=0.0, seeding meta/hyper
+09:36:42 [WARNING] src.agents.critic: Failed to parse critic JSON, returning approved
+09:36:42 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+09:36:58 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+09:37:13 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+09:37:26 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=125.0 (No predicted value) [75.0s]
+09:37:54 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+09:38:11 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+09:38:26 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+09:38:40 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=125.0 (No predicted value) [73.9s]
+09:38:40 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: 0.0 from heuristic)
+09:39:12 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+09:39:12 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: 0.0 from heuristic)
+09:39:45 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+09:39:54 [INFO] src.orchestrator:   Reflector: 2 new lessons (total: 5)
+09:39:54 [INFO] src.orchestrator: Results saved to results_v3_llama3_trace/orlm_industryOR
+
+============================================================
+  Dataset: orlm_industryOR
+  Total problems evaluated: 6
+  Overall accuracy: 0.0%
+  Failed executions: 4
+────────────────────────────────────────────────────────────
+  heuristic             0/2 correct  (0.0%)
+  metaheuristic         0/2 correct  (0.0%)
+  hyperheuristic        0/2 correct  (0.0%)
+============================================================
+

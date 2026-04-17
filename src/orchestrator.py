@@ -22,6 +22,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from dataclasses import asdict
 from pathlib import Path
 
+from src import agent_tracer
 from src.agents.analyzer import AnalyzerAgent
 from src.agents.critic import CriticAgent
 from src.agents.debugger import DebuggerAgent
@@ -224,6 +225,7 @@ class Orchestrator:
             "question": problem.question,
             "answer": problem.answer,
         }
+        agent_tracer.set_problem(str(problem.id))
 
         # ── Phase 1: Analyze ─────────────────────────────────────────
         analysis = {}
