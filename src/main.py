@@ -91,6 +91,17 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Disable the Problem Analyzer agent (Phase 1).",
     )
     p.add_argument(
+        "--no-researcher",
+        action="store_true",
+        help="Disable the Researcher agent (v4 Phase 1b: literature-grounded dossier).",
+    )
+    p.add_argument(
+        "--researcher-kb",
+        default=None,
+        help="Override path to the Researcher KB JSON "
+             "(default: src/knowledge/or_problems.json).",
+    )
+    p.add_argument(
         "--no-warm-start",
         action="store_true",
         help="Disable warm-start protocol (Phase 2: heuristic seeds meta/hyper).",
@@ -174,6 +185,7 @@ def main(argv: list[str] | None = None) -> int:
     # Multi-agent architecture settings
     if args.legacy:
         config.agent.enable_analyzer = False
+        config.agent.enable_researcher = False
         config.agent.enable_warm_start = False
         config.agent.enable_critic = False
         config.agent.improve_iterations = 0
@@ -182,6 +194,10 @@ def main(argv: list[str] | None = None) -> int:
     else:
         if args.no_analyze:
             config.agent.enable_analyzer = False
+        if args.no_researcher:
+            config.agent.enable_researcher = False
+        if args.researcher_kb:
+            config.agent.researcher_kb_path = args.researcher_kb
         if args.no_warm_start:
             config.agent.enable_warm_start = False
         if args.no_critic:

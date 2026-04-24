@@ -49,9 +49,10 @@ Return ONLY the Python code inside a single ```python ... ``` block.
 
 def _build_user_prompt(
     question: str, formulation: dict, analysis: dict | None = None,
-    warm_start: dict | None = None,
+    warm_start: dict | None = None, research: dict | None = None,
 ) -> str:
     import json
+    from src.agents.researcher import format_research_block
 
     form_str = json.dumps(formulation, indent=2, default=str)
 
@@ -59,6 +60,10 @@ def _build_user_prompt(
         f"## Problem Description\n{question}\n\n"
         f"## Mathematical Formulation\n```json\n{form_str}\n```\n\n"
     ]
+
+    lit = format_research_block(research, focus="hyperheuristic")
+    if lit:
+        parts.append(lit)
 
     if analysis:
         rec = analysis.get("recommended_solvers", {})
@@ -95,9 +100,11 @@ class HyperHeuristicCoderAgent(Agent):
         formulation: dict = input_data.get("formulation", {})
         analysis: dict | None = input_data.get("analysis")
         warm_start: dict | None = input_data.get("warm_start")
+        research: dict | None = input_data.get("research")
 
         user_prompt = _build_user_prompt(
-            question, formulation, analysis=analysis, warm_start=warm_start
+            question, formulation, analysis=analysis,
+            warm_start=warm_start, research=research,
         )
         raw = self._chat(_SYSTEM_PROMPT, user_prompt)
 

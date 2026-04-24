@@ -5,13 +5,14 @@ A multi-agent system that takes OR problems from benchmark datasets, uses LLM ag
 ## Quick Start
 
 ```bash
-# Set up your LLM provider in .env (see Configuration section)
+# 1. Create a virtualenv and install all dependencies
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt -r requirements-solver.txt
 
-# (Optional but recommended) install common solver packages that generated
-# code tends to import (numpy, scipy, pulp, ortools, deap, …). See below.
-pip install -r requirements-solver.txt
+# 2. Set up your LLM provider in .env (see Configuration section)
 
-# Then run:
+# 3. Run:
 python3 -m src.main --dataset industryOR --max-problems 5 --timeout 120
 
 # Run a specific solver type
@@ -24,21 +25,41 @@ python3 -m src.main --dataset industryOR --max-problems 1 --sequential
 python3 -m src.main --list-datasets
 ```
 
-## Solver Dependencies
+## Environment Setup
 
-LLM-generated solver code commonly imports packages that aren't in the base
-environment (`scipy`, `pulp`, `ortools`, `deap`, `networkx`, etc.). Missing
-packages cause `ModuleNotFoundError` at execution time and waste Debugger-agent
-iterations trying to recover.
-
-The full list lives in [`requirements-solver.txt`](requirements-solver.txt).
-Install once up front:
+All experiments should be run inside a Python virtualenv so the base system
+Python stays clean. The CLI's sandbox executes generated code using the same
+interpreter it was invoked with, so solver packages installed into the venv
+are automatically visible to generated code.
 
 ```bash
-pip install -r requirements-solver.txt
+# One-time setup
+python3 -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt            # CLI runtime (openai, anthropic, langfuse, …)
+pip install -r requirements-solver.txt     # solver packages (scipy, pulp, ortools, …)
+
+# From now on, always activate the venv before running
+source .venv/bin/activate
+python3 -m src.main --dataset industryOR --max-problems 5
 ```
 
-Or let the CLI install only the missing ones on startup:
+Everything below assumes the venv is active. `.venv/` is already in
+`.gitignore`.
+
+## Solver Dependencies
+
+LLM-generated solver code commonly imports packages beyond `numpy`
+(`scipy`, `pulp`, `ortools`, `deap`, `networkx`, etc.). Missing packages
+cause `ModuleNotFoundError` at execution time and waste Debugger-agent
+iterations trying to recover.
+
+The full list lives in [`requirements-solver.txt`](requirements-solver.txt)
+and gets installed as part of the [Environment Setup](#environment-setup)
+step above.
+
+If you forget or want to install only missing ones on startup:
 
 ```bash
 python3 -m src.main --dataset industryOR --install-solver-deps ...
@@ -55,16 +76,24 @@ Commercial solvers (Gurobi, CPLEX/`docplex`) are intentionally **not** listed
 ## Architecture
 
 ```
-Dataset ─→ Formulator Agent ─→ Solver Agents (×3, parallel) ─→ Executor ─→ Evaluator
-              (NL → math)     heuristic / meta /               (subprocess)  (per-dataset
-                              hyper-heuristic                                 comparison)
-                                    │
-                              Debugger Agent ←── on failure (up to 3 retries)
+Dataset ─→ Analyzer ─→ Researcher ─→ Formulator ─→ Solver Agents ─→ Critic ─→ Executor ─→ Improver ─→ Selector ─→ Reflector
+           (classify)  (v4: literature   (NL → math)   heuristic →                        (subprocess)  (refine)   (pick best)
+                       + KB lookup)                    meta/hyper                                                    + lessons
+                                                       (parallel)       │
+                                                                  Debugger Agent ←── on failure (up to 3 retries)
 ```
 
-All generated code is **pure Python** (stdlib + numpy/scipy) — no commercial solvers required.
+All generated code is **pure Python** (stdlib + numpy/scipy + optional solver packages from `requirements-solver.txt`) — no commercial solvers required.
 
-The three solver agents run **in parallel** by default (wall time = slowest solver, not sum). Use `--sequential` to disable.
+Each phase can be toggled via CLI flags (`--no-analyze`, `--no-researcher`, `--no-warm-start`, `--no-critic`, `--improve-iterations N`, `--no-selector`, `--no-reflector`, or `--legacy` for all-off).
+
+### v4 Researcher Agent
+
+The **Researcher** sits between the Analyzer and Formulator. It identifies the canonical OR problem family and surfaces textbook-standard approaches — drawing on the LLM's parametric knowledge plus a curated local KB at `src/knowledge/or_problems.json` (17 common families: TSP, VRP, knapsack variants, bin-packing, set-cover, job/flow-shop, assignment, flows, facility location, LP/MILP/NLP, graph coloring, …).
+
+When the problem matches a KB entry, grounded fields (classic algorithms, typical parameters, known pitfalls) override the LLM output so downstream coders stop reinventing algorithms (e.g., "use scipy.linprog for LP", "greedy-by-ratio + DP for knapsack", "Hungarian for assignment"). The dossier is injected as a concise *Literature Reference* block into the **user** prompt of every coder and debugger call — kept short to stay friendly to small local models.
+
+Disable with `--no-researcher`; point at a custom KB with `--researcher-kb PATH`.
 
 ## Datasets
 

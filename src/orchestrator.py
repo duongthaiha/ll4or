@@ -32,6 +32,7 @@ from src.agents.hyperheuristic_coder import HyperHeuristicCoderAgent
 from src.agents.improver import ImproverAgent
 from src.agents.metaheuristic_coder import MetaheuristicCoderAgent
 from src.agents.reflector import ReflectorAgent
+from src.agents.researcher import ResearcherAgent
 from src.agents.selector import SelectorAgent
 from src.config import Config
 from src.datasets.base import DatasetAdapter, Problem
@@ -77,6 +78,11 @@ class Orchestrator:
 
         # Multi-agent architecture agents (conditionally created)
         self.analyzer = AnalyzerAgent(llm) if config.agent.enable_analyzer else None
+        self.researcher = (
+            ResearcherAgent(llm, kb_path=config.agent.researcher_kb_path)
+            if config.agent.enable_researcher
+            else None
+        )
         self.critic = CriticAgent(llm) if config.agent.enable_critic else None
         self.improver = ImproverAgent(llm) if config.agent.improve_iterations > 0 else None
         self.selector = SelectorAgent(llm) if config.agent.enable_selector else None
@@ -113,6 +119,8 @@ class Orchestrator:
         phases = []
         if self.analyzer:
             phases.append("analyzer")
+        if self.researcher:
+            phases.append("researcher")
         if self.config.agent.enable_warm_start:
             phases.append("warm-start")
         if self.critic:
@@ -244,6 +252,24 @@ class Orchestrator:
             except Exception:
                 log.exception("Analysis failed for problem %s", problem.id)
 
+        # ── Phase 1b (v4): Research ──────────────────────────────────
+        research: dict = {}
+        if self.researcher:
+            try:
+                researched = self.researcher.run({
+                    **input_data,
+                    "analysis": analysis,
+                })
+                research = researched.get("research", {}) or {}
+                log.info(
+                    "  Researcher: canonical=%s, heuristic=%s%s",
+                    research.get("canonical_name", "?"),
+                    (research.get("heuristic_methods") or ["?"])[0],
+                    f" [kb:{research.get('_kb_match')}]" if research.get("_kb_match") else "",
+                )
+            except Exception:
+                log.exception("Research failed for problem %s", problem.id)
+
         # ── Phase 2: Formulate ───────────────────────────────────────
         try:
             formulated = self.formulator.run(input_data)
@@ -251,8 +277,9 @@ class Orchestrator:
             log.exception("Formulation failed for problem %s", problem.id)
             formulated = {**input_data, "formulation": {}}
 
-        # Inject analysis into formulated data for downstream agents
+        # Inject analysis + research into formulated data for downstream agents
         formulated["analysis"] = analysis
+        formulated["research"] = research
 
         # ── Phase 3: Solve ───────────────────────────────────────────
         if self.config.agent.enable_warm_start and "heuristic" in self.solver_agents:
@@ -465,6 +492,7 @@ class Orchestrator:
                             "question": problem.question,
                             "code": code,
                             "error": f"Code review found these issues:\n{issue_desc}",
+                            "research": formulated.get("research", {}),
                         })
                         code = extract_code(fixed.get("fixed_code_raw", ""))
                     except Exception:
@@ -490,6 +518,7 @@ class Orchestrator:
                         "question": problem.question,
                         "code": code,
                         "error": error_msg,
+                        "research": formulated.get("research", {}),
                     })
                     code = extract_code(fixed.get("fixed_code_raw", ""))
                 except Exception:
@@ -539,6 +568,7 @@ class Orchestrator:
             "code": code,
             "stdout": exec_result.stdout if exec_result else "",
             "stderr": exec_result.stderr if exec_result else "",
+            "research": formulated.get("research", {}),
         }
 
     def _run_improvement_loop(
@@ -630,6 +660,7 @@ class Orchestrator:
                             "question": problem.question,
                             "code": code,
                             "error": error_msg,
+                            "research": formulated.get("research", {}),
                         })
                         code = extract_code(fixed.get("fixed_code_raw", ""))
                     except Exception:
@@ -716,6 +747,7 @@ class Orchestrator:
                     "detail": r["comparison"].detail,
                     "elapsed_seconds": r["elapsed_seconds"],
                     "code": r["code"],
+                    "research": r.get("research", {}),
                 }
                 f.write(json.dumps(row) + "\n")
 

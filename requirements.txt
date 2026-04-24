@@ -1,0 +1,18 @@
+# Core runtime dependencies for the ll4or CLI itself.
+#
+# Install into a venv with:
+#   python3 -m venv .venv
+#   source .venv/bin/activate
+#   pip install -r requirements.txt -r requirements-solver.txt
+#
+# LLM client libraries (only the ones you use are needed at runtime;
+# all are listed here so a fresh venv Just Works).
+openai>=1.30
+anthropic>=0.25
+
+# Optional: Langfuse observability (docker-compose.langfuse.yml)
+langfuse>=3.0
+
+# Config loading helpers (src/config.py uses a lightweight .env parser,
+# but python-dotenv is commonly expected by contributors)
+python-dotenv

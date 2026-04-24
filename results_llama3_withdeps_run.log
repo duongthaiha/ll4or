@@ -1,0 +1,372 @@
+11:00:00 [INFO] src.execution.bootstrap: All 15 solver packages from requirements-solver.txt are installed.
+11:00:00 [INFO] src.tracing: Langfuse disabled (LANGFUSE_ENABLED=false)
+11:00:01 [INFO] src.orchestrator: Running 10 problems from 'orlm_industryOR' (eval: relative, tol=0.05, phases: analyzer, warm-start, critic, improver(×2), selector, reflector)
+11:00:01 [INFO] src.orchestrator: [1/10] Problem 1
+11:00:16 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:00:16 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=hard, recommended_meta=GA
+11:00:25 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:00:44 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:00:54 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:00:54 [INFO] src.orchestrator:   ✗ heuristic: predicted=1478880.0, gt=219816.0 (rel_error=572.7809%, tol=5.00% (rounded=True)) [29.2s]
+11:00:54 [INFO] src.orchestrator:   Warm-start: heuristic found obj=1478880.0, seeding meta/hyper
+11:01:12 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:01:22 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:01:22 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+11:01:40 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:01:40 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+11:01:57 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:01:57 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+11:02:13 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:02:13 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=219816.0 (No predicted value) [79.3s]
+11:02:36 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:02:46 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:02:47 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+11:03:08 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:03:08 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=83915.175, gt=219816.0 (rel_error=61.8249%, tol=5.00% (rounded=True)) [54.8s]
+11:03:08 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: 83915.175 from hyperheuristic)
+11:03:30 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:03:31 [INFO] src.orchestrator:   ✗ improved_v1 (refine): predicted=57362.978328228, gt=219816.0 (rel_error=73.9041%, tol=5.00% (rounded=True))
+11:03:31 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: 83915.175 from hyperheuristic)
+11:03:47 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:04:05 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:04:22 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:04:23 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (1 consecutive)
+11:04:35 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:04:35 [WARNING] src.agents.reflector: Failed to parse reflector JSON
+11:04:35 [INFO] src.orchestrator: [2/10] Problem 2
+11:04:44 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:04:44 [INFO] src.orchestrator:   Analyzer: class=knapsack, difficulty=medium, recommended_meta=GA
+11:04:51 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:04:58 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:05:09 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:05:09 [WARNING] src.agents.critic: Failed to parse critic JSON, returning approved
+11:05:09 [INFO] src.orchestrator:   ✗ heuristic: predicted=10.0, gt=125.0 (rel_error=92.0000%, tol=5.00% (rounded=True)) [18.3s]
+11:05:09 [INFO] src.orchestrator:   Warm-start: heuristic found obj=10.0, seeding meta/hyper
+11:05:25 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:05:42 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:05:42 [WARNING] src.agents.critic: Failed to parse critic JSON, returning approved
+11:05:43 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+11:06:00 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:06:00 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+11:06:13 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:06:14 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+11:06:30 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:06:30 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=125.0 (No predicted value) [81.4s]
+11:06:52 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:07:02 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:07:02 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=25.0, gt=125.0 (rel_error=80.0000%, tol=5.00% (rounded=True)) [31.9s]
+11:07:02 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: 25.0 from hyperheuristic)
+11:07:13 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:07:14 [INFO] src.orchestrator:   ✗ improved_v1 (refine): predicted=10.0, gt=125.0 (rel_error=92.0000%, tol=5.00% (rounded=True))
+11:07:14 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: 25.0 from hyperheuristic)
+11:07:24 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:07:25 [INFO] src.orchestrator:   ✓ improved_v2 (refine): predicted=125.00000000001329, gt=125.0 (rel_error=0.0000%, tol=5.00% (rounded=True))
+11:07:25 [INFO] src.orchestrator:   Improver: found correct answer on iteration 2!
+11:07:34 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:07:34 [WARNING] src.agents.reflector: Failed to parse reflector JSON
+11:07:34 [INFO] src.orchestrator: [3/10] Problem 3
+11:07:46 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:07:46 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=hard, recommended_meta=Genetic Algorithm (GA)
+11:08:04 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:08:25 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:08:37 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:08:37 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+11:09:00 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:09:00 [INFO] src.orchestrator:   ✗ heuristic: predicted=-488127560.0, gt=10349920.0 (rel_error=4816.2448%, tol=5.00% (rounded=True)) [56.0s]
+11:09:00 [INFO] src.orchestrator:   Warm-start: heuristic found obj=-488127560.0, seeding meta/hyper
+11:09:22 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:09:34 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:09:34 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+11:10:00 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:10:00 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+11:10:36 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:10:36 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+11:10:57 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:10:57 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=10349920.0 (No predicted value) [116.8s]
+11:11:18 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:11:30 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:11:30 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=-1.0459835178716976e+21, gt=10349920.0 (rel_error=10106199061168666.0000%, tol=5.00% (rounded=True)) [33.0s]
+11:11:30 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: -488127560.0 from heuristic)
+11:11:52 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:12:09 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:12:23 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:12:24 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+11:12:24 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: -488127560.0 from heuristic)
+11:12:42 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:13:01 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:13:16 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:13:16 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+11:13:28 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:13:28 [WARNING] src.agents.reflector: Failed to parse reflector JSON
+11:13:28 [INFO] src.orchestrator: [4/10] Problem 4
+11:13:38 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:13:38 [INFO] src.orchestrator:   Analyzer: class=knapsack, difficulty=medium, recommended_meta=GA
+11:13:47 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:13:56 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:14:05 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:14:06 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+11:14:16 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:14:16 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+11:14:23 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:14:23 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+11:14:31 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:14:31 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=30400.0 (No predicted value) [44.4s]
+11:14:46 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:14:56 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:14:56 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+11:15:12 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:15:13 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+11:15:27 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:15:28 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+11:15:41 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:15:42 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=30400.0 (No predicted value) [70.2s]
+11:16:09 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:16:19 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:16:19 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+11:16:50 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:16:50 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+11:17:18 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:17:19 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+11:17:46 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:17:47 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=30400.0 (No predicted value) [125.0s]
+11:17:47 [INFO] src.orchestrator:   Improver: skipping — no successful executions to improve
+11:17:56 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:17:56 [WARNING] src.agents.reflector: Failed to parse reflector JSON
+11:17:56 [INFO] src.orchestrator: [5/10] Problem 5
+11:18:11 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:18:11 [WARNING] src.agents.analyzer: Failed to parse analysis JSON, returning raw text
+11:18:11 [INFO] src.orchestrator:   Analyzer: class=?, difficulty=?, recommended_meta=?
+11:18:25 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:18:40 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:18:52 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:18:52 [INFO] src.orchestrator:   ✗ heuristic: predicted=-33041.91399999999, gt=18.6943 (rel_error=174005.2632%, tol=5.00% (rounded=True)) [26.8s]
+11:18:52 [INFO] src.orchestrator:   Warm-start: heuristic found obj=-33041.91399999999, seeding meta/hyper
+11:19:09 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:19:21 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:19:22 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+11:19:38 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:19:39 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+11:20:07 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:20:07 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+11:20:41 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:20:41 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=18.6943 (No predicted value) [108.6s]
+11:21:15 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:21:28 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:21:29 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+11:22:07 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:22:07 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+11:22:44 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:22:45 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+11:23:25 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:23:26 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=7.9430000000000005, gt=18.6943 (rel_error=57.8947%, tol=5.00% (rounded=True)) [165.1s]
+11:23:26 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: 7.9430000000000005 from hyperheuristic)
+11:23:50 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:23:50 [INFO] src.orchestrator:   ✗ improved_v1 (refine): predicted=-3.1755707682295364e+33, gt=18.6943 (rel_error=16713530359102824138907373453443072.0000%, tol=5.00% (rounded=True))
+11:23:50 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: 7.9430000000000005 from hyperheuristic)
+11:24:13 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:24:13 [INFO] src.orchestrator:   ✗ improved_v2 (refine): predicted=7.480572131232469e-10, gt=18.6943 (rel_error=100.0000%, tol=5.00% (rounded=True))
+11:24:26 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:24:26 [WARNING] src.agents.reflector: Failed to parse reflector JSON
+11:24:26 [INFO] src.orchestrator: [6/10] Problem 6
+11:24:35 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:24:35 [INFO] src.orchestrator:   Analyzer: class=scheduling, difficulty=medium, recommended_meta=GA
+11:24:51 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:25:04 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:25:16 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:25:16 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+11:25:30 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:25:30 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+11:25:42 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:25:42 [INFO] src.orchestrator:   ✗ heuristic: predicted=78000.0, gt=10755.0 (rel_error=625.2441%, tol=5.00% (rounded=True)) [50.9s]
+11:25:42 [INFO] src.orchestrator:   Warm-start: heuristic found obj=78000.0, seeding meta/hyper
+11:26:04 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:26:15 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:26:15 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+11:26:34 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:26:34 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+11:26:52 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:26:52 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+11:27:08 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:27:09 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=10755.0 (No predicted value) [86.4s]
+11:27:28 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:27:38 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:27:39 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+11:27:55 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:27:56 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+11:28:14 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:28:14 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+11:28:31 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:28:31 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=10755.0 (No predicted value) [82.5s]
+11:28:31 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: 78000.0 from heuristic)
+11:29:04 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:29:35 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:30:01 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:30:01 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+11:30:01 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: 78000.0 from heuristic)
+11:30:20 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:30:42 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:30:58 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:30:59 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+11:31:07 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:31:07 [WARNING] src.agents.reflector: Failed to parse reflector JSON
+11:31:07 [INFO] src.orchestrator: [7/10] Problem 7
+11:31:25 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:31:25 [WARNING] src.agents.analyzer: Failed to parse analysis JSON, returning raw text
+11:31:25 [INFO] src.orchestrator:   Analyzer: class=?, difficulty=?, recommended_meta=?
+11:31:34 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:31:47 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:31:56 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:31:57 [INFO] src.orchestrator:   ✗ heuristic: predicted=4375.0, gt=904590.0 (rel_error=99.5164%, tol=5.00% (rounded=True)) [22.4s]
+11:31:57 [INFO] src.orchestrator:   Warm-start: heuristic found obj=4375.0, seeding meta/hyper
+11:32:22 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:32:32 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:32:32 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+11:32:56 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:32:57 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+11:33:20 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:33:20 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+11:33:44 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:33:44 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=904590.0 (No predicted value) [107.8s]
+11:34:11 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:34:21 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:34:22 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+11:34:52 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:34:52 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+11:35:21 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:35:21 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+11:35:50 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:35:50 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=904590.0 (No predicted value) [125.6s]
+11:35:50 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: 4375.0 from heuristic)
+11:36:07 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:36:22 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:36:34 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:36:34 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+11:36:34 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: 4375.0 from heuristic)
+11:36:51 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:37:07 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:37:20 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:37:20 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+11:37:34 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:37:34 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 3)
+11:37:34 [INFO] src.orchestrator: [8/10] Problem 8
+11:37:44 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:37:44 [INFO] src.orchestrator:   Analyzer: class=IP, difficulty=medium, recommended_meta=None
+11:38:04 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:38:17 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:38:30 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:38:30 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+11:38:43 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:38:43 [INFO] src.orchestrator:   heuristic attempt 2 failed, trying debug fix…
+11:38:54 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:38:54 [INFO] src.orchestrator:   heuristic attempt 3 failed, trying debug fix…
+11:39:05 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:39:05 [INFO] src.orchestrator:   ✗ heuristic: predicted=None, gt=14.0 (No predicted value) [61.3s]
+11:39:13 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:39:27 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:39:27 [WARNING] src.agents.critic: Failed to parse critic JSON, returning approved
+11:39:27 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=22.999999999996266, gt=14.0 (rel_error=64.2857%, tol=5.00% (rounded=True)) [21.6s]
+11:39:44 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:39:55 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:39:55 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+11:40:12 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:40:13 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+11:40:30 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:40:30 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=-7.247894871519073e+17, gt=14.0 (rel_error=5177067765370766336.0000%, tol=5.00% (rounded=True)) [63.1s]
+11:40:30 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: 22.999999999996266 from metaheuristic)
+11:40:42 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:40:52 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:41:03 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:41:03 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+11:41:03 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: 22.999999999996266 from metaheuristic)
+11:41:13 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:41:25 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:41:34 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:41:35 [INFO] src.orchestrator:   Improver iteration 2 (refine): execution failed (2 consecutive)
+11:41:47 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:41:47 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 6)
+11:41:47 [INFO] src.orchestrator: [9/10] Problem 9
+11:41:57 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:41:57 [INFO] src.orchestrator:   Analyzer: class=LP, difficulty=medium, recommended_meta=GA
+11:42:08 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:42:24 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:42:39 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:42:39 [WARNING] src.agents.critic: Failed to parse critic JSON, returning approved
+11:42:39 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+11:42:52 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:42:52 [INFO] src.orchestrator:   ✗ heuristic: predicted=2283.0, gt=623.0 (rel_error=266.4526%, tol=5.00% (rounded=True)) [43.9s]
+11:42:52 [INFO] src.orchestrator:   Warm-start: heuristic found obj=2283.0, seeding meta/hyper
+11:43:06 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:43:18 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:43:18 [WARNING] src.agents.critic: Failed to parse critic JSON, returning approved
+11:43:18 [INFO] src.orchestrator:   metaheuristic attempt 1 failed, trying debug fix…
+11:43:31 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:43:32 [INFO] src.orchestrator:   metaheuristic attempt 2 failed, trying debug fix…
+11:43:44 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:43:45 [INFO] src.orchestrator:   metaheuristic attempt 3 failed, trying debug fix…
+11:43:57 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:43:58 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=None, gt=623.0 (No predicted value) [65.4s]
+11:44:14 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:44:27 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:44:27 [INFO] src.orchestrator:   Critic found 2 critical issues in hyperheuristic, requesting fix
+11:44:45 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:44:46 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+11:45:03 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:45:04 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+11:45:24 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:45:24 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+11:45:42 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:45:42 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=623.0 (No predicted value) [104.8s]
+11:45:42 [INFO] src.orchestrator:   Improver iteration 1/2 (best so far: 2283.0 from heuristic)
+11:45:58 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:46:13 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:46:26 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:46:26 [INFO] src.orchestrator:   Improver iteration 1 (refine): execution failed (1 consecutive)
+11:46:26 [INFO] src.orchestrator:   Improver iteration 2/2 (best so far: 2283.0 from heuristic)
+11:46:44 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:47:02 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:47:03 [INFO] src.orchestrator:   ✓ improved_v2 (refine): predicted=623.0, gt=623.0 (rel_error=0.0000%, tol=5.00% (rounded=True))
+11:47:03 [INFO] src.orchestrator:   Improver: found correct answer on iteration 2!
+11:47:17 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:47:17 [INFO] src.orchestrator:   Reflector: 3 new lessons (total: 9)
+11:47:17 [INFO] src.orchestrator: [10/10] Problem 10
+11:47:31 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:47:31 [WARNING] src.agents.analyzer: Failed to parse analysis JSON, returning raw text
+11:47:31 [INFO] src.orchestrator:   Analyzer: class=?, difficulty=?, recommended_meta=?
+11:47:38 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:47:38 [WARNING] src.agents.formulator: Failed to parse formulation JSON, returning raw text
+11:47:51 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:48:00 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:48:01 [INFO] src.orchestrator:   heuristic attempt 1 failed, trying debug fix…
+11:48:13 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:48:14 [INFO] src.orchestrator:   ✓ heuristic: predicted=3.0, gt=3.0 (rel_error=0.0000%, tol=5.00% (rounded=True)) [35.5s]
+11:48:14 [INFO] src.orchestrator:   Warm-start: heuristic found obj=3.0, seeding meta/hyper
+11:48:34 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:48:45 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:48:45 [INFO] src.orchestrator:   ✗ metaheuristic: predicted=0.0, gt=3.0 (rel_error=100.0000%, tol=5.00% (rounded=True)) [31.9s]
+11:49:14 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:49:23 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:49:24 [INFO] src.orchestrator:   hyperheuristic attempt 1 failed, trying debug fix…
+11:49:54 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:49:54 [INFO] src.orchestrator:   hyperheuristic attempt 2 failed, trying debug fix…
+11:50:19 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:50:20 [INFO] src.orchestrator:   hyperheuristic attempt 3 failed, trying debug fix…
+11:50:42 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:50:42 [INFO] src.orchestrator:   ✗ hyperheuristic: predicted=None, gt=3.0 (No predicted value) [116.7s]
+11:50:42 [INFO] src.orchestrator:   Improver: skipping — already have correct answer
+11:50:53 [INFO] httpx: HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+11:50:53 [INFO] src.orchestrator:   Reflector: 2 new lessons (total: 11)
+11:50:53 [INFO] src.orchestrator: Results saved to results_llama3_withdeps/orlm_industryOR
+
+============================================================
+  Dataset: orlm_industryOR
+  Total problems evaluated: 36
+  Overall accuracy: 8.3%
+  Failed executions: 15
+────────────────────────────────────────────────────────────
+  heuristic             1/10 correct  (10.0%)
+  metaheuristic         0/10 correct  (0.0%)
+  hyperheuristic        0/10 correct  (0.0%)
+  improved_v1           0/3 correct  (0.0%)
+  improved_v2           2/3 correct  (66.7%)
+============================================================
+

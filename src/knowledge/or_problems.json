@@ -1,0 +1,210 @@
+{
+  "_meta": {
+    "description": "Curated knowledge base of common OR problem families. Keys are lowercase canonical tags; aliases are matched case-insensitively.",
+    "schema": "canonical_name, aliases[], complexity, exact_methods[], heuristic_methods[], metaheuristic_methods[], typical_parameters{}, key_pitfalls[], references[]"
+  },
+
+  "knapsack_01": {
+    "canonical_name": "0/1 Knapsack Problem",
+    "aliases": ["knapsack", "0-1 knapsack", "binary knapsack"],
+    "complexity": "NP-hard (weakly) — pseudo-polynomial DP exists",
+    "exact_methods": ["Dynamic programming O(nW)", "Branch-and-bound with LP relaxation"],
+    "heuristic_methods": ["Greedy by value/weight ratio (sort descending, pack until full)", "Fractional relaxation rounding"],
+    "metaheuristic_methods": ["GA with binary vector encoding + repair operator", "Simulated annealing with bit-flip neighborhood"],
+    "typical_parameters": {"ga_population": 50, "generations": 200, "mutation_rate": 0.02},
+    "key_pitfalls": ["Ratio-greedy is not optimal — use DP for exact", "Must enforce capacity in every mutation/crossover", "Watch integer overflow for large W"],
+    "references": ["Martello & Toth (1990) — Knapsack Problems: Algorithms and Computer Implementations"]
+  },
+
+  "bounded_knapsack": {
+    "canonical_name": "Bounded / Multiple Knapsack Problem",
+    "aliases": ["multiple knapsack", "bounded knapsack", "multi-dimensional knapsack"],
+    "complexity": "NP-hard, multidim is strongly NP-hard",
+    "exact_methods": ["MILP formulation (CBC/HiGHS/PuLP)", "DP for small capacities"],
+    "heuristic_methods": ["Greedy by ratio per dimension", "First-fit decreasing by weight"],
+    "metaheuristic_methods": ["GA with integer encoding", "Tabu search over assignment vector"],
+    "typical_parameters": {"ga_population": 80, "generations": 300},
+    "key_pitfalls": ["All dimensions must fit simultaneously", "Repair infeasible offspring after crossover"],
+    "references": ["Kellerer, Pferschy & Pisinger (2004)"]
+  },
+
+  "tsp": {
+    "canonical_name": "Traveling Salesman Problem",
+    "aliases": ["tsp", "traveling salesman", "travelling salesman"],
+    "complexity": "NP-hard",
+    "exact_methods": ["MILP with MTZ or DFJ subtour elimination", "Branch-and-cut (Concorde)", "Held-Karp DP O(n^2 2^n) for n<=20"],
+    "heuristic_methods": ["Nearest-neighbor then 2-opt improvement", "Christofides 1.5-approx (metric TSP)", "Greedy edge insertion"],
+    "metaheuristic_methods": ["Lin-Kernighan (LKH)", "GA with order crossover (OX) + 2-opt local search", "Simulated annealing with 2-opt or or-opt moves", "Ant Colony Optimization"],
+    "typical_parameters": {"ga_population": 100, "generations": 500, "sa_initial_temp": 1000, "sa_cooling": 0.995},
+    "key_pitfalls": ["Always apply 2-opt as local search inside any metaheuristic", "Watch for asymmetric vs symmetric distance", "Represent tour as permutation, not adjacency list"],
+    "references": ["Applegate, Bixby, Chvatal, Cook (2006) — The TSP: A Computational Study", "Lin & Kernighan (1973)"]
+  },
+
+  "vrp": {
+    "canonical_name": "Vehicle Routing Problem (CVRP)",
+    "aliases": ["vrp", "vehicle routing", "cvrp", "capacitated vehicle routing"],
+    "complexity": "NP-hard",
+    "exact_methods": ["Branch-and-cut-and-price", "MILP with commodity flow formulation (small n)"],
+    "heuristic_methods": ["Clarke-Wright savings algorithm", "Sweep algorithm", "Nearest-neighbor per route"],
+    "metaheuristic_methods": ["Adaptive Large Neighborhood Search (ALNS)", "Tabu search (Taillard)", "GA with route-based encoding + split procedure"],
+    "typical_parameters": {"alns_iterations": 2000, "destroy_fraction": 0.2},
+    "key_pitfalls": ["Capacity per vehicle must be respected", "Depot must appear at start and end of each route", "Total distance = sum over routes"],
+    "references": ["Toth & Vigo (2014) — Vehicle Routing: Problems, Methods, and Applications"]
+  },
+
+  "bin_packing": {
+    "canonical_name": "Bin Packing Problem",
+    "aliases": ["bin packing", "bin-packing"],
+    "complexity": "NP-hard (strongly)",
+    "exact_methods": ["MILP", "Column generation"],
+    "heuristic_methods": ["First-Fit Decreasing (FFD)", "Best-Fit Decreasing (BFD)", "Next-Fit Decreasing"],
+    "metaheuristic_methods": ["Grouping GA", "Tabu search over item-to-bin assignment"],
+    "typical_parameters": {"iterations": 500},
+    "key_pitfalls": ["Always sort items descending by size first", "Watch floating-point capacity comparisons"],
+    "references": ["Johnson (1973)", "Martello & Toth (1990)"]
+  },
+
+  "set_cover": {
+    "canonical_name": "Set Covering Problem",
+    "aliases": ["set cover", "set covering", "scp"],
+    "complexity": "NP-hard",
+    "exact_methods": ["MILP (binary x per set)", "Lagrangian relaxation"],
+    "heuristic_methods": ["Greedy (pick set covering most uncovered elements per cost, ln(n)-approx)", "LP rounding"],
+    "metaheuristic_methods": ["GA with binary encoding + repair", "Tabu search"],
+    "typical_parameters": {"ga_population": 100, "generations": 200},
+    "key_pitfalls": ["Greedy is ln(n)-approximate, not optimal", "Ensure every element is covered after repair"],
+    "references": ["Caprara, Fischetti & Toth (1999)"]
+  },
+
+  "job_shop": {
+    "canonical_name": "Job-Shop Scheduling Problem",
+    "aliases": ["job shop", "jssp", "job-shop scheduling"],
+    "complexity": "NP-hard (strongly)",
+    "exact_methods": ["Disjunctive MILP", "Branch-and-bound with immediate-selection (Carlier-Pinson)"],
+    "heuristic_methods": ["Priority dispatching rules (SPT, LPT, MWKR)", "Shifting bottleneck"],
+    "metaheuristic_methods": ["Tabu search (Taillard, Nowicki-Smutnicki)", "GA with operation-based encoding", "Simulated annealing"],
+    "typical_parameters": {"tabu_tenure": 10, "iterations": 5000},
+    "key_pitfalls": ["Makespan = max completion time across all jobs", "Precedence within a job must be respected", "Operation-based encoding is easier than start-time encoding"],
+    "references": ["Pinedo (2016) — Scheduling: Theory, Algorithms, and Systems"]
+  },
+
+  "flow_shop": {
+    "canonical_name": "Flow-Shop Scheduling Problem",
+    "aliases": ["flow shop", "fssp", "permutation flow shop"],
+    "complexity": "NP-hard for m>=3 machines",
+    "exact_methods": ["MILP", "Branch-and-bound"],
+    "heuristic_methods": ["NEH heuristic (Nawaz-Enscore-Ham)", "Johnson's algorithm (m=2 exact)"],
+    "metaheuristic_methods": ["Iterated Greedy (Ruiz-Stuetzle)", "Tabu search", "GA with permutation encoding"],
+    "typical_parameters": {"ig_iterations": 1000, "destruction_size": 4},
+    "key_pitfalls": ["All jobs visit machines in same order (permutation)", "NEH is usually the best single-shot heuristic"],
+    "references": ["Ruiz & Maroto (2005) — A comprehensive review and evaluation of permutation flowshop heuristics"]
+  },
+
+  "assignment": {
+    "canonical_name": "Assignment Problem",
+    "aliases": ["assignment", "linear assignment", "lap"],
+    "complexity": "Polynomial — O(n^3)",
+    "exact_methods": ["Hungarian algorithm (Kuhn-Munkres) via scipy.optimize.linear_sum_assignment", "LP (fully integral)"],
+    "heuristic_methods": ["Greedy (sort pairs by cost, assign feasibly)"],
+    "metaheuristic_methods": ["Rarely needed — exact is polynomial"],
+    "typical_parameters": {},
+    "key_pitfalls": ["Use scipy.optimize.linear_sum_assignment — don't write GA for this", "Minimization by default; negate cost for maximization"],
+    "references": ["Kuhn (1955)", "Burkard, Dell'Amico, Martello (2012)"]
+  },
+
+  "max_flow": {
+    "canonical_name": "Maximum Flow Problem",
+    "aliases": ["max flow", "maximum flow", "max-flow"],
+    "complexity": "Polynomial — O(V^2 E) (Dinic's), O(VE) (push-relabel)",
+    "exact_methods": ["Ford-Fulkerson with BFS (Edmonds-Karp)", "Dinic's algorithm", "Push-relabel", "LP"],
+    "heuristic_methods": ["Not applicable — exact is polynomial"],
+    "metaheuristic_methods": ["Not applicable"],
+    "typical_parameters": {},
+    "key_pitfalls": ["Use networkx.maximum_flow or scipy", "Handle capacity=0 edges"],
+    "references": ["Ahuja, Magnanti, Orlin (1993) — Network Flows"]
+  },
+
+  "min_cost_flow": {
+    "canonical_name": "Minimum Cost Flow Problem",
+    "aliases": ["min cost flow", "minimum cost flow", "mcmf"],
+    "complexity": "Polynomial",
+    "exact_methods": ["Network simplex", "Successive shortest paths", "Cost-scaling", "LP"],
+    "heuristic_methods": ["Not applicable"],
+    "metaheuristic_methods": ["Not applicable"],
+    "typical_parameters": {},
+    "key_pitfalls": ["Use networkx.min_cost_flow or scipy.sparse.csgraph", "Supply+demand must balance"],
+    "references": ["Ahuja, Magnanti, Orlin (1993)"]
+  },
+
+  "facility_location": {
+    "canonical_name": "Facility Location Problem",
+    "aliases": ["facility location", "uflp", "cflp", "warehouse location"],
+    "complexity": "NP-hard",
+    "exact_methods": ["MILP (binary y_j open + x_ij assignment)", "Lagrangian relaxation"],
+    "heuristic_methods": ["ADD / DROP heuristics", "Greedy open + reassign"],
+    "metaheuristic_methods": ["Tabu search over open set", "GA with binary facility vector"],
+    "typical_parameters": {"ga_population": 60, "generations": 200},
+    "key_pitfalls": ["Each customer assigned to exactly one open facility", "Fixed-cost + transport-cost tradeoff"],
+    "references": ["Drezner & Hamacher (2002) — Facility Location: Applications and Theory"]
+  },
+
+  "scheduling_generic": {
+    "canonical_name": "Generic Scheduling Problem",
+    "aliases": ["scheduling", "resource-constrained scheduling", "rcpsp"],
+    "complexity": "NP-hard in general",
+    "exact_methods": ["MILP with start-time or time-indexed variables", "Constraint programming (ortools CP-SAT)"],
+    "heuristic_methods": ["Priority dispatching rules", "Serial schedule generation scheme"],
+    "metaheuristic_methods": ["GA with activity-list encoding", "Tabu search"],
+    "typical_parameters": {"iterations": 1000},
+    "key_pitfalls": ["For RCPSP strongly prefer ortools CP-SAT when available", "Respect precedence AND resource capacity at each time"],
+    "references": ["Pinedo (2016)"]
+  },
+
+  "lp": {
+    "canonical_name": "Linear Programming Problem",
+    "aliases": ["lp", "linear programming", "linear program"],
+    "complexity": "Polynomial",
+    "exact_methods": ["Simplex (scipy.optimize.linprog method='highs')", "Interior point"],
+    "heuristic_methods": ["Not applicable — LP is exactly solvable in poly time"],
+    "metaheuristic_methods": ["Not applicable"],
+    "typical_parameters": {},
+    "key_pitfalls": ["Do NOT write a GA for pure LP — use scipy.linprog or pulp", "Check for unboundedness / infeasibility status codes"],
+    "references": ["Chvatal (1983) — Linear Programming"]
+  },
+
+  "milp": {
+    "canonical_name": "Mixed-Integer Linear Programming Problem",
+    "aliases": ["milp", "mip", "mixed integer linear", "integer programming", "ip"],
+    "complexity": "NP-hard",
+    "exact_methods": ["Branch-and-cut (CBC via PuLP, HiGHS via scipy>=1.9, ortools CP-SAT for pure IP)", "MILP formulation in PuLP or Pyomo"],
+    "heuristic_methods": ["LP relaxation + rounding", "Feasibility pump"],
+    "metaheuristic_methods": ["Large-scale neighborhood search around LP relaxation"],
+    "typical_parameters": {"time_limit_s": 60},
+    "key_pitfalls": ["Always try the MILP solver first before metaheuristics — CBC/HiGHS are free and usually fast enough", "Binary vs general integer must be declared correctly"],
+    "references": ["Wolsey (1998) — Integer Programming"]
+  },
+
+  "nlp": {
+    "canonical_name": "Nonlinear Programming Problem",
+    "aliases": ["nlp", "nonlinear programming", "nonlinear program"],
+    "complexity": "Convex NLP: polynomial. Non-convex NLP: NP-hard",
+    "exact_methods": ["scipy.optimize.minimize (SLSQP, trust-constr) for convex/smooth", "cvxpy for convex", "IPOPT via pyomo for large-scale"],
+    "heuristic_methods": ["Multi-start local search with random restarts"],
+    "metaheuristic_methods": ["Differential Evolution (scipy.optimize.differential_evolution)", "Particle Swarm Optimization", "CMA-ES"],
+    "typical_parameters": {"de_popsize": 15, "de_maxiter": 1000, "pso_swarm_size": 30},
+    "key_pitfalls": ["If objective/constraints are convex, use cvxpy or scipy — not GA", "Provide good bounds to accelerate DE/PSO", "Handle constraint violations via penalty or repair"],
+    "references": ["Nocedal & Wright (2006) — Numerical Optimization"]
+  },
+
+  "graph_coloring": {
+    "canonical_name": "Graph Coloring Problem",
+    "aliases": ["graph coloring", "graph colouring", "chromatic number"],
+    "complexity": "NP-hard",
+    "exact_methods": ["MILP", "Branch-and-bound (DSATUR exact)"],
+    "heuristic_methods": ["DSATUR (saturation degree)", "Welsh-Powell (largest-first)", "Greedy with random order"],
+    "metaheuristic_methods": ["Tabu search (TabuCol)", "GA with partition-based encoding"],
+    "typical_parameters": {"tabu_iterations": 10000},
+    "key_pitfalls": ["DSATUR is usually a strong starting heuristic", "Symmetry: color labels are interchangeable — use partition representation"],
+    "references": ["Galinier & Hertz (2006) — A survey of local search methods for graph coloring"]
+  }
+}

@@ -33,9 +33,21 @@ Return ONLY the fixed Python code inside a single ```python ... ``` block.
 """
 
 
-def _build_user_prompt(question: str, code: str, error: str) -> str:
+def _build_user_prompt(
+    question: str, code: str, error: str, research: dict | None = None,
+) -> str:
+    pitfall_block = ""
+    if research and isinstance(research, dict):
+        name = research.get("canonical_name")
+        pitfalls = research.get("key_pitfalls") or []
+        if name and pitfalls:
+            pitfall_lines = "\n".join(f"- {p}" for p in pitfalls[:3])
+            pitfall_block = (
+                f"## Known pitfalls for {name}\n{pitfall_lines}\n\n"
+            )
     return (
         f"## Original Problem\n{question}\n\n"
+        f"{pitfall_block}"
         f"## Broken Code\n```python\n{code}\n```\n\n"
         f"## Error\n```\n{error}\n```\n\n"
         "Fix the code and return the complete corrected script."
@@ -49,8 +61,9 @@ class DebuggerAgent(Agent):
         question: str = input_data["question"]
         code: str = input_data["code"]
         error: str = input_data["error"]
+        research: dict | None = input_data.get("research")
 
-        user_prompt = _build_user_prompt(question, code, error)
+        user_prompt = _build_user_prompt(question, code, error, research=research)
         raw = self._chat(_SYSTEM_PROMPT, user_prompt, temperature=0.2)
 
         return {

@@ -82,6 +82,8 @@ class AgentConfig:
 
     # ── Multi-agent architecture settings ────────────────────────────
     enable_analyzer: bool = True       # Phase 1: classify problem before solving
+    enable_researcher: bool = True     # Phase 1b (v4): literature-grounded dossier
+    researcher_kb_path: str | None = None  # override for curated KB JSON file
     enable_warm_start: bool = True     # Phase 2: heuristic → meta/hyper warm-start
     enable_critic: bool = True         # Phase 3: review code before execution
     improve_iterations: int = 2        # Phase 4: LLM-guided improvement iterations (0=off)
